@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<templates id="template" xml:space="preserve">
+
+<t t-name="security.incident.conitem.inline">
+
+    <div class="epps_inline">
+
+    <div class="epps_item_name">
+    <textarea tabindex="-1" placeholder="Item name" id="epps_item_name" style="margin-right: 30px;" class="header-name textfullwidth textarea_unresizable" rows="1"><t t-esc="record.name"/></textarea>
+    </div>
+    <div class="epps_inline">
+        
+    </div>
+    </div>
+    <div class="epps_inline pl15" t-if="record.description != ''">
+        <div class="epps_description">
+            <textarea name="content" tabindex="-1" placeholder="New Task" style="height: 42px;" id="epps_task_description" class="header-name textfullwidth textarea_unresizable"><t t-esc="record.description"/></textarea>
+        </div>
+    </div>
+    <div class="epps_inline pl15" t-if="record.description == ''">
+        <div class="epps_description_small">
+            <textarea name="content" tabindex="-1" placeholder="Add description" style="height: 42px;" id="epps_task_description" class="header-name textfullwidth textarea_unresizable form-control load_editor">
+
+            </textarea>
+        </div>
+    </div>
+    <script type="text/javascript">
+        <!--CKEDITOR.replace("content");-->
+    </script>
+    <!--
+    <script type="text/javascript">
+        CKEDITOR.basePath = '/web/static/lib/ckeditor/';
+        CKEDITOR.language = 'en';
+        CKEDITOR.config.toolbar = [['Bold','Italic','Underline','Strike'],['NumberedList','BulletedList', 'Blockquote'], ['Outdent','Indent','Link','Unlink','Image'],] ;
+        CKEDITOR.replace("content");
+    </script>
+    -->
+    <div class="epps_inline pl15" id="inline_add_attachment">
+    </div>
+
+    <div class="epps_inline">
+        <div class="epps_due_date">
+            <div class="oe_msg_left">
+
+
+
+                <div id="existing_section">
+                    <div class="inlinedate_icon fleft">
+                        <img src="/epps_design/static/src/img/calendar-icon.png" class="oe_kanban_image pad_image_left o_newitem_calendar_img" id="existing_section_datepicker_img"/>
+                        <!--<input type="text" class="epps_datepicker" t-att-value="record.date_deadline" id="existing_section_datepicker" />-->
+                    </div>
+                    <!-- deadline -->
+                    <div id="existing_section_datepicker_result" class="fleft list_datepicker_label"></div>
+                    <input type="text" class="epps_datepicker list_datepicker" id="existing_section_datepicker" style="display:none;" t-att-value="record.date_deadline" />
+                </div>
+
+                <div class="epps_inline_user" id="epps_inline_user">
+                    <!-- user avatar -->
+                    <div class="epps_inline_user_selection_image">
+                        <img t-att-data-user="record.id" t-if="!record.avatar_empty" t-att-src="record.avatar" class="task_user_image_inline task_user_input_icon"/>
+                        <img t-att-data-user="record.id" t-if="record.avatar_empty" t-att-src="record.avatar" class="task_user_input_icon task_nouser_input_icon_details_bar"/>
+                    </div>
+                    <!-- user name -->
+                    <div class="epps_inline_username user_username" >
+                        <t t-raw="record.user_name" />
+                    </div>
+                    <input class="task_user_input_short_val user_input_val" style="display: none;" type="text" />
+                </div>
+                <!-- right aligned block to make room for user name -->
+                <div class="epps_inline_right_block">
+
+                    <!-- gantt diagram -->
+                    <div class="epps_inline_gantt">
+                        <img src="/epps_design/static/src/img/gantt-icon50px.png" class="task_user_image_inline"/>
+                        <span class="inline_inline_header_gantt">
+                        Gantt<br/>Diagramm
+                        </span>
+                    </div>
+
+                    <!-- reviewer -->
+                    <div  class="epps_inline_user epps_inline_reviewer" id="epps_inline_reviewer">
+                        <img t-att-data-user="record.reviewer_id" t-att-src="record.reviewer_avatar" data-default-src="/epps_design/static/src/img/assign-icon45x45.png" class="task_user_image_inline task_user_input_icon"/>
+                        <span class="inline_inline_header">
+                        Reviewer
+                        </span>
+                        <input class="task_user_input_short_val user_input_val" style="display: none;" type="text" />
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+        <div class="epps_inline epps_inlinesubtasks">
+            <div id="subtasks_list">
+
+
+            </div>
+
+        </div>
+
+        <div class="epps_inline epps_inlinesubtasks">
+            <div id="task_chatter">
+            </div>
+        </div>
+
+        <div class="epps_inline epps_inlinesubtasks">
+            <div id="delete_task" t-att-data-taskname="record.name">
+                <div class="inline_remove_icon fleft">
+                    <img src="/epps_design/static/src/img/remove-icon.png" class="oe_kanban_image pad_image_left" />
+                </div>
+                <div id="delete_task_label" class="fleft">Delete task</div>
+            </div>
+
+            <div id="delete_subtask" t-att-data-taskname="record.name" style="display: none;">
+                <div class="inline_remove_icon fleft">
+                    <img src="/epps_design/static/src/img/remove-icon.png" class="oe_kanban_image pad_image_left" />
+                </div>
+                <div id="delete_subtask_label" class="fleft">Delete subtask</div>
+            </div>
+        </div>
+    <div class="epps_inline" style='min-height: 100px;'>
+    </div>
+</t>

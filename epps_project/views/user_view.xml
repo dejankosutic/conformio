@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+    <!--Notification follow projects-->
+        <record id="view_users_form_notifications_projects" model="ir.ui.view">
+            <field name="name">res.users.notifications.projects.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="epps_user.view_users_form_notifications"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@string='Email me when:']" position="after">
+                    <group colspan="4" col="4" string="The rules 2) and 3) are applied to the following projects:">
+                        <field name="partner_id" invisible="1"/>
+                        <field name="projects_to_follow" colspan="4" nolabel="1" widget="many2many_checkboxes" readonly="0"
+                            domain="['&amp;',
+                                        '|',
+                                            ('privacy_visibility', '=', 'public'),
+                                            '|',
+                                                '|',('members', 'in', [id]),('message_follower_ids', 'in', [partner_id]),
+                                                ('user_id', 'in', [id]),
+                                        '&amp;',('is_repository', '=', False),('is_my_files', '=', False)
+                                     ]"/>
+                        <field name="project_email_ids" colspan="4" nolabel="1" invisible="1">
+                            <tree editable="top">
+                                <field name="project_id"/>
+                                <field name="send_email"/>
+                            </tree>
+                        </field>
+                        
+                    </group>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</openerp>

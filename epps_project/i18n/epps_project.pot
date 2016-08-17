@@ -1,0 +1,1901 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* epps_project
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-25 16:53+0000\n"
+"PO-Revision-Date: 2016-05-25 16:53+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: epps_project
+#: model:email.template,body_html:epps_project.email_test_template
+msgid "\n"
+"<p>\n"
+"This is a test mail for Task Assigend\n"
+"</p>\n"
+""
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/document.py:980
+#: code:addons/epps_project/models/document.py:1010
+#, python-format
+msgid " value must not be empty."
+msgstr ""
+
+#. module: epps_project
+#. openerp-web
+#: code:addons/epps_project/static/src/js/epps_project.js:318
+#, python-format
+msgid "%(page)d/%(page_count)d"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/document.py:1292
+#: code:addons/epps_project/models/document.py:1344
+#, python-format
+msgid "%s"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/document.py:324
+#, python-format
+msgid "%s(copy)%s"
+msgstr ""
+
+#. module: epps_project
+#: selection:ir.attachment,frequency_of_review:0
+msgid "1 month"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,interval_12:0
+msgid "10"
+msgstr ""
+
+#. module: epps_project
+#: selection:ir.attachment,frequency_of_review:0
+msgid "10 months"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "10th"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,interval_12:0
+msgid "11"
+msgstr ""
+
+#. module: epps_project
+#: selection:ir.attachment,frequency_of_review:0
+msgid "11 months"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "11th"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,interval_12:0
+msgid "12"
+msgstr ""
+
+#. module: epps_project
+#: selection:ir.attachment,frequency_of_review:0
+msgid "12 months"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "12th"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "13th"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "14th"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "15th"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "16th"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "17th"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "18th"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "19th"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "1st"
+msgstr ""
+
+#. module: epps_project
+#: selection:ir.attachment,frequency_of_review:0
+msgid "2 months"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "20th"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "21th"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "22th"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "23th"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "24th"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "25th"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "26th"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "27th"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "28th"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "2nd"
+msgstr ""
+
+#. module: epps_project
+#: selection:ir.attachment,frequency_of_review:0
+msgid "3 months"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "3rd"
+msgstr ""
+
+#. module: epps_project
+#: selection:ir.attachment,frequency_of_review:0
+msgid "4 months"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "4th"
+msgstr ""
+
+#. module: epps_project
+#: selection:ir.attachment,frequency_of_review:0
+msgid "5 months"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "5th"
+msgstr ""
+
+#. module: epps_project
+#: selection:ir.attachment,frequency_of_review:0
+msgid "6 months"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "6th"
+msgstr ""
+
+#. module: epps_project
+#: selection:ir.attachment,frequency_of_review:0
+msgid "7 months"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "7th"
+msgstr ""
+
+#. module: epps_project
+#: selection:ir.attachment,frequency_of_review:0
+msgid "8 months"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "8th"
+msgstr ""
+
+#. module: epps_project
+#: selection:ir.attachment,frequency_of_review:0
+msgid "9 months"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "9th"
+msgstr ""
+
+#. module: epps_project
+#: sql_constraint:ir.attachment:0
+msgid "A token must be unique!"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_create_project_form
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Accept Emails From"
+msgstr ""
+
+#. module: epps_project
+#: field:document.directory,directory_active:0
+#: field:ir.attachment,file_active:0
+#: view:project.project:epps_project.epps_create_project_form
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Active"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Add Project"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_create_project_form
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Administration"
+msgstr ""
+
+#. module: epps_project
+#: model:document.file.status,name:0
+#: model:document.file.status,name:epps_project.status_approved
+#: selection:project.pad,state:0
+msgid "Approved"
+msgstr ""
+
+#. module: epps_project
+#: field:project.pad,approve_user_id:0
+msgid "Approver"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_edit_project_form
+#: view:project.project:epps_project.epps_view_project_kanban
+#: view:project.project:epps_project.epps_view_project_search
+msgid "Archive"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.view_my_task_search_form
+msgid "Assignation Month"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.view_my_task_search_form
+msgid "Assigned to"
+msgstr ""
+
+#. module: epps_project
+#: view:ir.attachment:epps_project.epps_view_attachment_search
+#: field:ir.attachment,ref_id:0
+msgid "Attachment"
+msgstr ""
+
+#. module: epps_project
+#: field:dwa.fields,ir_att_id:0
+msgid "Attachment ID"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.actions.act_window,name:epps_project.epps_action_attachment
+#: view:ir.attachment:epps_project.epps_view_attachment_form
+#: view:ir.attachment:epps_project.epps_view_attachment_search
+#: view:ir.attachment:epps_project.epps_view_attachment_tree
+msgid "Attachments"
+msgstr ""
+
+#. module: epps_project
+#: field:project.project,project_attachments:0
+msgid "Attacments"
+msgstr ""
+
+#. module: epps_project
+#: field:project.pad,author_user_id:0
+msgid "Author"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Automation"
+msgstr ""
+
+#. module: epps_project
+#: view:ir.attachment:epps_project.epps_view_attachment_search
+msgid "Binary"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,byday:0
+msgid "By day"
+msgstr ""
+
+#. module: epps_project
+#: view:ir.attachment:epps_project.epps_view_attachment_form
+#: view:mail.message:epps_project.view_message_tags_form
+#: view:project.task:epps_project.epps_gantt_chart_dates_form
+#: view:project.task:epps_project.epps_view_task_form2
+#: view:project.task:epps_project.epps_view_task_recurrency_form
+msgid "Cancel"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Cancel Project"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.pad,state:0
+msgid "Cancelled"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_create_project_form
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Change description text"
+msgstr ""
+
+#. module: epps_project
+#: field:ir.attachment,change_revision_on_save:0
+msgid "Change the revision on save"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Close Project"
+msgstr ""
+
+#. module: epps_project
+#: view:ir.attachment:epps_project.epps_view_attachment_search
+#: view:project.task:epps_project.view_my_task_search_form
+msgid "Company"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/document.py:691
+#, python-format
+msgid "Company Rules"
+msgstr ""
+
+#. module: epps_project
+#: model:dwa.fields,name:0
+#: model:dwa.fields,value:0
+msgid "Company logo"
+msgstr ""
+
+#. module: epps_project
+#: field:project.project,is_company_rules:0
+msgid "Company rules project"
+msgstr ""
+
+#. module: epps_project
+#: field:document.file.status,create_uid:0
+#: field:dropbox.integration,create_uid:0
+#: field:dwa.fields,create_uid:0
+#: field:project.pad,create_uid:0
+#: field:user.project.email,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: epps_project
+#: field:document.file.status,create_date:0
+#: field:dropbox.integration,create_date:0
+#: field:dwa.fields,create_date:0
+#: field:project.pad,create_date:0
+#: field:user.project.email,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.view_my_task_search_form
+msgid "Creation Date"
+msgstr ""
+
+#. module: epps_project
+#: view:ir.attachment:epps_project.epps_view_attachment_search
+msgid "Creation Month"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_create_project_form
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Customer"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.model,name:epps_project.model_dwa_fields
+msgid "DWA Fields"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,rrule_type:0
+msgid "Daily"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Dashboard"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,day:0
+#: selection:project.task,month_by:0
+msgid "Date of month"
+msgstr ""
+
+#. module: epps_project
+#: help:document.directory,message_last_post:0
+#: help:ir.attachment,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,month_by:0
+msgid "Day of month"
+msgstr ""
+
+#. module: epps_project
+#: field:dwa.fields,deletable:0
+msgid "Deletable"
+msgstr ""
+
+#. module: epps_project
+#: view:ir.attachment:epps_project.epps_view_attachment_form
+#: view:project.project:epps_project.epps_edit_project_form
+#: view:project.project:epps_project.epps_view_project_kanban
+msgid "Delete"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_view_task_form2
+msgid "Description"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_view_task_tree
+#: view:project.task:epps_project.epps_view_task_tree_my
+msgid "Details"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.model,name:epps_project.model_document_directory
+msgid "Directory"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/document.py:1280
+#, python-format
+msgid "Directory with specified name already exists."
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Discussions"
+msgstr ""
+
+#. module: epps_project
+#: field:ir.attachment,document_approver_id:0
+msgid "Document Approver"
+msgstr ""
+
+#. module: epps_project
+#: field:ir.attachment,document_author_id:0
+msgid "Document Author"
+msgstr ""
+
+#. module: epps_project
+#: view:ir.attachment:epps_project.epps_view_attachment_form
+msgid "Document Name"
+msgstr ""
+
+#. module: epps_project
+#: field:ir.attachment,document_owner_id:0
+msgid "Document Owner"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.ui.menu,name:epps_project.epps_document_management_menu
+msgid "Document management"
+msgstr ""
+
+#. module: epps_project
+#: view:ir.attachment:epps_project.epps_view_attachment_form
+msgid "Document revision"
+msgstr ""
+
+#. module: epps_project
+#: view:document.file.status:epps_project.view_epps_document_status_form
+#: view:document.file.status:epps_project.view_epps_document_status_tree
+#: model:ir.actions.act_window,name:epps_project.action_epps_document_status
+#: field:ir.attachment,document_status_id:0
+#: model:ir.model,name:epps_project.model_document_file_status
+msgid "Document status"
+msgstr ""
+
+#. module: epps_project
+#: sql_constraint:ir.attachment:0
+msgid "Document with that name, revision and status already exist !"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_view_project_kanban
+msgid "Documents"
+msgstr ""
+
+#. module: epps_project
+#: selection:document.file.status,state:0
+#: field:project.task,done:0
+msgid "Done"
+msgstr ""
+
+#. module: epps_project
+#: model:document.file.status,name:0
+#: model:document.file.status,name:epps_project.status_draft
+#: selection:project.pad,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.model,name:epps_project.model_dropbox_integration
+msgid "Dropbox Integration"
+msgstr ""
+
+#. module: epps_project
+#: field:res.users,dropbox_token:0
+msgid "Dropbox Token"
+msgstr ""
+
+#. module: epps_project
+#: view:res.users:epps_project.view_users_form_simple_modif_inherit
+msgid "Dropbox api key"
+msgstr ""
+
+#. module: epps_project
+#: field:res.users,dropbox_auth_code:0
+msgid "Dropbox auth code"
+msgstr ""
+
+#. module: epps_project
+#: view:res.users:epps_project.view_users_form_simple_modif_inherit
+msgid "Dropbox integration"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_view_task_form2
+msgid "Due date"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_edit_project_form
+#: view:project.project:epps_project.epps_view_project_kanban
+msgid "Duplicate"
+msgstr ""
+
+#. module: epps_project
+#: view:mail.message.subtype:epps_project.view_mail_message_subtype_form
+msgid "EPPS Settings"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Edit Project"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.ui.menu,name:epps_project.epps_menu_document_status
+msgid "Edit document statuses"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Edit settings"
+msgstr ""
+
+#. module: epps_project
+#: field:ir.attachment,file_edition:0
+msgid "Edition"
+msgstr ""
+
+#. module: epps_project
+#: selection:document.directory,permission_type:0
+msgid "Editor"
+msgstr ""
+
+#. module: epps_project
+#: field:user.project.email,send_email:0
+msgid "Email"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_create_project_form
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Email Alias"
+msgstr ""
+
+#. module: epps_project
+#: field:mail.message.subtype,email_template_id:0
+msgid "Email Template"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.model,name:epps_project.model_mail_thread
+msgid "Email Thread"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_create_project_form
+#: view:project.project:epps_project.epps_edit_project_form
+#: selection:project.task,end_type:0
+msgid "End date"
+msgstr ""
+
+#. module: epps_project
+#: field:mail.message.subtype,epps_subtype:0
+msgid "Epps Subtype"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/document.py:1760
+#, python-format
+msgid "Error at doc write!"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/project.py:325
+#, python-format
+msgid "Error!"
+msgstr ""
+
+#. module: epps_project
+#: sql_constraint:dwa.fields:0
+msgid "Field name must be unique!"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,byday:0
+msgid "Fifth"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_edit_project_form
+#: view:project.project:epps_project.view_epps_repository_form
+msgid "Files"
+msgstr ""
+
+#. module: epps_project
+#: view:ir.attachment:epps_project.epps_view_attachment_search
+msgid "Filter on my documents"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,byday:0
+msgid "First"
+msgstr ""
+
+#. module: epps_project
+#: field:document.directory,message_follower_ids:0
+#: field:ir.attachment,message_follower_ids:0
+#: field:mail.message,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: epps_project
+#: model:document.file.status,name:0
+#: model:document.file.status,name:epps_project.status_for_approval
+msgid "For approval"
+msgstr ""
+
+#. module: epps_project
+#: model:document.file.status,name:0
+#: model:document.file.status,name:epps_project.status_for_review
+msgid "For review"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,byday:0
+msgid "Fourth"
+msgstr ""
+
+#. module: epps_project
+#: field:ir.attachment,frequency_of_review:0
+msgid "Frequency Of Review"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,fr:0
+msgid "Fri"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,week_list:0
+msgid "Friday"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.actions.act_window,name:epps_project.action_window_gantt_chart_dates
+msgid "Gant diagram"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_gantt_chart_dates_form
+msgid "Gantt chart"
+msgstr ""
+
+#. module: epps_project
+#: view:ir.attachment:epps_project.epps_view_attachment_search
+#: view:project.task:epps_project.view_my_task_search_form
+msgid "Group By"
+msgstr ""
+
+#. module: epps_project
+#: help:document.directory,message_summary:0
+#: help:ir.attachment,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: epps_project
+#: field:document.file.status,id:0
+#: field:dropbox.integration,id:0
+#: field:dwa.fields,id:0
+#: field:epps.design.installed,id:0
+#: field:message.tags,id:0
+#: field:project.pad,id:0
+#: field:user.project.email,id:0
+msgid "ID"
+msgstr ""
+
+#. module: epps_project
+#: field:ir.ui.menu,icon_file:0
+msgid "Icon File"
+msgstr ""
+
+#. module: epps_project
+#: help:document.directory,message_unread:0
+#: help:ir.attachment,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: epps_project
+#: selection:document.file.status,state:0
+msgid "In progress"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_create_project_form
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Incoming Emails create"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,day_28:0
+#: field:project.task,interval_12:0
+msgid "Interval"
+msgstr ""
+
+#. module: epps_project
+#: field:document.directory,permission_type:0
+msgid "Invited permission"
+msgstr ""
+
+#. module: epps_project
+#: field:document.directory,message_is_follower:0
+#: field:ir.attachment,message_is_follower:0
+#: field:mail.message,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,byday:0
+msgid "Last"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.view_my_task_search_form
+msgid "Last Message"
+msgstr ""
+
+#. module: epps_project
+#: field:document.directory,message_last_post:0
+#: field:ir.attachment,message_last_post:0
+msgid "Last Message Date"
+msgstr ""
+
+#. module: epps_project
+#: field:document.file.status,write_uid:0
+#: field:dropbox.integration,write_uid:0
+#: field:dwa.fields,write_uid:0
+#: field:project.pad,write_uid:0
+#: field:user.project.email,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: epps_project
+#: field:document.file.status,write_date:0
+#: field:dropbox.integration,write_date:0
+#: field:dwa.fields,write_date:0
+#: field:project.pad,write_date:0
+#: field:user.project.email,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_view_project_kanban
+msgid "Last opened on"
+msgstr ""
+
+#. module: epps_project
+#: help:project.task,rrule_type:0
+msgid "Let the event automatically repeat at that interval"
+msgstr ""
+
+#. module: epps_project
+#: field:dwa.fields,logo:0
+msgid "Logo"
+msgstr ""
+
+#. module: epps_project
+#. openerp-web
+#: code:addons/epps_project/static/src/xml/mail.xml:49
+#, python-format
+msgid "Make a Task from it"
+msgstr ""
+
+#. module: epps_project
+#: model:res.groups,name:epps_project.group_epps_project_manager
+msgid "Manager"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_view_task_tree
+#: view:project.task:epps_project.epps_view_task_tree_my
+msgid "Mark Done"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_view_task_tree
+#: view:project.task:epps_project.epps_view_task_tree_my
+msgid "Mark Undone"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/project.py:844
+#, python-format
+msgid "Members Only:\n"
+" only project members see the content"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.model,name:epps_project.model_mail_message
+msgid "Message"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.actions.act_window,name:epps_project.action_message_tags
+#: view:mail.message:epps_project.view_message_tags_form
+msgid "Message Tags"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.model,name:epps_project.model_mail_message_subtype
+msgid "Message subtypes"
+msgstr ""
+
+#. module: epps_project
+#: field:document.directory,message_ids:0
+#: field:ir.attachment,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: epps_project
+#: help:document.directory,message_ids:0
+#: help:ir.attachment,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,mo:0
+msgid "Mon"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,week_list:0
+msgid "Monday"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,rrule_type:0
+msgid "Monthly"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/mail_message_old.py:240
+#, python-format
+msgid "My Discussion"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.ui.menu,name:epps_project.mail_tomefeeds
+msgid "My Discussions"
+msgstr ""
+
+#. module: epps_project
+#: view:ir.attachment:epps_project.epps_view_attachment_search
+msgid "My Document(s)"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.actions.act_window,name:epps_project.action_view_sale_task_my
+#: model:ir.ui.menu,name:epps_project.menu_sale_tasks_my
+#: view:project.task:epps_project.view_my_task_search_form
+msgid "My Tasks"
+msgstr ""
+
+#. module: epps_project
+#: field:project.project,is_my_files:0
+msgid "My files project"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.ui.menu,name:epps_project.epps_menu_messaging
+msgid "My work"
+msgstr ""
+
+#. module: epps_project
+#: field:document.file.status,name:0
+#: field:dwa.fields,name:0
+#: view:project.task:epps_project.epps_view_task_form2
+msgid "Name"
+msgstr ""
+
+#. module: epps_project
+#: selection:document.file.status,state:0
+#: view:project.task:epps_project.view_my_task_search_form
+msgid "New"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/project.py:854
+#, python-format
+msgid "New Project"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "New Project Based on Template"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.view_my_task_search_form
+msgid "New/Today/Upcoming/Later"
+msgstr ""
+
+#. module: epps_project
+#: field:ir.attachment,document_next_reviewer_id:0
+msgid "Next person to handle the document"
+msgstr ""
+
+#. module: epps_project
+#: model:document.file.status,name:0
+#: model:document.file.status,name:epps_project.status_new
+msgid "No status"
+msgstr ""
+
+#. module: epps_project
+#: field:project.pad,note:0
+#: field:project.pad,note_pad:0
+msgid "Note"
+msgstr ""
+
+#. module: epps_project
+#: field:project.pad,name:0
+msgid "Note name"
+msgstr ""
+
+#. module: epps_project
+#: view:project.pad:epps_project.project_pad_form
+#: view:project.project:epps_project.epps_edit_project_form
+#: field:project.project,pad_ids:0
+msgid "Notes"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.model,name:epps_project.model_mail_notification
+msgid "Notifications"
+msgstr ""
+
+#. module: epps_project
+#: field:ir.attachment,notify_user_ids:0
+msgid "Notify When Approved"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,end_type:0
+msgid "Number of repetitions"
+msgstr ""
+
+#. module: epps_project
+#: selection:ir.attachment,change_revision_on_save:0
+#: selection:ir.attachment,send_document_on_save:0
+msgid "Off"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/mail_message_old.py:243
+#: selection:ir.attachment,change_revision_on_save:0
+#: selection:ir.attachment,send_document_on_save:0
+#, python-format
+msgid "On"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,month_by:0
+msgid "Option"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/document.py:1007
+#, python-format
+msgid "Organization name must not be empty."
+msgstr ""
+
+#. module: epps_project
+#: model:dwa.fields,name:0
+msgid "Organization_name"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.model,name:epps_project.model_mail_mail
+msgid "Outgoing Mails"
+msgstr ""
+
+#. module: epps_project
+#: view:ir.attachment:epps_project.epps_view_attachment_search
+msgid "Owner"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,parent_task_id:0
+msgid "Parent task"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.model,name:epps_project.model_res_partner
+msgid "Partner"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Pending"
+msgstr ""
+
+#. module: epps_project
+#: field:document.file.status,permanent:0
+msgid "Permanent"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/project.py:799
+#, python-format
+msgid "Please consider another name for the project."
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/project.py:759
+#, python-format
+msgid "Please pick another name, project with that name already exists."
+msgstr ""
+
+#. module: epps_project
+#: selection:document.directory,permission_type:0
+msgid "Previewer"
+msgstr ""
+
+#. module: epps_project
+#: field:document.directory,isPrivate:0
+msgid "Private"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/project.py:883
+#: model:ir.actions.act_window,name:epps_project.epps_project_edit_act
+#: model:ir.model,name:epps_project.model_project_project
+#: field:project.pad,project_id:0
+#: view:project.project:epps_project.epps_create_project_form
+#: view:project.project:epps_project.epps_edit_project_form
+#: view:project.project:epps_project.epps_view_all_projects_tree
+#: view:project.project:epps_project.view_epps_repository_form
+#: view:project.task:epps_project.view_my_task_search_form
+#: field:user.project.email,project_id:0
+#, python-format
+msgid "Project"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_view_all_projects_tree
+msgid "Project Manager"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_view_all_projects_tree
+#: view:project.project:epps_project.epps_view_project_search
+msgid "Project Name"
+msgstr ""
+
+#. module: epps_project
+#: field:project.project,project_description:0
+msgid "Project description"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/project.py:765
+#, python-format
+msgid "Project directory does not exist."
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_create_project_form
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Project duration"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_create_project_form
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Project manager"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_create_project_form
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Project members"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_create_project_form
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Project name"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_view_task_form2
+msgid "Project task"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.actions.act_window,name:epps_project.epps_open_view_project_create
+#: model:ir.ui.menu,name:epps_project.epps_menu_project_management
+#: view:project.project:epps_project.epps_view_project_gantt
+#: field:res.users,project_email_ids:0
+#: field:res.users,projects_to_follow:0
+msgid "Projects"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.ui.menu,name:epps_project.epps_menu_project_archive
+msgid "Projects Archive"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/project.py:843
+#, python-format
+msgid "Public:\n"
+" everyone in this network"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Re-open project"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,end_type:0
+msgid "Recurrence Termination"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,rrule_type:0
+msgid "Recurrency"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,recurrency:0
+msgid "Recurrent"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,recurrent_id:0
+msgid "Recurrent ID"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,recurrent_id_date:0
+msgid "Recurrent ID date"
+msgstr ""
+
+#. module: epps_project
+#: help:project.task,recurrency:0
+msgid "Recurrent Meeting"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,rrule:0
+msgid "Recurrent Rule"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_view_task_recurrency_form
+msgid "Recurring"
+msgstr ""
+
+#. module: epps_project
+#: field:project.project,group_id:0
+msgid "Related Group"
+msgstr ""
+
+#. module: epps_project
+#: field:project.project,menu_id:0
+msgid "Related Menu"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_view_task_form2
+msgid "Remaining"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_view_task_recurrency_form
+#: field:project.task,count:0
+msgid "Repeat"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,interval:0
+msgid "Repeat Every"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,final_date:0
+msgid "Repeat Until"
+msgstr ""
+
+#. module: epps_project
+#: help:project.task,day_28:0
+#: help:project.task,interval:0
+#: help:project.task,interval_12:0
+msgid "Repeat every (Days/Week/Month/Year)"
+msgstr ""
+
+#. module: epps_project
+#: help:project.task,count:0
+msgid "Repeat x times"
+msgstr ""
+
+#. module: epps_project
+#. openerp-web
+#: code:addons/epps_project/static/src/xml/mail.xml:46
+#, python-format
+msgid "Reply"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.actions.act_window,name:epps_project.action_epps_repository
+#: model:ir.ui.menu,name:epps_project.epps_repository_menu
+#: model:ir.ui.menu,name:epps_project.epps_repository_parent_menu
+msgid "Repository"
+msgstr ""
+
+#. module: epps_project
+#: field:project.project,is_repository:0
+msgid "Repository project"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Reset as Project"
+msgstr ""
+
+#. module: epps_project
+#: selection:document.directory,permission_type:0
+msgid "Reviewer"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,sa:0
+msgid "Sat"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,week_list:0
+msgid "Saturday"
+msgstr ""
+
+#. module: epps_project
+#: view:ir.attachment:epps_project.epps_view_attachment_form
+#: view:mail.message:epps_project.view_message_tags_form
+#: view:project.task:epps_project.epps_gantt_chart_dates_form
+#: view:project.task:epps_project.epps_view_task_form2
+#: view:project.task:epps_project.epps_view_task_recurrency_form
+msgid "Save"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_create_project_form
+msgid "Save changes"
+msgstr ""
+
+#. module: epps_project
+#: field:ir.attachment,save_revision:0
+msgid "Save revision"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_view_project_search
+msgid "Search Project"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,byday:0
+msgid "Second"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,is_section:0
+msgid "Section"
+msgstr ""
+
+#. module: epps_project
+#: help:project.task,is_section:0
+msgid "Section to separate tasks"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.actions.act_window,name:epps_project.epps_view_all_projects
+#: model:ir.ui.menu,name:epps_project.epps_menu_all_projects
+msgid "See all projects"
+msgstr ""
+
+#. module: epps_project
+#: field:ir.attachment,send_on_save:0
+msgid "Send document on save"
+msgstr ""
+
+#. module: epps_project
+#: field:ir.attachment,send_document_on_save:0
+msgid "Send the document on save"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/mail_message.py:255
+#, python-format
+msgid "Sent by %(company)s"
+msgstr ""
+
+#. module: epps_project
+#: field:document.file.status,sequence:0
+#: field:dwa.fields,sequence:0
+msgid "Sequence"
+msgstr ""
+
+#. module: epps_project
+#: sql_constraint:dwa.fields:0
+msgid "Sequence number MUST be a natural"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/document_status.py:35
+#: sql_constraint:document.file.status:0
+#, python-format
+msgid "Sequence number MUST be a natural number below 100."
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Set as Template"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_edit_project_form
+#: view:project.project:epps_project.epps_view_project_kanban
+msgid "Settings"
+msgstr ""
+
+#. module: epps_project
+#: field:document.directory,shared_editors_ids:0
+msgid "Shared with editors"
+msgstr ""
+
+#. module: epps_project
+#: field:document.directory,shared_previewers_ids:0
+msgid "Shared with previewers"
+msgstr ""
+
+#. module: epps_project
+#: field:document.directory,shared_reviewers_ids:0
+msgid "Shared with reviewers"
+msgstr ""
+
+#. module: epps_project
+#: field:document.directory,shared_uploaders_ids:0
+msgid "Shared with uploaders"
+msgstr ""
+
+#. module: epps_project
+#: field:document.directory,shared_viewers_ids:0
+msgid "Shared with viewers"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/document_status.py:41
+#: code:addons/epps_project/models/document_status.py:49
+#, python-format
+msgid "Sorry you can not change/remove this document status."
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_view_task_form2
+#: view:project.task:epps_project.epps_view_task_tree
+#: view:project.task:epps_project.epps_view_task_tree_my
+msgid "Spent Hours"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_create_project_form
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Start date"
+msgstr ""
+
+#. module: epps_project
+#: field:document.file.status,state:0
+#: field:project.pad,state:0
+msgid "State"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,subtask_ids:0
+msgid "Subtasks"
+msgstr ""
+
+#. module: epps_project
+#: field:ir.attachment,file_subversion:0
+msgid "Subversion"
+msgstr ""
+
+#. module: epps_project
+#: field:document.directory,message_summary:0
+#: field:ir.attachment,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,su:0
+msgid "Sun"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,week_list:0
+msgid "Sunday"
+msgstr ""
+
+#. module: epps_project
+#: field:message.tags,tag:0
+msgid "Tag"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.model,name:epps_project.model_message_tags
+#: field:mail.message,message_tags_ids:0
+msgid "Tags"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.model,name:epps_project.model_project_task
+#: view:project.task:epps_project.epps_view_task_form2
+#: view:project.task:epps_project.epps_view_task_tree
+#: view:project.task:epps_project.epps_view_task_tree_my
+#: view:project.task:epps_project.view_my_task_search_form
+msgid "Task"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_view_task_form2
+msgid "Task Details"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_gantt_chart_dates_form
+#: view:project.task:epps_project.epps_view_task_form2
+msgid "Task Duration"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.actions.act_window,name:epps_project.action_window_task_recurrency
+#: view:project.task:epps_project.epps_view_task_recurrency_form
+msgid "Task Recurrency"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_view_task_form2
+msgid "Task Work"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_edit_project_form
+#: view:project.task:epps_project.epps_view_task_tree
+#: view:project.task:epps_project.epps_view_task_tree_my
+#: view:project.task:epps_project.view_my_task_search_form
+msgid "Tasks"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/document.py:546
+#, python-format
+msgid "Template file is missing."
+msgstr ""
+
+#. module: epps_project
+#: model:email.template,subject:epps_project.email_test_template
+msgid "Test Template"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_view_task_recurrency_form
+msgid "The"
+msgstr ""
+
+#. module: epps_project
+#: view:res.users:epps_project.view_users_form_notifications_projects
+msgid "The rules 2) and 3) are applied to the following projects:"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,byday:0
+msgid "Third"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_create_project_form
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "This will be used for Gantt chart"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,th:0
+msgid "Thu"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,week_list:0
+msgid "Thursday"
+msgstr ""
+
+#. module: epps_project
+#: field:document.directory,to_company_rules:0
+msgid "To company rules"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,tu:0
+msgid "Tue"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,week_list:0
+msgid "Tuesday"
+msgstr ""
+
+#. module: epps_project
+#: view:ir.attachment:epps_project.epps_view_attachment_search
+msgid "Type"
+msgstr ""
+
+#. module: epps_project
+#: view:ir.attachment:epps_project.epps_view_attachment_search
+msgid "URL"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_view_project_kanban
+msgid "Unarchive"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.view_my_task_search_form
+msgid "Unassigned"
+msgstr ""
+
+#. module: epps_project
+#: field:document.directory,message_unread:0
+#: field:ir.attachment,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_view_task_recurrency_form
+msgid "Until"
+msgstr ""
+
+#. module: epps_project
+#: selection:document.directory,permission_type:0
+msgid "Uploader"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_create_project_form
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "Use Tasks"
+msgstr ""
+
+#. module: epps_project
+#: model:res.groups,name:epps_project.group_epps_project_user
+#: field:user.project.email,user_id:0
+msgid "User"
+msgstr ""
+
+#. module: epps_project
+#: model:ir.model,name:epps_project.model_res_users
+msgid "Users"
+msgstr ""
+
+#. module: epps_project
+#: field:dwa.fields,value:0
+msgid "Value"
+msgstr ""
+
+#. module: epps_project
+#: field:ir.attachment,file_version:0
+msgid "Version"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_view_project_kanban
+msgid "View project"
+msgstr ""
+
+#. module: epps_project
+#: selection:document.directory,permission_type:0
+msgid "Viewer"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.pad,state:0
+msgid "Waiting for approval"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/document.py:980
+#: code:addons/epps_project/models/document.py:1002
+#: code:addons/epps_project/models/document.py:1007
+#: code:addons/epps_project/models/document.py:1010
+#, python-format
+msgid "Warning !"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/document.py:1280
+#: code:addons/epps_project/models/document.py:1334
+#: code:addons/epps_project/models/document.py:1336
+#: code:addons/epps_project/models/document.py:1451
+#: code:addons/epps_project/models/document.py:1489
+#: code:addons/epps_project/models/document.py:1501
+#: code:addons/epps_project/models/document.py:1503
+#, python-format
+msgid "Warning!"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,we:0
+msgid "Wed"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,week_list:0
+msgid "Wednesday"
+msgstr ""
+
+#. module: epps_project
+#: field:project.task,week_list:0
+msgid "Weekday"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,rrule_type:0
+msgid "Weekly"
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,rrule_type:0
+msgid "Yearly"
+msgstr ""
+
+#. module: epps_project
+#: view:project.project:epps_project.epps_edit_project_form
+msgid "You are about to delete a project. Are you sure?"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/project.py:813
+#, python-format
+msgid "You can't delete project that is not in draft state. Order: %s"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/document.py:1334
+#: code:addons/epps_project/models/document.py:1336
+#: code:addons/epps_project/models/document.py:1451
+#: code:addons/epps_project/models/document.py:1489
+#: code:addons/epps_project/models/document.py:1501
+#: code:addons/epps_project/models/document.py:1503
+#, python-format
+msgid "You do not have permission to do this action."
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/document.py:1002
+#, python-format
+msgid "You must pick a logo."
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/mail_message.py:280
+#, python-format
+msgid "about"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/mail_message.py:280
+#, python-format
+msgid "access"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/project.py:796
+#: code:addons/epps_project/models/project.py:800
+#, python-format
+msgid "copy"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/project.py:310
+#, python-format
+msgid "count cannot be negative or 0."
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_view_task_recurrency_form
+msgid "day of Month"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_view_task_recurrency_form
+msgid "every"
+msgstr ""
+
+#. module: epps_project
+#: field:ir.attachment,file_token:0
+msgid "file_token"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_view_task_recurrency_form
+msgid "interval"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/project.py:308
+#, python-format
+msgid "interval cannot be negative."
+msgstr ""
+
+#. module: epps_project
+#: selection:project.task,day_28:0
+msgid "last"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_view_task_recurrency_form
+msgid "months"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_view_task_recurrency_form
+msgid "on"
+msgstr ""
+
+#. module: epps_project
+#: view:mail.message:epps_project.view_message_tags_form
+#: view:project.task:epps_project.epps_gantt_chart_dates_form
+#: view:project.task:epps_project.epps_view_task_form2
+#: view:project.task:epps_project.epps_view_task_recurrency_form
+msgid "or"
+msgstr ""
+
+#. module: epps_project
+#. openerp-web
+#: code:addons/epps_project/static/src/xml/mail.xml:39
+#, python-format
+msgid "read less"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/project.py:308
+#: code:addons/epps_project/models/project.py:310
+#, python-format
+msgid "warning!"
+msgstr ""
+
+#. module: epps_project
+#: view:project.task:epps_project.epps_view_task_recurrency_form
+msgid "weeks"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/mail_message_old.py:245
+#: code:addons/epps_project/models/mail_message_old.py:250
+#, python-format
+msgid "wrote:"
+msgstr ""
+
+#. module: epps_project
+#: code:addons/epps_project/models/mail_message.py:282
+#, python-format
+msgid "your messages"
+msgstr ""

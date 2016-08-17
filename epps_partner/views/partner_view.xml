@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+        <record id="epps_view_res_partner_filter" model="ir.ui.view">
+            <field name="name">epps.res.partner.select</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <search string="Search Contacts">
+                   <field name="name"
+                       filter_domain="['|','|',('display_name','ilike',self),('ref','=',self),('email','ilike',self)]"/>
+               </search>
+            </field>
+        </record>
+
+        <record id="epps_view_partner_tree" model="ir.ui.view">
+            <field name="name">epps.res.partner.tree</field>
+            <field name="model">res.partner</field>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Customers">
+                    <field name="display_name"/>
+                    <field name="function" invisible="1"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="user_id" invisible="1"/>
+                    <field name="is_company" invisible="1"/>
+                    <field name="country_id" invisible="1"/>
+                    <field name="parent_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="epps_view_partner_form" model="ir.ui.view">
+            <field name="name">epps.res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="priority" eval="0"/> <!--TODO: TEST IT!-->
+            <field name="arch" type="xml">
+                <form string="Customers">
+                <sheet>
+                    <field name="image" widget='image' class="oe_left oe_avatar" options='{"preview_image": "image_medium", "size": [90, 90]}'/>
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="name" string="Company name"/>
+                            <field name="is_company" invisible="1" on_change="onchange_type(is_company)" class="oe_inline"/>
+                        </div>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="Company name" />
+                        </h1>
+                        <field name="parent_id"
+                            placeholder="Company"
+                            domain="[('is_company', '=', True)]" context="{'default_is_company': True, 'default_supplier': supplier, 'default_customer': customer}"
+                            attrs="{'invisible': [('is_company','=', True),('parent_id', '=', False)]}"
+                            on_change="onchange_address(use_parent_address, parent_id)"/>
+                        <field name="category_id" invisible="1" widget="many2many_tags" placeholder="Tags..."/>
+                    </div>
+
+                    <group>
+                        <group string="Administrator">
+                            <field name="admin_firstname"/>
+                            <field name="admin_lastname"/>
+                            <field name="email" widget="email" required="1"/> <!--attrs="{'required': [('user_ids','!=', [])]}"/-->
+                            <field name="subdomain_name"/>
+                            <field name="mobile"/>
+                            <field name="phone"/>
+                            <field name="function" placeholder="e.g. Sales Director"
+                                attrs="{'invisible': [('is_company','=', True)]}"/>
+                            <field name="fax" invisible="1"/>
+                            <field name="user_ids" invisible="1"/>
+                            <field name="title" invisible="1" options='{"no_open": True}'/>
+                        </group>
+
+                        <group string="Address">
+                            <label for="type" attrs="{'invisible': [('parent_id','=', False)]}"/>
+                            <div attrs="{'invisible': [('parent_id','=', False)]}" name="div_type">
+                                <field class="oe_inline"
+                                    name="type"/>
+                            </div>
+                            <!--label string="Address" for="street"-->
+                            <div>
+                                <div class="oe_edit_only">
+                                    <field name="use_parent_address" class="oe_inline"
+                                           on_change="onchange_address(use_parent_address, parent_id)"
+                                           attrs="{'invisible': ['|', ('is_company', '=', True),('parent_id', '=', False)]}"/>
+                                    <label for="use_parent_address" attrs="{'invisible': ['|', ('is_company', '=', True), ('parent_id', '=', False)]}"/>
+                                </div>
+                                <button name="open_parent" type="object" string="(edit company address)" class="oe_link oe_edit_only"
+                                        attrs="{'invisible': ['|',('parent_id','=', False),('use_parent_address','=',False)]}"/>
+                                <field name="street" placeholder="Street..."  attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                <field name="street2"  attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                <div class="address_format">
+                                    <field name="city" placeholder="City" style="width: 40%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                    <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' on_change="onchange_state(state_id)" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                    <field name="zip" placeholder="ZIP" style="width: 20%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                </div>
+                                <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True, "no_create": True}' attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                            </div>
+                            <field name="website" invisible="1" widget="url" placeholder="e.g. www.odoo.com"/>
+                        </group>
+                    </group>
+
+                    <notebook colspan="4">
+                        <page name='internal_notes' string="Internal Notes" groups="epps_user.group_customer_administrator">
+                            <field name="comment" placeholder="Put an internal note..."/>
+                        </page>
+
+                        <page name='sales_purchases' invisible="1" string="Sales &amp; Purchases">
+                            <group>
+                                <group>
+                                    <field name="user_id" 
+                                        context="{'default_groups_ref': ['base.group_partner_manager']}"/>
+                                    <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                                </group>
+                                <group>
+                                    <field name="customer"/>
+                                    <field name="supplier"/>
+                                </group>
+                                <group>
+                                    <field name="ref"/>
+                                    <field name="lang"/>
+                                    <field name="date"/>
+                                </group>
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+    <!-- Partner Actions --> 
+        <record id="action_epps_partner" model="ir.actions.act_window">
+          <field name="name">Customers</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">res.partner</field>
+          <field name="view_type">form</field>
+          <field name="view_id" ref="epps_view_partner_tree"/>
+          <field name="search_view_id" ref="epps_view_res_partner_filter"/>
+          <field name="domain" eval="[('active', '=', True),('is_company', '=', True),('customer', '=', True)]"/>
+          <field name="context">{'default_active':1, 
+                                 'default_is_company':1,
+                                 'default_customer':1,
+                                 'default_notify_email':'none',
+                                 'default_opt_out':1}</field>
+          <field name="help"></field>
+        </record>
+        <record id="action_epps_partner_tree_view" model="ir.actions.act_window.view">
+          <field eval="1" name="sequence"/>
+          <field name="view_mode">tree</field>
+          <field name="view_id" ref="epps_view_partner_tree"/>
+          <field name="act_window_id" ref="action_epps_partner"/>
+        </record>
+        <record id="action_epps_partner_form_view" model="ir.actions.act_window.view">
+          <field eval="2" name="sequence"/>
+          <field name="view_mode">form</field>
+          <field name="view_id" ref="epps_view_partner_form"/>
+          <field name="act_window_id" ref="action_epps_partner"/>
+        </record>
+
+</data>
+</openerp>

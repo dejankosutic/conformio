@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<openerp>
+    <data>
+        <template id="assets_backend" name="epps_company_rules assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/epps_company_rules/static/lib/croppic/croppic.js"></script>
+                <link rel="stylesheet" href="/epps_company_rules/static/lib/croppic/assets/css/croppic.css"/>
+            </xpath>
+        </template>
+
+    </data>
+</openerp>

@@ -1,0 +1,179 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* epps_account_settings
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-25 15:50+0000\n"
+"PO-Revision-Date: 2016-05-25 15:50+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: epps_account_settings
+#: view:res.company:epps_account_settings.view_company_form_user_number
+msgid "Account plan"
+msgstr ""
+
+#. module: epps_account_settings
+#: view:res.company:epps_account_settings.view_company_form_user_number
+msgid "Account role"
+msgstr ""
+
+#. module: epps_account_settings
+#: view:epps.account.settings:epps_account_settings.view_epps_account_settings_form
+#: model:ir.ui.menu,name:epps_account_settings.epps_account_settingst_parent_menu
+msgid "Account settings"
+msgstr ""
+
+#. module: epps_account_settings
+#: view:epps.account.settings:epps_account_settings.view_epps_account_settings_form
+#: field:epps.account.settings,additional_storage:0
+msgid "Additional storage space (GB)"
+msgstr ""
+
+#. module: epps_account_settings
+#: view:epps.account.settings:epps_account_settings.view_epps_account_settings_form
+#: field:epps.account.settings,additional_users:0
+msgid "Additional users"
+msgstr ""
+
+#. module: epps_account_settings
+#: view:product.template:epps_account_settings.product_template_form_view_infra
+msgid "Blue snap code"
+msgstr ""
+
+#. module: epps_account_settings
+#: field:product.template,bluesnap_code:0
+msgid "BlueSnap Code"
+msgstr ""
+
+#. module: epps_account_settings
+#: view:epps.account.settings:epps_account_settings.view_epps_account_settings_form
+msgid "Cancel your subscription?"
+msgstr ""
+
+#. module: epps_account_settings
+#: view:product.template:epps_account_settings.product_template_form_view_infra
+msgid "Code"
+msgstr ""
+
+#. module: epps_account_settings
+#: model:ir.model,name:epps_account_settings.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: epps_account_settings
+#: field:epps.account.settings,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: epps_account_settings
+#: field:epps.account.settings,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: epps_account_settings
+#: view:epps.account.settings:epps_account_settings.view_epps_account_settings_form
+msgid "Current number of remaining users:"
+msgstr ""
+
+#. module: epps_account_settings
+#: field:res.company,plan_product_id:0
+msgid "Current plan"
+msgstr ""
+
+#. module: epps_account_settings
+#: view:epps.account.settings:epps_account_settings.view_epps_account_settings_form
+msgid "Current usage:"
+msgstr ""
+
+#. module: epps_account_settings
+#. openerp-web
+#: code:addons/epps_account_settings/static/src/xml/epps_account_settings.xml:14
+#, python-format
+msgid "Free plan"
+msgstr ""
+
+#. module: epps_account_settings
+#: field:epps.account.settings,id:0
+msgid "ID"
+msgstr ""
+
+#. module: epps_account_settings
+#: field:epps.account.settings,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: epps_account_settings
+#: field:epps.account.settings,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: epps_account_settings
+#. openerp-web
+#: code:addons/epps_account_settings/static/src/xml/epps_account_settings.xml:15
+#, python-format
+msgid "Level 1"
+msgstr ""
+
+#. module: epps_account_settings
+#. openerp-web
+#: code:addons/epps_account_settings/static/src/xml/epps_account_settings.xml:16
+#, python-format
+msgid "Level 2"
+msgstr ""
+
+#. module: epps_account_settings
+#. openerp-web
+#: code:addons/epps_account_settings/static/src/xml/epps_account_settings.xml:17
+#, python-format
+msgid "Level 3"
+msgstr ""
+
+#. module: epps_account_settings
+#. openerp-web
+#: code:addons/epps_account_settings/static/src/xml/epps_account_settings.xml:18
+#, python-format
+msgid "Level 4"
+msgstr ""
+
+#. module: epps_account_settings
+#: code:addons/epps_account_settings/models/epps_account_settings.py:68
+#: code:addons/epps_account_settings/models/epps_account_settings.py:76
+#: code:addons/epps_account_settings/models/epps_account_settings.py:84
+#: code:addons/epps_account_settings/models/epps_account_settings.py:92
+#, python-format
+msgid "Please enter a number between 0 and 100"
+msgstr ""
+
+#. module: epps_account_settings
+#: model:ir.model,name:epps_account_settings.model_product_template
+msgid "Product Template"
+msgstr ""
+
+#. module: epps_account_settings
+#: view:epps.account.settings:epps_account_settings.view_epps_account_settings_form
+msgid "Purchase"
+msgstr ""
+
+#. module: epps_account_settings
+#: model:ir.actions.act_window,name:epps_account_settings.action_epps_account_settings
+#: model:ir.ui.menu,name:epps_account_settings.epps_account_settingst_menu
+msgid "Upgrade/downgrade"
+msgstr ""
+
+#. module: epps_account_settings
+#: view:epps.account.settings:epps_account_settings.view_epps_account_settings_form
+msgid "You can also edit specific plan features, while keeping your currently selected plan:"
+msgstr ""
+
+#. module: epps_account_settings
+#: view:epps.account.settings:epps_account_settings.view_epps_account_settings_form
+msgid "You will confirm your order on the checkout page."
+msgstr ""

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+        <!-- Task-related subtypes for messaging / Chatter -->
+        <!-->
+        <record id="document.mt_document_new" model="mail.message.subtype">
+            <field name="name">Document Created</field>
+            <field name="res_model">ir.attachment</field>
+            <field name="default" eval="False"/>
+            <field name="hidden" eval="True"/>
+            <field name="description">Document created</field>
+        </record>
+        -->
+        <record id="document.mt_document_assigned" model="mail.message.subtype">
+            <field name="name">Document Assigned</field>
+            <field name="res_model">ir.attachment</field>
+            <field name="default" eval="False"/>
+            <field name="description">Document Assigned</field>
+        </record>
+        <record id="document.mt_document_write" model="mail.message.subtype">
+            <field name="name">Document Write</field>
+            <field name="res_model">ir.attachment</field>
+            <field name="default" eval="False"/>
+            <field name="description">Document Write</field>
+        </record>
+        
+        <record id="document.mt_document_approved" model="mail.message.subtype">
+            <field name="name">Document Approved</field>
+            <field name="res_model">ir.attachment</field>
+            <field name="default" eval="False"/>
+            <field name="description">Document Approved</field>
+        </record>
+        <record id="document.mt_document_deleted" model="mail.message.subtype">
+            <field name="name">Document Deleted</field>
+            <field name="res_model">ir.attachment</field>
+            <field name="default" eval="False"/>
+            <field name="description">Document Deleted</field>
+        </record>
+        
+        
+        <record id="document.mt_folder_write" model="mail.message.subtype">
+            <field name="name">Folder Changed</field>
+            <field name="res_model">document.directory</field>
+            <field name="default" eval="False"/>
+            <field name="hidden" eval="True"/>
+            <field name="description">Folder changed</field>
+        </record>
+        <record id="document.mt_folder_assigned" model="mail.message.subtype">
+            <field name="name">Folder Assigned</field>
+            <field name="res_model">document.directory</field>
+            <field name="default" eval="False"/>
+            <field name="description">Folder Assigned</field>
+        </record>
+        <record id="document.mt_folder_deleted" model="mail.message.subtype">
+            <field name="name">Folder Deleted</field>
+            <field name="res_model">document.directory</field>
+            <field name="default" eval="False"/>
+            <field name="description">Folder Deleted</field>
+        </record>
+    </data>
+</openerp>

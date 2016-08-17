@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="assets_backend" name="web_base assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/epps_mail/static/src/js/view_form_base.js"></script>
+                <link rel="stylesheet" href="/epps_mail/static/src/css/epps_mail.css" t-ignore="true"/>
+            </xpath>
+        </template>
+
+    </data>
+</openerp>

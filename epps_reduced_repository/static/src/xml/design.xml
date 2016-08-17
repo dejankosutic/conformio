@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <template id="assets_backend" name="epps_reduced_repository_assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/epps_reduced_repository/static/src/js/epps_reduced_repository.js"></script>
+                <link rel="stylesheet" href="/epps_reduced_repository/static/src/css/style.css"/>
+            </xpath>
+        </template>
+    </data>
+</openerp>

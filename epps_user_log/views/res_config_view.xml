@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_general_configuration_logging_enabled" model="ir.ui.view">
+            <field name="name">base.config.settings.logging.enabled</field>
+            <field name="model">base.config.settings</field>
+            <field name="inherit_id" ref="base_setup.view_general_configuration"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//form" position="inside">
+                     <group name="ip_logging_enabled">
+                        <label for="id" string="IP Logging Enabled"/>
+                        <div>
+                            <field name="ip_logging_enabled" class="oe_inline"/>
+                        </div>
+                    </group>
+                 </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

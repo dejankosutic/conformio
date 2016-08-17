@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+        <record id="epps_hr.group_epps_hr_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="base.module_category_epps_hr_management"/>
+           
+        </record> <!--<field name="implied_ids" eval="[(4, ref('project.group_project_user'))]"/>-->
+    
+        <record id="epps_hr.group_epps_hr_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="base.module_category_epps_hr_management"/>
+            <field name="implied_ids" eval="[(4, ref('epps_hr.group_epps_hr_user')),
+                                             (4, ref('base.group_erp_manager'))
+                                            ]"/>
+            <field name="users" eval="[(4, ref('base.user_root')),(4, ref('base.user_customer_administrator'))]"/>
+        </record>
+
+    </data>
+</openerp>

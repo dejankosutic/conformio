@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="view_company_form_user_number" model="ir.ui.view">
+            <field name="name">res.company.form.product.plan</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='account_grp']" position="after">
+                    <group string="Account plan">
+                        <field name="plan_product_id"/>
+                    </group>
+                    <group string="Account role">
+                        <field name="client_role"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

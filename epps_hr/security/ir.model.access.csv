@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_epps_user,epps_hr.epps.department.user,epps_hr.model_epps_hr_department,epps_hr.group_epps_hr_user,1,1,1,1
+access_hr_epps_job_user,epps_hr.epps.job user,epps_hr.model_epps_hr_job,epps_hr.group_epps_hr_user,1,1,1,1

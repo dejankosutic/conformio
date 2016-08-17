@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<openerp>
+    <data>
+        <template id="assets_backend" name="epps_project assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <!--link rel="stylesheet" href="/epps_project/static/src/css/epps_project.css"/-->
+                <script type="text/javascript" src="/epps_project/static/src/js/epps_project.js"></script>
+                <link rel="stylesheet" href="/epps_project/static/src/css/epps_project.css"/>
+            </xpath>
+        </template>
+        
+        <!--template id="menu_link" inherit_id="web.menu_link">
+            <xpath expr="//a[1]" position="attributes">
+                <attribute name="t-att-class">'epps_create_project'</attribute>
+            </xpath>
+            <xpath expr="//a[1]" position="inside">
+                    <span class="oe_menu_text">
+                        <t t-esc="menu['id']"/>
+                    </span>
+            </xpath>
+        </template-->
+    </data>
+</openerp>

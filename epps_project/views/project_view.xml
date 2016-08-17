@@ -1,0 +1,1160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- DISCUSSION -->
+        <record id="mail.mt_comment" model="mail.message.subtype">
+            <field name="epps_subtype" eval="True"/>
+        </record>
+
+        <!-- TASK ASSIGNED-->
+        <record id="project.mt_task_assigned" model="mail.message.subtype">
+            <field name="name">Task Assigned</field>
+            <field name="res_model">project.task</field>
+            <field name="default" eval="True"/>
+            <field name="description">Task Assigned</field>
+            <field name="epps_subtype" eval="True"/>
+            <field name="email_template_id" eval="ref('epps_project.email_template_task_assigned')"/>
+        </record>
+        <record id="project.mt_project_task_assigned" model="mail.message.subtype">
+            <field name="name">Task Assigned</field>
+            <field name="sequence">11</field>
+            <field name="res_model">project.project</field>
+            <field name="default" eval="True"/>
+            <field name="parent_id" eval="ref('project.mt_task_assigned')"/>
+            <field name="relation_field">project_id</field>
+        </record>
+        
+        <!-- TASK DONE -->
+        <record id="project.mt_task_done" model="mail.message.subtype">
+            <field name="name">Task Done</field>
+            <field name="res_model">project.task</field>
+            <field name="default" eval="True"/>
+            <field name="description">Task Done</field>
+            <field name="epps_subtype" eval="True"/>
+            <field name="email_template_id" eval="ref('epps_project.email_template_task_done')"/>
+        </record>
+        <record id="project.mt_project_task_done" model="mail.message.subtype">
+            <field name="name">Task Done</field>
+            <field name="sequence">11</field>
+            <field name="res_model">project.project</field>
+            <field name="default" eval="True"/>
+            <field name="parent_id" eval="ref('project.mt_task_done')"/>
+            <field name="relation_field">project_id</field>
+            <field name="epps_subtype" eval="True"/>
+        </record>
+        
+        <!--PROJECT CREATED -->
+        <record id="project.project_created" model="mail.message.subtype">
+            <field name="name">Project Created</field>
+            <field name="res_model">project.project</field>
+            <field name="default" eval="True"/>
+            <field name="description">Project Created</field>
+            <field name="epps_subtype" eval="True"/>
+            <field name="email_template_id" eval="ref('epps_project.email_template_project_created')"/>
+        </record>
+         <!-- PROJECT USER ASSIGNED-->
+        <record id="project.project_assigned" model="mail.message.subtype">
+            <field name="name">Project Assigned</field>
+            <field name="res_model">project.project</field>
+            <field name="default" eval="True"/>
+            <field name="description">Project Assigned</field>
+            <field name="epps_subtype" eval="True"/>
+            <field name="email_template_id" eval="ref('epps_project.email_template_project_user_assigned')"/>
+        </record>
+        <!-- PROJECT MEMBER ASSIGNED-->
+        <record id="project.project_members_assigned" model="mail.message.subtype">
+            <field name="name">Project Member Assigned</field>
+            <field name="res_model">project.project</field>
+            <field name="default" eval="True"/>
+            <field name="description">Project Member Assigned</field>
+            <field name="epps_subtype" eval="True"/>
+            <field name="email_template_id" eval="ref('epps_project.email_template_project_member_assigned')"/>
+        </record>
+        
+
+        <record id="epps_view_task_form2" model="ir.ui.view">
+            <field name="name">epps.project.task.form</field>
+            <field name="model">project.task</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <form string="Project task">
+                    <!--header-->
+                        <!--field name="stage_id" widget="statusbar" clickable="True"
+                            options="{'fold_field': 'fold'}"/-->
+                    <!--h1>
+                        <field name="name" style="width:200%%" placeholder="Task summary..." class="oe_inline"/>
+                    </h1>
+                    </header-->
+                    <div class="oe_right oe_button_box" name="buttons">
+                        <ul class="decod_pager_group" style="display:none;">
+                            <li style="list-style-type: none; height: 24px; padding-right: 10px; display: inline;">
+                                <a class="oe_i decod_prev" type="button" data-pager-action="previous">(</a>
+                            </li>
+                            <li style="list-style-type: none; height: 24px; padding-right: 10px; display: inline;">
+                                <a class="oe_i decod_next" type="button" data-pager-action="next">)</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <sheet string="Task">
+                                                <!--div class="oe_right">
+                            <field name="kanban_state" class="oe_inline" widget="kanban_state_selection"/>
+                        </div-->
+                        <!--h1>
+                            <field name="name" style="width:200%%" placeholder="Task summary..." class="oe_inline"/>
+                        </h1-->
+                        <group string="Task Details">
+                            <group>
+                                <field name="name" string="Name"/>
+                                <field name="project_id" domain="[('state','not in', ('close', 'cancelled')),
+                                                                  ('is_company_rules','=',False),
+                                                                  ('is_repository','=',False),
+                                                                  ('is_my_files','=',False),
+                                                                  ('is_conbase','=',False)]"
+                                       on_change="onchange_project(project_id)" context="{'default_use_tasks':1}"
+                                        />
+                                <field name="user_id"
+                                    domain="[('id', 'not in', [1])]"
+                                    options='{"no_open": True}'
+                                    context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'project.group_project_user']}"/>
+                                <field name="reviewer_id"
+                                    domain="[('id', 'not in', [1])]"
+                                    options='{"no_open": True}'
+                                    context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'project.group_project_user']}"/>
+                                <field name="planned_hours" widget="float_time"
+                                        groups="project.group_time_work_estimation_tasks"
+                                        on_change="onchange_planned(planned_hours, effective_hours)"/>
+                            </group>
+                            <group>
+                                <field name="date_deadline" string="Due date"/>
+                                <field name="categ_ids" widget="many2many_tags"/>
+                                <field name="progress" widget="progressbar"
+                                    groups="project.group_time_work_estimation_tasks"/>
+                            </group>
+                        </group>
+
+                        <label string="Description"/>
+                        <field name="notes" nolabel="1" widget="text_html"/>
+                        <field name="work_ids" groups="project.group_tasks_work_on_tasks">
+                            <tree string="Task Work" editable="top">
+                                <field name="name"/>
+                                <field name="hours" widget="float_time" sum="Spent Hours"/>
+                                <field name="date"/>
+                                <field name="user_id"
+                                    context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'project.group_project_user']}"
+                                    domain="[('id', 'not in', [1])]"/>
+                            </tree>
+                        </field>
+                        <group>
+                         <group class="oe_subtotal_footer oe_right" name="project_hours" groups="project.group_time_work_estimation_tasks">
+                            <field name="effective_hours" widget="float_time"/>
+                            <label for="remaining_hours" string="Remaining" groups="project.group_time_work_estimation_tasks"/>
+                            <div>
+                                <field name="remaining_hours" widget="float_time" groups="project.group_time_work_estimation_tasks"/>
+                            </div>
+                            <field name="total_hours" widget="float_time" class="oe_subtotal_footer_separator"/>
+                         </group>
+                        </group>
+                        <div class="oe_clear"/>
+
+                        <group>
+                            <group string="Task Duration" invisible="1">
+                                <field name="date_start"/>
+                                <field name="date_end"/>
+                            </group>
+                            <group invisible="1">
+                                <field name="date_last_stage_update" groups="base.group_no_one"/>
+                            </group>
+                        </group>
+                        <group col="4" invisible="1">
+                            <field name="priority" invisible="1" groups="base.group_user" widget="priority"/>
+                            <field name="sequence" invisible="1"/>
+                            <field name="partner_id"/>
+                            <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                        </group>
+                    </sheet>
+
+                     <footer invisible="not context.get('view_buttons')">
+                        <button class="oe_highlight" name="button_save_data" string="Save" type="object" />
+                        or
+                        <button class="oe_link" special="cancel" string="Cancel" />
+                    </footer>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="epps_view_task_tree" model="ir.ui.view">
+            <field name="name">epps.project.task.tree</field>
+            <field name="model">project.task</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Tasks" fonts="bold:message_unread==True" colors="red:date_deadline and (date_deadline&lt;current_date)">
+                    <field name="sequence" widget="handle"/> <!--invisible="not context.get('seq_visible', False)"/-->
+
+                    <button string="Mark Done" name="button_done" type="object" icon="gtk-apply" attrs="{'invisible':[('done','=', True)]}"/>
+                    <button string="Mark Undone" name="button_undone" type="object" icon="gtk-dialog-error" attrs="{'invisible':[('done','!=', True)]}"/>
+                       <!-- TODO: states="waiting_answer" type="object" icon="gtk-jump-to" /-->
+                    <field name="done" invisible="1"/> <!-- invisible depending on method we'll use-->
+                    <field name="name" string="Task"/>
+                    <field name="user_id" />    <!--invisible="context.get('user_invisible', False)"/-->
+                    <field name="date_deadline"     invisible="0" /> <!--invisible="context.get('deadline_visible',True)"/-->
+                    <button name="button_details" string="Details" type="object" icon="STOCK_EDIT" />
+                    <field name="message_unread"    invisible="1"/>
+                    <field name="project_id"        invisible="1" /> <!--invisible="context.get('user_invisible', False)"/-->
+                    <field name="delegated_user_id" invisible="1" /> <!--invisible="context.get('show_delegated', True)"/-->
+                    <field name="total_hours"       invisible="1"/>
+                    <field name="rrule_type" invisible="1"/>
+                    <field name="planned_hours"     invisible="1"/> <!--invisible="context.get('set_visible',False)" groups="project.group_time_work_estimation_tasks"/-->
+                    <field name="effective_hours"   invisible="1" widget="float_time" sum="Spent Hours" />
+                    <field name="remaining_hours"   invisible="1" /> <!-- widget="float_time" sum="Remaining Hours" on_change="onchange_remaining(remaining_hours,planned_hours)" invisible="context.get('set_visible',False)" groups="project.group_time_work_estimation_tasks"/-->
+                    <field name="stage_id"          invisible="1" /> <!--invisible="context.get('set_visible',False)"/-->
+                    <field name="date_start"        invisible="1" groups="base.group_no_one"/>
+                    <field name="date_end"          invisible="1" groups="base.group_no_one"/>
+                    <field name="progress"          invisible="1" widget="progressbar" /> <!--invisible="context.get('set_visible',False)"/-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="epps_edit_project_form" model="ir.ui.view">
+            <field name="name">epps.edit.project.form</field>
+            <field name="model">project.project</field>
+            <field name="priority">1</field>
+            <field name="inherit_id" ref=""/>
+            <field name="arch" type="xml">
+                <form string="Project">
+                    <field name="is_company_rules" invisible="1"/>
+                    <field name="is_my_files" invisible="1"/>
+                    <field name="is_conbase" invisible="1"/>
+                <header>
+                    <field name="state" invisible="1" widget="statusbar" clickable="True" statusbar_visible="draft,open,close,cancelled" statusbar_colors='{"pending":"blue"}'/>
+                </header>
+                <sheet string="Project" class="transparent_sheet">
+                    <notebook class="menu_top">
+                        <page string="Dashboard" class="full_background">
+
+                            <div class="o_epps_dashboard_box">
+                                <field name="messages_4_recenttasks" widget="project_recent_tasks"/>
+                            </div>
+                            <div class="o_epps_dashboard_box">
+                                <field name="messages_4_recentdiscussions" widget="project_recent_discussions"/>
+                            </div>
+                            <div class="o_epps_dashboard_box recent_files">
+                                <field name="messages_4_recentfiles" widget="project_recent_files"/>
+                            </div>
+
+                        </page>
+                        <page string="Tasks" class="full_background">
+                            <field name="task_ids" nolabel="1" context="{'tree_view_ref':'epps_project.epps_view_task_tree'}" options="{'reload_on_button': true}"/>
+                        </page>
+                        <page string="Discussions" class="full_background">
+                            <div class="oe_chatter oe_chatter_discussions">
+                                <div style="display: block; width: 100%;">
+                                    <div style="float: left; width: 60%;" id="o_epps_discussion_chatter">
+
+                                        <field name="messages_4_discussions" widget="project_discussions"/>
+                                    </div>
+                                    <div style="float: left; padding-left:20px; width: 40%;">
+                                        <field name="message_ids" widget="message_tags"/>
+                                        <field name="id" widget="project_members"/>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </page>
+                        <page string="Files" class="full_background">
+                            <!--iframe src="http://46.101.214.196/OnlineEditorsExample/doceditor.aspx?fileID=demo.docx"
+                                    style="min-width: 900px; min-height:900px;"></iframe-->
+                            <field name="id" widget="project_files"/>
+                            <!--widget="many2many_binary"-->
+                        </page>
+                        <!--page string="FILES WIP" class="margin_background">
+                            <iframe src="http://46.101.251.119/products/files/#1"
+                                    style="min-width: 1100px; min-height:900px;"></iframe>
+                        </page-->
+                        <page string="Notes" class="margin_background">
+                             <field name="pad_ids" nolabel="1" context="{'default_author_user_id': user_id}"/>
+                        </page>
+                        <page string="Settings" groups="epps_project.group_epps_project_manager,epps_project.group_epps_project_user" class="margin_background">
+                            <!--no need for analytic field name="analytic_account_id" invisible="1" required="0"/-->
+                            <div class="proj_title">
+                                <label for="name" class="oe_read_only" string="Project name"/>
+                                <!--
+                                <label for="name" class="oe_edit_only" string="Project name"/>
+                                -->
+                                <h1>
+                                    <field name="name" style="width:50%%" string="Project name"/>
+                                </h1>
+                                <div name="options_active" invisible="1">
+                                    <field name="active" class="oe_inline"/>
+                                    <label for="active" string="Active" />
+                                    <field name="use_tasks" invisible="1" class="oe_inline"/>
+                                    <label for="use_tasks" invisible="1" string="Use Tasks"/>
+                                </div>
+                            </div>
+                            <!--div class="oe_right oe_button_box" name="buttons" groups="base.group_user">
+                                 <button class="oe_inline oe_stat_button" type="action" attrs="{'invisible':[('use_tasks','=', 0)]}"
+                                    name="%(project.act_project_project_2_project_task_all)d" icon="fa-tasks">
+                                    <field string="Tasks" name="task_count" widget="statinfo"/>
+                                </button>
+                                <button  class="oe_inline oe_stat_button" name="attachment_tree_view"  type="object" icon="fa-files-o">
+                                    <field string="Documents" name="doc_count" widget="statinfo"/>
+                                </button>
+                            </div-->
+                            <group>
+                                <group col="4">
+                                    <div id="proj_manager_input">
+                                        <label for="user_id" class="oe_read_only" string="Project manager"/>
+                                        <!--
+                                        <label for="user_id" class="oe_edit_only" string="Project manager"/>
+                                        -->
+                                        <field name="user_id" string="Project manager"
+                                                required="1"
+                                                attrs="{'readonly':[('state','in',['close', 'cancelled'])]}"
+                                                context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager','project.group_project_manager'],'tree_view_ref':'epps_user.view_user_tree_epps','form_view_ref':'epps_user.view_user_form_epps'}"
+                                                domain="[('id', 'not in', [1])]"/>
+                                    </div>
+                                    <newline/>
+                                    <field name="partner_id" invisible="1" on_change="onchange_partner_id(partner_id)" string="Customer"/>
+                                </group>
+                                    <!--no need for analytic p invisible="1">
+                                        To invoice or setup invoicing and renewal options, go to the related contract:
+                                        <field name="analytic_account_id" readonly="1" required="0" class="oe_inline" nolabel="1"/>
+                                    </p-->
+                                <group name="group_alias" invisible="1">
+                                    <label for="alias_name" string="Email Alias"/>
+                                    <div name="alias_def">
+                                        <field name="alias_id" class="oe_read_only oe_inline"
+                                                string="Email Alias" required="0"/>
+                                        <div class="oe_edit_only oe_inline" name="edit_alias" style="display: inline;" >
+                                            <field name="alias_name" class="oe_inline"/>@<field name="alias_domain" class="oe_inline" readonly="1"/>
+                                        </div>
+                                    </div>
+                                    <label for="alias_model" string="Incoming Emails create"/>
+                                    <field name="alias_model" class="oe_inline" nolabel="1"/>
+                                    <field name="alias_contact" class="oe_inline"
+                                            string="Accept Emails From"/>
+                                </group>
+                            </group>
+                            <group>
+                                <div id="project_members">
+                                    <label for="members" class="custom_label" string="Project members"/>
+                                    <field colspan="4" name="members" options="{'create_text': 'Assign people', 'search_no_create':True}"
+                                           nolabel="1" widget="many2many_kanban"
+                                           quick_create="false"
+                                           context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'project.group_project_user'],'tree_view_ref':'epps_user.view_user_tree_epps','form_view_ref':'epps_user.view_user_form_epps'}"
+                                           domain="[('id', 'not in', [1])]">
+                                        <kanban quick_create="false" create="true" delete="true">
+                                            <field name="name" invisible="1"/>
+                                            <templates>
+                                                <t t-name="kanban-box">
+                                                    <div style="position: relative">
+                                                        <a t-if="! read_only_mode" type="delete" 
+                                                                style="background-color:white;
+                                                                       color:#DAE2E8;
+                                                                       position:absolute;
+                                                                       right:0px;
+                                                                       padding: 0px;
+                                                                       diplay: block;
+                                                                       border: 1px solid #DAE2E8;
+                                                                       border-radius:50%;
+                                                                       height:19px;
+                                                                       width:19px;
+                                                                       text-align:center;">X</a>
+                                                        <div class="oe_module_vignette">
+                                                            <img t-att-src="kanban_image('res.users', 'image_small', record.id.value)" class="oe_avatar oe_kanban_avatar_smallbox"/>
+                                                            <!--
+                                                            <div class="oe_module_desc">
+                                                                <field name="name"/>
+                                                            </div>
+                                                            -->
+                                                        </div>
+                                                    </div>
+                                                </t>
+                                            </templates>
+                                        </kanban>
+                                    </field>
+                                </div>
+                            </group>
+                            <group>
+                                <div id="project_description">
+                                    <label for="project_description" class="custom_label" string="Change description text"/>
+                                    <field nolabel="1" name="project_description" string="Change description text" widget="text_html"/>
+                                </div>
+                            </group>
+                            <group string="Administration" invisible="1">
+                                <field name="planned_hours" widget="float_time"
+                                        groups="project.group_time_work_estimation_tasks"/>
+                                <field name="effective_hours" widget="float_time"
+                                        groups="project.group_time_work_estimation_tasks"/>
+                                <field name="resource_calendar_id"
+                                        groups="project.group_time_work_estimation_tasks"/>
+                            </group>
+                            <group name="misc">
+                                <label colspan="4" class="custom_label" string="Project duration"/>
+                                <newline/>
+                                <label colspan="4" class="custom_label_subtitle" string="This will be used for Gantt chart"/>
+                                <newline/>
+                                <div class="date_wrapper">
+                                    <field name="date_start" placeholder="Start date"
+                                           class="proj_start_date oe_proj_start_date" string="Start date"/>
+                                    <span class="oe_read_only date_spacer"/>
+                                    <field name="date" attrs="{'invisible': [('date', '=', False)]}"
+                                           placeholder="End date" class="proj_end_date oe_proj_end_date"
+                                           string="End date"/>
+                                </div>
+                                <field name="sequence" invisible="1" groups="base.group_no_one"/>
+                                
+                                <field name="currency_id" invisible="1" groups="base.group_multi_currency" required="1"/>
+                                <!--no need for analytic field name="parent_id" invisible="1" string="Parent" help="Append this project to another one using analytic accounts hierarchy" domain="[('id','!=',analytic_account_id)]" context="{'current_model': 'project.project'}" /-->
+                            </group>
+                            <group invisible="1">
+                                 <field name="type_ids"/>
+                            </group>
+                            <group>
+                                <group>
+                                    <field name="privacy_visibility" options="{'horizontal': 1}" nolabel="1" widget="buttonRadio"/>
+                                </group>
+                            </group>
+                            <div id="form_buttons">
+                                <!--
+                                <button name="create_new" string="Save changes" type="object" class="oe_button oe_form_button_save oe_highlight" groups="base.group_user"/>
+                                -->
+                                <field name="is_company_rules" invisible="1"/>
+                                <button name="edit_current" string="Edit settings" type="object" class="oe_button oe_form_button_save oe_highlight" groups="base.group_user"/>
+                                <button name="duplicate_current" string="Duplicate" type="object" class="oe_button" groups="base.group_user"
+                                        attrs="{'invisible':[('is_company_rules', '=', True)]}"/>
+                                <button name="archive_current" string="Archive" type="object" class="oe_button" groups="base.group_user"
+                                        attrs="{'invisible':['|',('is_company_rules' ,'=', True),('active','=', False)]}"/>
+                                <button name="unarchive_current" string="Unarchive" type="object" class="oe_button" groups="base.group_user"
+                                        attrs="{'invisible':['|',('is_company_rules' ,'=', True),('active','!=', False)]}"/>
+                                <button name="delete_current" string="Delete" type="object" class="oe_button"
+                                        confirm="You are about to delete a project. Are you sure?"
+                                        groups="base.group_user"
+                                        attrs="{'invisible':[('is_company_rules', '=', True)]}"/>
+                            </div>
+                            <group invisible="1">
+                                <button name="create_new" string="Add Project" type="object" class="oe_highlight" groups="base.group_user"/>
+                                <button name="edit_current" string="Edit Project" type="object" class="oe_highlight" groups="base.group_user"/>
+                                <button name="close_current" string="Close Project" type="object" class="oe_highlight" groups="base.group_user"/>
+                                <button name="set_open" string="Re-open project" type="object" states="pending" class="oe_highlight" groups="base.group_user"/>
+                                <button name="set_done" string="Close Project" type="object" states="open,pending" groups="base.group_user"/>
+                                <button name="set_open" string="Re-open project" type="object" states="cancelled,close" groups="base.group_user"/>
+                                <button name="set_pending" string="Pending" type="object" states="open" groups="base.group_user"/>
+                                <button name="set_template" string="Set as Template" type="object" states="open" groups="base.group_user"/>
+                                <button string="New Project Based on Template" name="duplicate_template"  type="object" states="template" context="{'parent_id':parent_id}" class="oe_highlight" groups="base.group_user"/>
+                                <button name="reset_project" string="Reset as Project" type="object" states="template" class="oe_highlight" groups="base.group_user"/>
+                                <button name="set_cancel" string="Cancel Project" type="object" states="open,pending" groups="base.group_user"/>
+                            </group>
+                        </page>
+                        <page string="Automation" class="margin_background" groups="epps_user.group_customer_administrator">
+                             <!--field name="is_company_rules" invisible="1"/-->
+                            <field name="dwa_fields_ids" widget="project_dwa"></field>
+                        </page>
+                    </notebook>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- ACTION TO COPY -->
+        <record id="epps_project_edit_act" model="ir.actions.act_window">
+            <field name="name">Project</field>
+            <field name="res_model">project.project</field>
+            <field name="view_type">form</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">form</field>
+            <field name="target">current</field>
+            <!--field name="target">current</field-->
+            <field name="view_id" ref="epps_edit_project_form"/>
+            <field name="context">{}</field>
+        </record>
+
+        <!-- Top menu item -->
+        <menuitem name="Projects"
+            id="base.epps_menu_main_pm"
+            groups="epps_project.group_epps_project_manager,epps_project.group_epps_project_user"
+            sequence="0"/><!--groups="project.group_project_manager,project.group_project_user"-->
+
+
+        <menuitem name="Resellers"
+            id="base.epps_menu_main_apps"
+            groups="epps_user.group_customer_administrator"
+            sequence="1"/><!--groups="project.group_project_manager,project.group_project_user"-->
+
+        <menuitem name="Risk Management"
+            id="base.epps_menu_risk"
+            parent="base.epps_menu_main_apps"
+            groups="epps_user.group_customer_administrator"
+            sequence="100"/><!--groups="project.group_project_manager,project.group_project_user"-->
+
+        <menuitem name="Projects"
+            id="epps_menu_project_management"
+            parent="base.epps_menu_main_pm"
+            sequence="200"/>
+        
+        <menuitem name="Archive"
+            id="base.epps_menu_main_archive"
+            groups="base.group_system"
+            sequence="498"/>
+        <menuitem name="Projects Archive"
+            id="epps_menu_project_archive"
+            groups="base.group_system"
+            parent="base.epps_menu_main_archive"
+            sequence="200"/>
+
+        <record id="epps_view_all_projects_tree" model="ir.ui.view">
+            <field name="name">epps.all.projects.tree</field>
+            <field name="model">project.project</field>
+            <field name="priority">100</field>
+            <field name="arch" type="xml">
+                <tree string="Project" create="false">
+                    <field name="active" string="Active" invisible="True"/>
+                    <field name="name" string="Project Name"/>
+                    <field name="user_id" string="Project Manager"/>
+                    <!--for now
+                    <field name="project_description" string="Description"/>
+                    -->
+                    <button name="edit_current"
+                             string="" type="object"
+                            />
+                    <button name="duplicate_current"
+                             string="" type="object"
+                            />
+                    <button name="archive_current"
+                             string="" type="object"
+                             attrs="{'invisible':[('active','=', False)]}"
+                    />
+                    <button name="unarchive_current"
+                             string="" type="object"
+                             attrs="{'invisible':[('active','!=', False)]}"
+                    />
+                    <button name="delete_current"
+                             string="" type="object"
+                            />
+                </tree>
+           </field>
+        </record>
+
+        <record id="epps_create_project_form" model="ir.ui.view">
+            <field name="name">epps.create.project.form</field>
+            <field name="model">project.project</field>
+            <field name="priority">100</field>
+            <field name="arch" type="xml">
+                <form string="Project">
+                <header>
+                    <field name="state" invisible="1" widget="statusbar" clickable="True" statusbar_visible="draft,open,close,cancelled" statusbar_colors='{"pending":"blue"}'/>
+                </header>
+                <sheet string="Project" class="transparent_sheet">
+                    <!--copy-paste page string="Settings" -->
+                    <div id="create_project_form_wrapper">
+                        <!--no need for analytic field name="analytic_account_id" invisible="1" required="0"/-->
+                        <div class="proj_title">
+                            <label for="name" class="oe_read_only" string="Project name"/>
+                            <!--
+                            <label for="name" class="oe_edit_only" string="Project name"/>
+                            -->
+                            <h1>
+                                <field name="name" style="width:50%%" string="Project name"/>
+                            </h1>
+                            <div name="options_active" invisible="1">
+                                <field name="active" class="oe_inline"/>
+                                <label for="active" string="Active" />
+                                <field name="use_tasks" invisible="1" class="oe_inline"/>
+                                <label for="use_tasks" invisible="1" string="Use Tasks"/>
+                            </div>
+                        </div>
+                        <group>
+                            <group col="4">
+                                <div id="proj_manager_input" >
+                                    <label for="user_id" class="oe_read_only" string="Project manager"/>
+                                    <!--
+                                    <label for="user_id" class="oe_edit_only" string="Project manager"/>
+                                    -->
+                                    <field name="user_id" string="Project manager"
+                                            required="1"
+                                            options="{'no_open': true}"
+                                            attrs="{'readonly':[('state','in',['close', 'cancelled'])]}"
+                                            context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'project.group_project_manager'],'tree_view_ref':'epps_user.view_user_tree_epps','form_view_ref':'epps_user.view_user_form_epps'}"
+                                            domain="[('id', 'not in', [1])]"/>
+                                </div>
+                                <newline/>
+                                <field name="partner_id" invisible="1" on_change="onchange_partner_id(partner_id)" string="Customer"/>
+                            </group>
+                                <!--no need for analytic p invisible="1">
+                                    To invoice or setup invoicing and renewal options, go to the related contract:
+                                    <field name="analytic_account_id" readonly="1" required="0" class="oe_inline" nolabel="1"/>.
+                                </p-->
+                            <group name="group_alias" invisible="1">
+                                <label for="alias_name" string="Email Alias"/>
+                                <div name="alias_def">
+                                    <field name="alias_id" class="oe_read_only oe_inline"
+                                            string="Email Alias" required="0"/>
+                                    <div class="oe_edit_only oe_inline" name="edit_alias" style="display: inline;" >
+                                        <field name="alias_name" class="oe_inline"/>@<field name="alias_domain" class="oe_inline" readonly="1"/>
+                                    </div>
+                                </div>
+                                <label for="alias_model" string="Incoming Emails create"/>
+                                <field name="alias_model" class="oe_inline" nolabel="1"/>
+                                <field name="alias_contact" class="oe_inline"
+                                        string="Accept Emails From"/>
+                            </group>
+                        </group>
+                        <group>
+                            <div id="project_members">
+                                <label for="members" class="custom_label" string="Project members"/>
+                                <field colspan="4" name="members" options="{'create_text': 'Assign people','search_no_create':True}"
+                                            nolabel="1" widget="many2many_kanban"
+                                            context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'project.group_project_user'],'tree_view_ref':'epps_user.view_user_tree_epps','form_view_ref':'epps_user.view_user_form_epps'}"
+                                            domain="[('id', 'not in', [1])]">
+                                        <kanban quick_create="false" create="true" delete="true">
+                                        <field name="name" invisible="1"/>
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div style="position: relative">
+                                                    <a t-if="! read_only_mode" type="delete" 
+                                                            style="background-color:white;
+                                                                   color:#DAE2E8;
+                                                                   position:absolute;
+                                                                   right:0px;
+                                                                   padding: 0px;
+                                                                   diplay: block;
+                                                                   border: 1px solid #DAE2E8;
+                                                                   border-radius:50%;
+                                                                   height:19px;
+                                                                   width:19px;
+                                                                   text-align:center;">X</a>
+                                                    <div class="oe_module_vignette">
+                                                        <img t-att-src="kanban_image('res.users', 'image_small', record.id.value)" class="oe_avatar oe_kanban_avatar_smallbox"/>
+                                                        <!--
+                                                        <div class="oe_module_desc">
+                                                            <field name="name"/>
+                                                        </div>
+                                                        -->
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>
+                            </div>
+                        </group>
+                        <group>
+                            <div id="project_description">
+                                <label for="project_description" class="custom_label" string="Change description text"/>
+                                <field nolabel="1" name="project_description" string="Change description text" widget="text_html"/>
+                            </div>
+                        </group>
+                        <group string="Administration" invisible="1">
+                            <field name="planned_hours" widget="float_time"
+                                    groups="project.group_time_work_estimation_tasks"/>
+                            <field name="effective_hours" widget="float_time"
+                                    groups="project.group_time_work_estimation_tasks"/>
+                            <field name="resource_calendar_id"
+                                    groups="project.group_time_work_estimation_tasks"/>
+                        </group>
+                        <group name="misc">
+                            <label colspan="4" class="custom_label" string="Project duration"/>
+                            <newline/>
+                            <label colspan="4" class="custom_label_subtitle" string="This will be used for Gantt chart"/>
+                            <newline/>
+                            <div class="date_wrapper">
+                                <field name="date_start" placeholder="Start date" class="proj_start_date" string="Start date"/>
+                                <span class="oe_read_only date_spacer"/>
+                                <field name="date" placeholder="End date" class="proj_end_date" string="End date"/>
+                            </div>
+                            <field name="sequence" invisible="1" groups="base.group_no_one"/>
+                            <field name="currency_id" invisible="1" groups="base.group_multi_currency" required="1"/>
+                            <!--no need for analytic field name="parent_id" invisible="1" string="Parent" help="Append this project to another one using analytic accounts hierarchy" domain="[('id','!=',analytic_account_id)]" context="{'current_model': 'project.project'}" /-->
+                        </group>
+                        <group invisible="1">
+                             <field name="type_ids"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="privacy_visibility" options="{'horizontal': 1}" nolabel="1" widget="buttonRadio"/>
+                            </group>
+                        </group>
+                        <div id="form_buttons">
+                                <button name="save_current" string="Save changes" type="object" class="oe_button oe_form_button_save oe_highlight" groups="base.group_user"/>
+                            <!-- This is Create only form
+                            <button name="duplicate_current" string="Duplicate" type="object" class="oe_button" groups="base.group_user"/>
+                            <button name="archive_current" string="Archive" type="object" class="oe_button" groups="base.group_user"/>
+                            <button name="delete_current" string="Delete" type="object" class="oe_button" groups="base.group_user"/>
+                            -->
+                        </div>
+                    </div>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--eps project kanban vew-->
+        <record model="ir.ui.view" id="epps_view_project_kanban">
+            <field name="name">epps.project.kanban</field>
+            <field name="model">project.project</field>
+            <field name="priority">100</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey" create="false">
+                    <field name="effective_hours"/>
+                    <field name="planned_hours"/>
+                    <field name="name"/>
+                    <field name="members"/>
+                    <field name="use_tasks"/>
+                    <field name="user_id"/>
+                    <field name="date"/>
+                    <field name="color"/>
+                    <field name="task_count"/>
+                    <field name="task_ids"/>
+                    <field name="alias_id"/>
+                    <field name="alias_name"/>
+                    <field name="alias_domain"/>
+                    <field name="doc_count"/>
+                    <field name="active" invisible="1"/>
+                    <field name="privacy_visibility" invisible="1"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_card oe_kanban_project oe_kanban_global_click custom_kanban show_settings">
+                                <div class="project_settings_on_hover">
+                                    <div class="kanban_project_settings_menu" groups="base.group_user">
+                                        <ul attrs="{'invisible':[('active','=', False)]}">
+                                            <t t-if="widget.view.is_action_enabled('delete')"><li><span>Delete</span><a id="kanban_delete" type="delete"></a></li></t>
+                                            <t t-if="widget.view.is_action_enabled('archive')"><li><span>Archive</span><a id="kanban_archive" type="archive"></a></li></t>
+                                            <t t-if="widget.view.is_action_enabled('duplicate')"><li><span>Duplicate</span><a id="kanban_duplicate" type="duplicate"></a></li></t>
+                                            <t t-if="widget.view.is_action_enabled('edit_settings')"><li><span>Settings</span><a id="kanban_setings" type="edit_settings"></a></li></t>
+                                        </ul>
+                                        <ul attrs="{'invisible':[('active','!=', False)]}">
+                                            <t t-if="widget.view.is_action_enabled('unarchive')"><li><span>Unarchive</span><a id="kanban_archive" type="unarchive"></a></li></t>
+                                        </ul>
+                                    </div>
+                                    <div class="kanban_view_project_button" attrs="{'invisible':[('active','=', False)]}">
+                                        <t t-if="widget.view.is_action_enabled('open')"><a class="oe_kanban_white_button" type="open">View project</a></t>
+                                    </div>
+                                    <div class="kanban_project_join_project_button" style="display: none;" id="kanban_project_join_project_button">
+                                        <t t-if="widget.view.is_action_enabled('join_project')"><a class="oe_kanban_white_button" type="join_project">Join project</a></t>
+                                    </div>
+                                </div>
+                                <div class="oe_kanban_content">
+                                    <h4 class="poroject_kanban_title"><field name="name"/></h4>
+                                    <div invisible="1" class="text-center oe_kanban_alias" t-if="record.alias_name.value and record.alias_domain.value">
+                                        <small><i class="fa fa-envelope-o"></i> <field name="alias_id"/></small>
+                                    </div>
+                                    <div class="oe_kanban_project_list" invisible="1">
+                                        <a t-if="record.doc_count.raw_value" name="attachment_tree_view" type="object" style="margin-right: 10px"> <field name="doc_count"/> Documents</a>
+                                    </div>
+                                    <div class="last_edit_date">
+                                        <p>Last opened on <field name="write_date" nolabel="1"/></p>
+                                    </div>
+
+                                    <div class="oe_kanban_project_description">
+                                        <p>
+                                            <field nolabel="1" name="project_description_txt"/>
+                                        </p>
+                                    </div>
+                                    <div class="oe_kanban_footer_left"  invisible="1">
+                                        <span groups="project.group_time_work_estimation_tasks">
+                                            <span class="oe_e">R</span>
+                                            <t t-esc="Math.round(record.effective_hours.raw_value)"/>/<t t-esc="Math.round(record.planned_hours.raw_value)"/> <field name="company_uom_id"/>
+                                        </span>
+                                        <span t-if="record.date.raw_value">
+                                            <span class="oe_e">N</span>
+                                            <field name="date"/>
+                                        </span>
+                                    </div>
+                                    <div class="oe_kanban_project_avatars">
+                                        <t t-foreach="record.members.raw_value.slice(0,11)" t-as="member">
+                                            <img t-att-src="kanban_image('res.users', 'image_small', member)" t-att-data-member_id="member"/>
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+       <!--epps gantt view-->
+       <record id="epps_view_project_gantt" model="ir.ui.view">
+            <field name="name">epps.project.gantt</field>
+            <field name="model">project.project</field>
+            <field name="priority">100</field>
+            <field name="arch" type="xml">
+                <gantt date_start="date_start" date_stop="date" progress="progress_rate" string="Projects" create="false">
+                </gantt>
+            </field>
+        </record>
+
+        <!--epps project search form-->
+        <record id="epps_view_project_search" model="ir.ui.view">
+            <field name="name">epps.project.search</field>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">
+                <search string="Search Project">
+                    <field name="name" string="Project Name"/>
+                    <filter string="Archive" domain="[('active','=',False)]"/>
+                    <!--
+                    <filter string="Open" name="Current" domain="[('state', '=','open')]"/>
+                    <filter string="Pending" name="Pending" domain="[('state', '=','pending')]"/>
+                    <filter string="Template" name="Template" domain="[('state', '=','template')]"/>
+                    <separator/>
+
+                    <filter string="Member" name="Member" domain="['|',('user_id', '=', uid),('members', '=', uid)]"/>
+                    <filter string="Manager" domain="[('user_id','=',uid)]"/> 
+                    <separator/>
+                    <filter string="New Mail" name="message_unread" domain="[('message_unread','=',True)]"/>
+                    <field name="user_id" string="Project Manager"/>
+                    <field name="partner_id" string="Contact" filter_domain="[('partner_id', 'child_of', self)]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Manager" name="Manager" context="{'group_by':'user_id'}"/>
+                        <filter string="Contact" name="Partner" context="{'group_by':'partner_id'}"/>
+                        <filter string="Parent" name="Parent" help="Parent" context="{'group_by':'parent_id'}"/>
+                    </group>
+                    -->
+                </search>
+            </field>
+        </record>
+
+        <record id="epps_open_view_project_create" model="ir.actions.act_window">
+            <field name="name">Projects</field>
+            <field name="res_model">project.project</field>
+            <field name="view_type">form</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">form</field>
+            <field name="target">current</field>
+            <field name="view_id" ref="epps_create_project_form"/>
+            <field name="context">{}</field>
+        </record>
+
+        <!--menuitem action="epps_open_view_project_create"
+            groups="epps_project.group_epps_project_manager"
+            id="epps_menu_project_create" 
+            name="- - Create Project - -"
+            parent="epps_menu_project_management" 
+            sequence="99999"/ GK:Removed as "+" is now working-->
+
+       <record id="epps_view_all_projects" model="ir.actions.act_window">
+            <field name="name">See all projects</field>
+            <field name="res_model">project.project</field>
+            <field name="view_type">form</field>
+            <field name="domain">[
+                ('is_company_rules','=',False),
+                ('is_repository','=',False),
+                ('is_my_files','=',False),
+                ('is_conbase','=',False)]
+            </field>
+            <field name="view_mode">kanban,tree,gantt</field>
+            <field name="view_id" ref="epps_view_all_projects_tree"/>
+            <field name="context">{}</field>
+        </record>
+
+         <record id="action_view_all_tree" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="epps_view_all_projects_tree"/>
+            <field name="act_window_id" ref="epps_view_all_projects"/>
+        </record>
+
+        <record id="action_view_all_form" model="ir.actions.act_window.view">
+            <field eval="20" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="epps_edit_project_form"/>
+            <field name="act_window_id" ref="epps_view_all_projects"/>
+        </record>
+
+        <record id="action_view_all_gant" model="ir.actions.act_window.view">
+            <field eval="15" name="sequence"/>
+            <field name="view_mode">gantt</field>
+            <field name="view_id" ref="epps_view_project_gantt"/>
+            <field name="act_window_id" ref="epps_view_all_projects"/>
+        </record>
+
+        <record id="action_view_all_kanban" model="ir.actions.act_window.view">
+            <field eval="5" name="sequence"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="epps_view_project_kanban"/>
+            <field name="act_window_id" ref="epps_view_all_projects"/>
+        </record>
+
+        <menuitem action="epps_view_all_projects"
+            groups="epps_project.group_epps_project_manager,epps_project.group_epps_project_user"
+            id="epps_menu_all_projects"
+            name="See all projects"
+            parent="epps_menu_project_management"
+            sequence="999955"
+        />
+            <!--web_icon="/epps_design/static/src/img/project-icon.png"-->
+
+        <record id="project_pad_form" model="ir.ui.view">
+                <field name="name">project.pad.form</field>
+                <field name="model">project.pad</field>
+                <field name="arch" type="xml">
+                    <form string="Notes">
+                        <div class="oe_right oe_button_box" name="buttons" invisible="1">
+                             <button class="oe_inline oe oe_i" type="object" 
+                                name="previous_pad" string="(" />
+                             <button class="oe_inline oe oe_i" type="object" 
+                                name="next_pad" string=")" />
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                                <field name="state" invisible="1"/>
+                                <field name="project_id" invisible="1"/>
+                            </group>
+                            <group invisible="1">
+                                <field name="author_user_id" invisible="1"/>
+                                <field name="approve_user_id" invisible="1"/>
+                                <field name="note" invisible="1"/>
+                            </group>
+                        </group>
+                        <field name="note_pad" colspan="4" widget="text_html" nolabel="1" required="1"/>
+                    </form>
+                </field>
+            </record>
+
+            <record id="epps_view_task_tree_my" model="ir.ui.view">
+                <field name="name">epps.project.task.tree.my</field>
+                <field name="model">project.task</field>
+                <field name="arch" type="xml">
+                    <tree editable="top" string="Tasks" fonts="bold:message_unread==True" colors="red:date_deadline and (date_deadline&lt;current_date)" create="false">
+                        <field name="sequence" widget="handle"/> <!--invisible="not context.get('seq_visible', False)"/-->
+
+                        <button string="Mark Done" name="button_done" type="object" icon="gtk-apply" attrs="{'invisible':[('done','=', True)]}"/>
+                        <button string="Mark Undone" name="button_undone" type="object" icon="gtk-dialog-error" attrs="{'invisible':[('done','!=', True)]}"/>
+                        <!-- TODO: states="waiting_answer" type="object" icon="gtk-jump-to" /-->
+                        <field name="done" invisible="1"/> <!-- invisible depending on method we'll use-->
+                        <field name="is_section" />
+                        <field name="name" string="Task"/>
+                        <field name="project_id"        invisible="0" /> <!--invisible="context.get('user_invisible', False)"/-->
+                        <field name="user_id"           invisible="1" />    <!--invisible="context.get('user_invisible', False)"/-->
+                        <field name="date_deadline"     invisible="0" /> <!--invisible="context.get('deadline_visible',True)"/-->
+                        <button name="button_details" string="Details" type="object" icon="STOCK_EDIT" />
+                        <field name="message_unread"    invisible="1"/>
+                        <field name="delegated_user_id" invisible="1" /> <!--invisible="context.get('show_delegated', True)"/-->
+                        <field name="total_hours"       invisible="1"/>
+                        <field name="planned_hours"     invisible="1"/> <!--invisible="context.get('set_visible',False)" groups="project.group_time_work_estimation_tasks"/-->
+                        <field name="effective_hours"   invisible="1" widget="float_time" sum="Spent Hours" />
+                        <field name="remaining_hours"   invisible="1" /> <!-- widget="float_time" sum="Remaining Hours" on_change="onchange_remaining(remaining_hours,planned_hours)" invisible="context.get('set_visible',False)" groups="project.group_time_work_estimation_tasks"/-->
+                        <field name="stage_id"          invisible="1" /> <!--invisible="context.get('set_visible',False)"/-->
+                        <field name="rrule_type" invisible="1"/>
+                        <!--invisible="context.get('set_visible',False)"/-->
+                        <field name="date_start"        invisible="1" groups="base.group_no_one"/>
+                        <field name="date_end"          invisible="1" groups="base.group_no_one"/>
+                        <field name="progress"          invisible="1" widget="progressbar" /> <!--invisible="context.get('set_visible',False)"/-->
+                    </tree>
+                </field>
+            </record>
+
+            <record id="view_my_task_search_form" model="ir.ui.view">
+            <field name="name">project.my.task.search.form</field>
+            <field name="model">project.task</field>
+            <field name="arch" type="xml">
+               <search string="Tasks">
+                    <field name="name" string="Tasks"/>
+                    <field name="categ_ids"/>
+                    <field name="partner_id"/>
+                    <field name="project_id"/>
+                    <field name="reviewer_id" domain="[('id', 'not in', [1])]"/>
+                    <field name="user_id" domain="[('id', 'not in', [1])]"/>
+                    <field name="stage_id"/>
+                    <filter string="My Tasks" domain="[('user_id','=',uid)]"/>
+                    <filter string="Unassigned" name="unassigned" domain="[('user_id', '=', False)]"/>
+                    <separator/>
+                    <filter string="New" name="draft" domain="[('stage_id.sequence', '&lt;=', 1)]"/>
+                    <separator/>
+                    <group expand="1" string="Group By">
+                        <filter string="Task" context="{'group_by':'name'}"/>
+                        <filter string="Assigned to" name="User" context="{'group_by':'user_id'}"/>
+                        <filter string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
+                        <separator/>
+                        <filter invisible="1" string="Last Message" name="group_message_last_post" context="{'group_by':'message_last_post:week'}"/>
+                        <filter invisible="1" string="Assignation Month" context="{'group_by':'date_start:month'}" help="Creation Date"/>
+                        <filter string="New/Today/Upcoming/Later" name="group_date_dedaline" context="{'group_by':'date_deadline:gtd_interval'}"/>
+                        <filter string="Project" name="project" context="{'group_by':'project_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_view_sale_task_my" model="ir.actions.act_window">
+            <field name="name">My Tasks</field>
+            <field name="res_model">project.task</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id" ref="epps_project.view_my_task_search_form"/>
+            <field name="context">{'search_default_user_id': uid,
+                                   'search_default_open': 1,
+                                   'search_default_group_date_dedaline': 1,
+                                   'search_default_project': 1,
+                                   'my_task_default_user_id': uid}
+            </field>
+            <field name="domain">['&amp;',
+                                      ('is_section', '!=', True),
+                                      '|',
+                                          '|',
+                                              '|',
+                                                    ('project_id.members','in',[uid]),
+                                                    ('user_id','=', uid),
+                                               ('project_id.privacy_visibility', '=', 'public'),
+                                          '&amp;',
+                                               ('project_id', '=', False),
+                                               ('create_uid', '=', uid)
+                                 ]
+            </field> <!--('project_id.members','in',[uid]) -->
+            <!--
+            <field name="help" type="html">
+                <p>
+                    Odoo's project management allows you to manage the pipeline
+                    of tasks in order to get things done efficiently. You can
+                    track progress, discuss on tasks, attach documents, etc.
+                </p>
+            </field>
+            -->
+        </record>
+
+        <record id="action_view_task_tree" model="ir.actions.act_window.view">
+            <field eval="5" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="epps_view_task_tree_my"/>
+            <field name="act_window_id" ref="action_view_sale_task_my"/>
+        </record>
+
+        <record id="epps_gantt_chart_dates_form" model="ir.ui.view">
+            <field name="name">epps.task.gantt.chart.dates.form</field>
+            <field name="model">project.task</field>
+            <field name="arch" type="xml">
+                <form string="Gantt chart">
+                  <sheet>
+                    <group string="Task Duration">
+                        <field name="date_start"/>
+                        <field name="date_end"/>
+                    </group>
+                     <footer invisible="not context.get('view_buttons')">
+                        <button class="oe_highlight" name="button_save_data" string="Save" type="object" />
+                        or
+                        <button class="oe_link" special="cancel" string="Cancel" />
+                    </footer>
+                  </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_window_gantt_chart_dates" model="ir.actions.act_window">
+            <field name="name">Gant diagram</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">project.task</field>
+            <field name="target">new</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="context">{'view_buttons':True}</field>
+            <!--<field name="res_id">78516</field> TESTING-->
+        </record>
+        <record id="action_gantt_chart_dates" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="epps_gantt_chart_dates_form"/>
+            <field name="act_window_id" ref="action_window_gantt_chart_dates"/>
+        </record>
+
+        <record id="epps_view_task_recurrency_form" model="ir.ui.view">
+            <field name="name">epps.task.recurrency.form</field>
+            <field name="model">project.task</field>
+            <field name="arch" type="xml">
+                <form string="Task Recurrency">
+                    <sheet>
+                        <group>
+                            <group col="1">
+                                <group>
+                                    <field name="recurrency" string="Recurring" />
+                                </group>
+                                <group attrs="{'invisible': [('recurrency','=',False)]}">
+                                    <field name="rrule_type" string="Repeat" attrs="{'required': [('recurrency','==',True)]}" class="oe_inline"/>
+                                </group>
+                                <group attrs="{'invisible': [('recurrency','=',False)]}">
+                                    <label for="interval" string="interval" attrs="{'invisible': ['&amp;',('rrule_type','not in', ['weekly']), ('rrule_type','not in', ['monthly'])]}"/>
+                                    <div>
+                                        <label string="every" class="oe_inline" attrs="{'invisible': ['&amp;',('rrule_type','not in', ['weekly']), ('rrule_type','not in', ['monthly'])]}"/>
+                                        <field name="interval_12" attrs="{'required': ['&amp;',('recurrency','==',True),'|',('rrule_type','in', ['weekly']),('rrule_type','in', ['monthly'])], 'invisible': ['&amp;',('rrule_type','not in', ['weekly']), ('rrule_type','not in', ['monthly'])]}" class="oe_inline"/>
+                                        <field name="interval" attrs="{'required': [('recurrency','==',True)], 'invisible': ['&amp;',('rrule_type','not in', ['weekly']), ('rrule_type','not in', ['monthly'])]}" class="oe_inline" invisible="1"/>
+                                        <label string="weeks" class="oe_inline" attrs="{'invisible': [('rrule_type','not in', ['weekly'])]}"/>
+                                        <label string="months" class="oe_inline" attrs="{'invisible': [('rrule_type','not in', ['monthly'])]}"/>
+                                    </div>
+                                    <label string="Until" for="end_type" invisible="1"/>
+                                    <div  invisible="1">
+                                        <field name="end_type" attrs="{'required': [('recurrency','==',True)]}" class="oe_inline"/>
+                                        <field name="count" attrs="{'invisible': [('end_type', '!=', 'count')], 'required': [('recurrency','==',True)]}" class="oe_inline"/>
+                                        <field name="final_date" attrs="{'invisible': [('end_type', '!=', 'end_date')], 'required': [('end_type', '=', 'end_date')]}" class="oe_inline"/>
+                                    </div>
+                                    <label string="on" attrs="{'invisible' :[('rrule_type','not in', ['weekly'])]}"/>
+                                    <group col="2" colspan="1" name="weekdays" attrs="{'invisible' :[('rrule_type','not in', ['weekly'])]}" >
+                                        <div class="recurr_days_checkbox">
+                                            <label for="su" class="oe_inline" string="S"/>
+                                            <field name="su" />
+                                            <label for="mo" class="oe_inline" string="M"/>
+                                            <field name="mo" />
+                                            <label for="tu" class="oe_inline" string="T"/>
+                                            <field name="tu" />
+                                            <label for="we" class="oe_inline" string="W"/>
+                                            <field name="we" />
+                                            <label for="th" class="oe_inline" string="T"/>
+                                            <field name="th" />
+                                            <label for="fr" class="oe_inline" string="F"/>
+                                            <field name="fr" />
+                                            <label for="sa" class="oe_inline" string="S"/>
+                                            <field name="sa" />
+                                        </div>
+                                    </group>
+
+                                    <label string="on"
+                                        attrs="{'invisible': [('rrule_type','!=','monthly')]}"/>
+
+                                    <div attrs="{'invisible': [('rrule_type','!=','monthly')]}">
+                                        <field name="month_by" invisible="1"/>
+                                        <field name="day_28"
+                                            attrs="{'required': [('month_by','=','date'), ('rrule_type','=','monthly')],
+                                                'invisible': [('month_by','=','day')]}"
+                                                class="oe_inline"/>
+                                        <field name="day"
+                                            attrs="{'required': [('month_by','=','date'), ('rrule_type','=','monthly')],
+                                                'invisible': [('month_by','=','day')]}" invisible="1"/>
+                                        <field name="byday" string="The"
+                                            attrs="{'required': [('month_by','=','day'), ('rrule_type','=','monthly')], 'invisible': [('month_by','=','date')]}" invisible="1"/>
+                                        <field name="week_list" nolabel="1"
+                                            attrs="{'required': [('month_by','=','day'), ('rrule_type','=','monthly')], 'invisible': [('month_by','=','date')]}" invisible="1"/>
+                                        <label string="day of Month"
+                                            attrs="{'invisible': [('rrule_type','!=','monthly')]}"/>
+                                    </div>
+                                </group>
+                            </group>
+                            <group>
+                                <field name="rrule" invisible="1" readonly="0" />
+                                <field name="recurrent_id" invisible="1" />
+                            </group>
+                        </group>
+                         <footer invisible="not context.get('view_buttons')">
+                            <button class="oe_highlight" name="button_save_data" string="Save" type="object" />
+                            or
+                            <button class="oe_link" special="cancel" string="Cancel" />
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_window_task_recurrency" model="ir.actions.act_window">
+            <field name="name">Task Recurrency</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">project.task</field>
+            <field name="target">new</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="context">{'view_buttons':True}</field>
+            <!--<field name="res_id">78516</field> TESTING-->
+        </record>
+        <record id="action_task_recurrency" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="epps_view_task_recurrency_form"/>
+            <field name="act_window_id" ref="action_window_task_recurrency"/>
+        </record>
+
+        <!--<menuitem action="action_window_task_recurrency" id="dummy_act"
+               parent="base.epps_menu_risk"/>--> <!-- TEST ITEM DA VIDIM DAL RADI BRISATI-->
+    </data>
+</openerp>

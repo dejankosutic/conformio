@@ -1,0 +1,194 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* epps_mail
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-25 17:11+0000\n"
+"PO-Revision-Date: 2016-05-25 17:11+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:130
+#, python-format
+msgid "&ograve"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:36
+#, python-format
+msgid "Archive"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:185
+#, python-format
+msgid "Compose New Private Message"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:172
+#, python-format
+msgid "Log a note for this document. No notification will be sent"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:152
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:172
+#, python-format
+msgid "Log an internal note"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:40
+#, python-format
+msgid "Mark as Todo"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:17
+#, python-format
+msgid "Mention(s):"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:38
+#, python-format
+msgid "Move to Inbox"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:130
+#, python-format
+msgid "Open the full mail composer"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:39
+#, python-format
+msgid "Reply"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:151
+#, python-format
+msgid "Send"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:169
+#, python-format
+msgid "Send a message"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:169
+#, python-format
+msgid "Send a message to other users"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:37
+#, python-format
+msgid "Set back to Todo"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:162
+#, python-format
+msgid "Share with my followers..."
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:126
+#, python-format
+msgid "User img"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/js/view_form_base.js:69
+#, python-format
+msgid "You are currently composing a message, your message will be discarded.\n"
+"\n"
+"Are you sure you want to leave this page ?"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:93
+#, python-format
+msgid "and"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:75
+#, python-format
+msgid "logged a note"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:93
+#, python-format
+msgid "more"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:95
+#, python-format
+msgid "notified"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:171
+#, python-format
+msgid "or"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:56
+#, python-format
+msgid "read less"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:80
+#, python-format
+msgid "to"
+msgstr ""
+
+#. module: epps_mail
+#. openerp-web
+#: code:addons/epps_mail/static/src/xml/epps_mail.xml:69
+#, python-format
+msgid "updated document"
+msgstr ""

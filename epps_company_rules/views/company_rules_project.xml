@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <!--Company Rules project-->
+        <record id="epps_company_rules_project" model="project.project">
+            <field name="name">Company Rules</field>
+            <field name="user_id" ref="base.user_customer_administrator"/>
+            <field name="project_description"></field>
+            <field name="privacy_visibility">public</field>
+            <field name="members"></field>
+            <field name="is_company_rules" eval="True"/>
+            <field name="is_my_files" eval="False"/>
+        </record>
+
+        <!--My Files project-->
+        <record id="epps_my_files_rules_project" model="project.project">
+            <field name="name">My Files</field>
+            <field name="user_id" ref="base.user_customer_administrator"/>
+            <field name="project_description"></field>
+            <field name="privacy_visibility">public</field>
+            <field name="members"></field>
+            <field name="is_company_rules" eval="False"/>
+            <field name="is_my_files" eval="True"/>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--Messgae Tags-->
+        <record id="view_message_tags_form" model="ir.ui.view">
+            <field name="name">mail.message.tags</field>
+            <field name="model">mail.message</field>
+            <field name="priority">999</field>
+            <field name="arch" type="xml">
+                <form string="Message Tags">
+                    <sheet>
+                        <group>
+                           <field name="message_tags_ids" widget="many2many_tags"/>
+                        </group>
+                        <footer>
+                        <button name="message_tags_save" type="object" string="Save" class="oe_highlight"/>
+                        or
+                        <button name="message_tags_cancel" string="Cancel" special="cancel" class="oe_link"/>
+                    </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_message_tags" model="ir.actions.act_window">
+            <field name="name">Message Tags</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mail.message</field>
+            <field name="target">new</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+        </record>
+        <record id="action_window_view_message_tags_form" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_message_tags_form"/>
+            <field name="act_window_id" ref="action_message_tags"/>
+        </record>
+
+    </data>
+</openerp>

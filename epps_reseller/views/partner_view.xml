@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+        <record id="epps_view_partner_reseller_form" model="ir.ui.view">
+            <field name="name">epps.res.partner.reseller.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="epps_partner.epps_view_partner_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//page[@name='internal_notes']" position="before">
+                        <page string="Customer Access" groups="epps_user.group_customer_administrator">
+                            <field name="reseller_order_ids" readonly="1" nolabel="1"/>
+                        </page>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+</data>
+</openerp>

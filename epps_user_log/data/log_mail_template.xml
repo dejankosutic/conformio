@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Email template for new IP ADDRESS LOGGED -->
+        <record id="email_temp_new_ip_address_logg" model="email.template">
+            <field name="name">New IP Log</field>
+            <field name="model_id" ref="epps_user_log.model_user_log"/>
+            <field name="email_from"><![CDATA[${object.user_id.company_id.name} <${(object.user_id.company_id.email)|safe}>]]></field>
+            <field name="email_to">${object.user_id.email|safe}</field>
+            <field name="subject">Logged in from new IP address</field>
+            <field name="body_html"><![CDATA[
+<p>
+New IP address detected
+</p>
+
+<p>
+Login Date: ${format_tz(object.log_date, tz=user.tz, context={'lang':object.user_id.partner_id.lang})}<br>
+IP Address: ${object.ip_address}
+</p>
+
+<p>Note: If it was you, you can safely ignore this email.</p>]]></field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--Dropbox token field-->
+        <record id="view_users_form_simple_modif_inherit" model="ir.ui.view">
+            <field name="name">res.users.preferences.inherit.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form_simple_modif"/>
+            <field name="arch" type="xml">
+            <data>
+                <group name="email_preferences_group" position="after">
+                    <group name="dropbox_group" string="Dropbox integration">
+                        <field name="dropbox_auth_code" string="Dropbox auth code"/>
+                    </group>
+                 </group>
+                 <footer position="inside">
+                     <img class="oe_right geo_trust_logo" alt="GeoTrust" src="/epps_design/static/src/img/geotrust_logo.gif"></img>
+                 </footer>
+            </data>
+            </field>
+        </record>
+
+        <!-- change password wizard -->
+        <record id="change_password_wizard_view_inherited" model="ir.ui.view">
+            <field name="name">epps.change.password.form</field>
+            <field name="model">change.password.wizard</field>
+            <field name="inherit_id" ref="base.change_password_wizard_view"/>
+            <field name="arch" type="xml">
+             <data>
+                <footer position="inside">
+                    <img class="oe_right geo_trust_logo" alt="GeoTrust" src="/epps_design/static/src/img/geotrust_logo.gif"></img>
+                </footer>
+            </data>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<openerp>
+    <data>
+        <template id="assets_backend" name="epps_account_settings_assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <!--script type="text/javascript" src="/epps_account_settings/static/src/js/epps_account_settings.js"></script-->
+                <link rel="stylesheet" href="/epps_account_settings/static/src/css/epps_account_settings.css"/>
+            </xpath>
+        </template>
+    </data>
+</openerp>

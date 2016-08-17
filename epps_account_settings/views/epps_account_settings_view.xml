@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_epps_account_settings_form" model="ir.ui.view">
+            <field name="name">epps.account.settings.form</field>
+            <field name="model">epps.account.settings</field>
+            <field name="size">large</field>
+            <field name="arch" type="xml">
+                <form string="Account settings">
+                    <sheet string="Account settings">
+                        <field name="features_table_html" widget="html" options='{"safe": True}'/>
+                    </sheet>
+                    <sheet string="Account settings" invisible="1">
+                        <div class="user_storage_upgrade">
+                            <div class="row">
+                                <h2>You can also edit specific plan features, while keeping your currently selected plan:</h2>
+                                <table class="additional_users_wrapper">
+                                    <tr>
+                                        <td style="width: 40%; text-align:right;">
+                                            <div class="precalculate_wrapper">
+                                                <label string="Additional users" />
+                                                <p>Current number of remaining users: <field name="remaining_users" readonly="1" class="oe_inline"/> / <field name="max_number_of_users" readonly="1" class="oe_inline"/></p>
+                                            </div>
+                                        </td>
+                                        <td style="text-align:center; min-width:200px;">
+                                            <button name="remove_users" type="object" string="-" class="oe_inline oe_numeric_button_left"/>
+                                            <field name="additional_users" class="oe_inline oe_numeric_input" nolabel="1" readonly="1"/>
+                                            <button name="add_users" type="object" string="+" class="oe_inline oe_numeric_button_right"/>
+                                        </td>
+                                        <td style="width: 40%;">
+                                            <div class="submit_buttons">
+                                                <button name="purchase_users" string="Purchase" type="object" class="oe_highlight"/>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <hr/>
+                                <table class="additional_storage_wrapper">
+                                    <tr>
+                                        <td style="width: 40%; text-align:right;">
+                                            <div class="precalculate_wrapper">
+                                                <label string="Additional storage space (GB)"/>
+                                                <p>Current usage: <field name="max_space_gb" readonly="1" class="oe_inline"/> GB</p>
+                                            </div>
+                                        </td>
+                                        <td style="text-align:center; min-width:200px;">
+                                            <button name="remove_storage" type="object" string="-" class="oe_inline oe_numeric_button_left"/>
+                                            <field name="additional_storage" class="oe_inline oe_numeric_input" nolabel="1" readonly="1"/>
+                                            <button name="add_storage" type="object" string="+" class="oe_inline oe_numeric_button_right"/>
+                                        </td>
+                                        <td style="width: 40%;">
+                                            <div class="submit_buttons">
+                                                <button name="purchase_storage" string="Purchase" type="object" class="oe_highlight"/>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <hr/>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img class="geo_trust_logo" alt="GeoTrust" src="/epps_design/static/src/img/geotrust_logo.gif"></img>
+                                </div>
+                                <div class="col-md-4 purchase_info">
+                                    <p>You will confirm your order on the checkout page.</p>
+                                </div>
+                                <div class="col-md-4">
+                                </div>
+                            </div>
+                        </div>
+                    </sheet>
+                    <div class="cancel_subscription">
+                        <a href="http://support.advisera.com/customer/portal/emails/new">Cancel your subscription?</a>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_epps_account_settings" model="ir.actions.act_window">
+          <field name="name">Upgrade/downgrade</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">epps.account.settings</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">form</field>
+          <field name="view_id" ref="view_epps_account_settings_form"/>
+          <field name="context">{}</field>
+          <field name="help"></field>
+          <field name="target">inline</field>
+        </record>
+
+        <menuitem name="Account settings"
+            id="epps_account_settingst_parent_menu"
+            parent="base.epps_menu_main_epps_settings"
+            groups=""
+            sequence="100"/>
+
+        <menuitem name="Upgrade/downgrade"
+            id="epps_account_settingst_menu"
+            parent="epps_account_settingst_parent_menu"
+            groups=""
+            action="epps_account_settings.action_epps_account_settings"
+            sequence="100"/>
+    </data>
+</openerp>

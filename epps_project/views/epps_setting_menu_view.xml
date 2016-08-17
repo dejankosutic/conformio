@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Top menu item -->
+        <menuitem name="Settings"
+            id="base.epps_menu_main_epps_settings"
+            groups="epps_user.group_customer_administrator"
+            sequence="9999"/>
+
+        <!--Document state-->
+        <menuitem name="Document management"
+            id="epps_document_management_menu"
+            parent="base.epps_menu_main_epps_settings"
+            groups="epps_user.group_customer_administrator"
+            sequence="100"/>
+
+        <menuitem name="Edit document statuses"
+            id="epps_menu_document_status"
+            parent="epps_document_management_menu"
+            groups="epps_user.group_customer_administrator"
+            action="epps_project.action_epps_document_status"
+            sequence="100"/>
+
+        <!--Account settings-->
+        <!--
+        <menuitem name="Account settings"
+            id="epps_account_settingst_parent_menu"
+            parent="base.epps_menu_main_epps_settings"
+            groups="epps_project.group_epps_project_manager"
+            sequence="100"/>
+
+        <menuitem name="Account settings"
+            id="epps_account_settingst_menu"
+            parent="epps_account_settingst_parent_menu"
+            groups="epps_project.group_epps_project_manager"
+            action=""
+            sequence="100"/>
+        -->
+    </data>
+</openerp>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- New document template-->
+        <record id="epps_new_file_template" model="ir.attachment">
+            <field name="datas_fname">new.docx</field>
+            <field name="name">new</field>
+            <field name="datas" type="base64" file="epps_project/data/new.docx"/>
+        </record>
+    </data>
+</openerp>

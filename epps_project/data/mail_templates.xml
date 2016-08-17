@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Email test template -->
+        <record id="email_test_template" model="email.template">
+            <field name="name">Test Template</field>
+            <field name="model_id" ref="project.model_project_task"/>
+            <field name="email_from"><![CDATA[${object.create_uid.company_id.name} <${(object.create_uid.company_id.email)|safe}>]]></field>
+            <field name="partner_to">${ctx.get('partners_to','')}</field>
+            <field name="subject">Test Template</field>
+            <field name="body_html"><![CDATA[
+<p>
+This is a test mail for Task Assigend
+</p>
+]]></field>
+        </record>
+        <record id="email_template_task_assigned" model="email.template">
+            <field name="name">Task Assigned</field>
+            <field name="model_id" ref="project.model_project_task"/>
+            <field name="email_from"><![CDATA[${object.assigned_by_id.name or ''} on Conformio <do-not-reply@conformio.com>]]></field>
+            <field name="partner_to">${object.user_id.partner_id.id or ''}</field>
+            <field name="subject">Task is assigned to you in the project ${object.project_id.name}</field>
+            <field name="body_html"><![CDATA[
+<p>
+Hello ${object.user_id.partner_id.name},
+<br/>
+You have been assigned a task:
+<br/>
+- Task name: ${object.name}
+<br/>
+- Project: ${object.project_id.name}
+<br/>
+- Assigned by: ${object.assigned_by_id.name or ''}
+<br/>
+</p>
+]]></field>
+        </record>
+        <record id="email_template_task_done" model="email.template">
+            <field name="name">Task Done</field>
+            <field name="model_id" ref="project.model_project_task"/>
+            <field name="email_from"><![CDATA[${object.write_uid.name} on Conformio <do-not-reply@conformio.com>]]></field>
+            <field name="partner_to">${object.assigned_by_id.partner_id.id or ''}</field>
+            <field name="subject">Task done: ${object.project_id.name}</field>
+            <field name="body_html"><![CDATA[
+<p>
+Hello,
+<br/>
+${object.write_uid.name} has marked the following task as completed:
+<br/>
+- Task name: ${object.name}
+<br/>
+- Project: ${object.project_id.name}
+<br/>
+- Assigned by: ${object.assigned_by_id.name or ''}
+<br/>
+</p>
+]]></field>
+        </record>
+        <record id="email_template_project_created" model="email.template">
+            <field name="name">Project Created</field>
+            <field name="model_id" ref="project.model_project_project"/>
+            <field name="email_from"><![CDATA[${object.write_uid.name} on Conformio <do-not-reply@conformio.com>]]></field>
+            <field name="partner_to">${ctx.get('partners_to','')}</field>
+            <field name="subject">You are assigned to the project ${object.name}</field>
+            <field name="body_html"><![CDATA[
+<p>
+Hello ${object.user_id.partner_id.name},
+<br/>
+${object.write_uid.name} has assigned you to a project ${object.name} in Conformio.
+</p>
+]]></field>
+        </record>
+        <record id="email_template_project_user_assigned" model="email.template">
+            <field name="name">Project User Assigned</field>
+            <field name="model_id" ref="project.model_project_project"/>
+            <field name="email_from"><![CDATA[${object.write_uid.name} on Conformio <do-not-reply@conformio.com>]]></field>
+            <field name="partner_to">${ctx.get('partners_to','')}</field>
+            <field name="subject">You are assigned to the project ${object.name}</field>
+            <field name="body_html"><![CDATA[
+<p>
+Hello ${object.user_id.partner_id.name},
+<br/>
+${object.write_uid.name} has assigned you to a project ${object.name} in Conformio.
+</p>
+]]></field>
+        </record>
+        <record id="email_template_project_member_assigned" model="email.template">
+            <field name="name">Project Memeber Assigned</field>
+            <field name="model_id" ref="project.model_project_project"/>
+            <field name="email_from"><![CDATA[${object.write_uid.name} on Conformio <do-not-reply@conformio.com>]]></field>
+            <field name="partner_to">${ctx.get('partners_to','')}</field>
+            <field name="subject">You are assigned to the project ${object.name}</field>
+            <field name="body_html"><![CDATA[
+<p>
+Hello ${object.user_id.partner_id.name},
+<br/>
+${object.write_uid.name} has assigned you to a project ${object.name} in Conformio.
+</p>
+]]></field>
+        </record>
+
+    </data>
+</openerp>

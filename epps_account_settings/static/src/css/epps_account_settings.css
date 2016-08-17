@@ -1,0 +1,262 @@
+.green_checkmark{
+    min-height: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    min-width: 50px;
+    background-image: url('/epps_account_settings/static/src/img/green-checkmark.png');
+    background-position: center;
+    background-size: 30px;
+}
+.plan_settings table{
+    width: 100%;
+    border-spacing: 0px 0;
+    border-collapse: separate;
+}
+.plan_settings table th{
+    text-align: center;
+    color: #808080;
+    font-weight: bold;
+    font-size: 16px;
+    border-bottom: 1px dashed #808080;
+    border-right: 1px dashed #808080;
+}
+.plan_settings table td{
+    border-top: 1px dashed transparent;
+    border-left: 1px dashed transparent;
+    border-bottom: 1px dashed #808080;
+    border-right: 1px dashed #808080;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px;
+    
+}
+.plan_settings table tr.last_row_tr td{
+    border-bottom:1px dashed transparent;
+    vertical-align: top;
+}
+.plan_settings table tr.last_row_tr td a{
+    display: inline-block;
+    margin-top: 5px;
+}
+.plan_settings table tr.last_row_tr td p{
+    color: #AEAEAE;
+    font-weight: bold;
+}
+.plan_settings table th.last_column_td{
+    border-right:1px dashed transparent;
+}
+.plan_settings table td.last_column_td{
+    border-right:1px dashed transparent;
+}
+.plan_settings table td.align_left_td{
+    text-align: left;
+}
+
+.oe_highlight_gray_button{
+    background-color: #737373 !important;
+    border-color: #737373 !important;
+    background-image: none;
+    box-shadow: none;
+    color: #FFFFFF !important;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 400;
+    border: 1px solid #737373 !important;
+}
+.oe_highlight_gray_button:hover{
+    border-color: #737373 !important;
+    color: #737373 !important;
+    background-color: #FFFFFF !important;
+}
+
+.oe_gray_button{
+    background-color: #FFFFFF !important;
+    border-color: #737373 !important;
+    background-image: none;
+    box-shadow: none;
+    color: #737373 !important;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 400;
+    border: 1px solid #737373 !important;
+    min-width: 130px;
+}
+.oe_gray_button:hover{
+    border-color: #737373 !important;
+    color: #737373 !important;
+}
+
+.submit_buttons{
+    text-align: left;
+}
+
+.submit_buttons button{
+    min-width: 120px;
+    margin: 10px;
+}
+
+.user_storage_upgrade h2{
+    color: #646464;
+    font-weight: lighter;
+    text-align: center;
+    margin-top: 20px !important;
+    margin-bottom: 40px !important;
+}
+.user_storage_upgrade hr{
+    max-width: 80%;
+}
+
+.purchase_info{
+    text-align: center;
+}
+.purchase_info p{
+    color: #8E8E8E;
+}
+.additional_users_wrapper{
+    margin: 0 auto;
+    vertical-align: middle;
+    width: 90%;
+}
+.additional_storage_wrapper{
+    margin: 0 auto;
+    width: 90%;
+}
+
+.additional_users_wrapper td{
+    vertical-align: middle;
+}
+.additional_storage_wrapper td{
+    vertical-align: middle;
+}
+.precalculate_wrapper{
+    display: inline-block;
+    text-align: right;
+}
+.oe_inline.oe_numeric_input{
+    border: 1px solid #dcdcdc;
+    margin-top: -5px;
+    width: 40px !important;
+    height: 100%;
+    height: 38px;
+    line-height: 38px !important;
+}
+.oe_inline.oe_numeric_button_left {
+    margin: 0px !important;
+    border-radius: 3px 0px 0px 3px;
+    background-color: #dcdcdc !important;
+    border: 1px solid #dcdcdc !important;
+    color: #FFF !important;
+    /*margin-top: 4px !important;*/
+    width: 40px;
+}
+button.oe_button.oe_form_button.oe_inline.oe_numeric_button_left:hover{
+    background-color: #027EE6 !important;
+    border-radius: 3px 0px 0px 3px !important;
+    border: 1px solid #027EE6 !important;
+}
+.oe_inline.oe_numeric_button_right {
+    margin: 0px !important;
+    border-radius: 0px 3px 3px 0px;
+    background-color: #027EE6 !important;
+    border: 1px solid #027EE6 !important;
+    color: #FFF !important;
+    /*margin-top: 4px !important;*/
+    
+}
+button.oe_button.oe_form_button.oe_inline.oe_numeric_button_right:hover{
+    border-radius: 0px 3px 3px 0px !important;
+    background-color: #dcdcdc !important;
+    border: 1px solid #dcdcdc !important;
+}
+
+/*features table buttons*/
+a.oe_highlight_gray_button{
+    background-color: #737373 !important;
+    border-color: #737373 !important;
+    background-image: none;
+    box-shadow: none;
+    color: #FFFFFF !important;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 400;
+    border: 1px solid #737373 !important;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 3px;
+}
+a.oe_highlight_gray_button:hover{
+    border-color: #737373 !important;
+    color: #737373 !important;
+    background-color: #FFFFFF !important;
+}
+
+a.oe_gray_button{
+    background-color: #FFFFFF !important;
+    border-color: #737373 !important;
+    background-image: none;
+    box-shadow: none;
+    color: #737373 !important;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 400;
+    border: 1px solid #737373 !important;
+    min-width: 130px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 3px;
+}
+a.oe_gray_button:hover{
+    border-color: #737373 !important;
+    color: #737373 !important;
+}
+
+a.oe_highlight_upgrade{
+    background-color: #027EE6 !important;
+    border-color: #027EE6 !important;
+    background-image: none;
+    box-shadow: none;
+    color: #FFFFFF !important;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 400;
+    border: 1px solid #027EE6 !important;
+    min-width: 130px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 3px;
+}
+a.oe_highlight_upgrade:hover{
+    border-color: #027EE6 !important;
+    color: #027EE6 !important;
+    background-color: #FFFFFF !important;
+}
+/*style for the last element in table row*/
+.plan_settings tr td:last-of-type {
+    border-right-color: transparent;
+}
+
+.precalculate_wrapper p{
+    color: #808080;
+    line-height: 28px;
+    font-size: 14px;
+    margin: 0px;
+}
+.precalculate_wrapper label {
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+
+.cancel_subscription{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.cancel_subscription a{
+    color: #646464 !important;
+    text-decoration: underline;
+}

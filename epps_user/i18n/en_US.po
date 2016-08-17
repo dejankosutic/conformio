@@ -1,0 +1,506 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* epps_user
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-25 17:24+0000\n"
+"PO-Revision-Date: 2016-05-25 17:24+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: epps_user
+#: field:res.users,message_received:0
+msgid "1) I receive a message"
+msgstr "1) I receive a message"
+
+#. module: epps_user
+#: field:res.users,tasks_change:0
+msgid "2) I get new tasks or status of my tasks changes"
+msgstr "2) I get new tasks or status of my tasks changes"
+
+#. module: epps_user
+#: field:res.users,documents_change:0
+msgid "3) Documents to which I'm subscribed changes"
+msgstr "3) Documents to which I'm subscribed changes"
+
+#. module: epps_user
+#: field:res.users,new_login:0
+msgid "4) I login from somewhere new"
+msgstr "4) I login from somewhere new"
+
+#. module: epps_user
+#: field:res.users,project_invite:0
+msgid "5) Someone invites me to a Project"
+msgstr "5) Someone invites me to a Project"
+
+#. module: epps_user
+#: field:res.users,message_like:0
+msgid "6) Someone likes a message I posted"
+msgstr "6) Someone likes a message I posted"
+
+#. module: epps_user
+#: field:res.users,important_updates:0
+msgid "7) Important updates about Conformio features available"
+msgstr "7) Important updates about Conformio features available"
+
+#. module: epps_user
+#. openerp-web
+#: code:addons/epps_user/static/src/xml/usermenu.xml:13
+#, python-format
+msgid "About Conformio"
+msgstr "About Conformio"
+
+#. module: epps_user
+#. openerp-web
+#: code:addons/epps_user/static/src/js/epps_user.js:46
+#, python-format
+msgid "About Conformio "
+msgstr "About Conformio "
+
+#. module: epps_user
+#: view:res.groups:epps_user.view_groups_form_epps
+msgid "Access Controls"
+msgstr "Access Controls"
+
+#. module: epps_user
+#: model:ir.model,name:epps_user.model_res_groups
+msgid "Access Groups"
+msgstr "Access Groups"
+
+#. module: epps_user
+#: code:addons/epps_user/models/res_users.py:285
+#: view:res.groups:epps_user.view_groups_form_epps
+#: view:res.users:epps_user.epps_user_groups_view
+#: view:res.users:epps_user.view_user_form_epps
+#, python-format
+msgid "Access Rights"
+msgstr "Access Rights"
+
+#. module: epps_user
+#: view:res.groups:epps_user.view_groups_form_epps
+msgid "Access Rules"
+msgstr "Access Rules"
+
+#. module: epps_user
+#: view:res.users:epps_user.view_user_form_epps
+msgid "Activate"
+msgstr "Activate"
+
+#. module: epps_user
+#: view:res.users:epps_user.view_user_form_epps
+msgid "Activate/Deactivate User"
+msgstr "Activate/Deactivate User"
+
+#. module: epps_user
+#. openerp-web
+#: code:addons/epps_user/static/src/xml/usermenu.xml:31
+#, python-format
+msgid "Advisera"
+msgstr "Advisera"
+
+#. module: epps_user
+#: view:res.users:epps_user.view_user_form_epps
+msgid "Allowed Companies"
+msgstr "Allowed Companies"
+
+#. module: epps_user
+#. openerp-web
+#: code:addons/epps_user/static/src/xml/usermenu.xml:76
+#: view:res.users:epps_user.view_users_form_notifications
+#, python-format
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: epps_user
+#: code:addons/epps_user/models/res_users.py:258
+#, python-format
+msgid "Cannot send email: user has no email address. %s"
+msgstr "Cannot send email: user has no email address. %s"
+
+#. module: epps_user
+#. openerp-web
+#: code:addons/epps_user/static/src/xml/usermenu.xml:9
+#: code:addons/epps_user/static/src/xml/usermenu.xml:74
+#: view:res.users:epps_user.view_user_form_epps
+#, python-format
+msgid "Change Password"
+msgstr "Change Password"
+
+#. module: epps_user
+#: view:res.users:epps_user.view_user_form_epps
+msgid "Change the user password."
+msgstr "Change the user password."
+
+#. module: epps_user
+#: selection:res.company,client_role:0
+msgid "Client"
+msgstr "Client"
+
+#. module: epps_user
+#: field:res.company,client_role:0
+msgid "Client role"
+msgstr "Client role"
+
+#. module: epps_user
+#: model:ir.model,name:epps_user.model_res_company
+msgid "Companies"
+msgstr "Companies"
+
+#. module: epps_user
+#. openerp-web
+#: code:addons/epps_user/static/src/xml/usermenu.xml:68
+#, python-format
+msgid "Confirm New Password:"
+msgstr "Confirm New Password:"
+
+#. module: epps_user
+#. openerp-web
+#: code:addons/epps_user/static/src/xml/usermenu.xml:28
+#, python-format
+msgid "Conformio"
+msgstr "Conformio"
+
+#. module: epps_user
+#. openerp-web
+#: code:addons/epps_user/static/src/xml/usermenu.xml:30
+#, python-format
+msgid "Conformio is part of"
+msgstr "Conformio is part of"
+
+#. module: epps_user
+#. openerp-web
+#: code:addons/epps_user/static/src/xml/usermenu.xml:36
+#, python-format
+msgid "Copyright © 2016 EPPS Services Ltd"
+msgstr "Copyright © 2016 EPPS Services Ltd"
+
+#. module: epps_user
+#: field:res.users,customer_administrator:0
+msgid "Customer Administrator"
+msgstr "Customer Administrator"
+
+#. module: epps_user
+#: view:res.users:epps_user.view_user_form_epps
+msgid "Deactivate"
+msgstr "Deactivate"
+
+#. module: epps_user
+#: view:res.users:epps_user.view_user_form_epps
+msgid "Email Address"
+msgstr "Email Address"
+
+#. module: epps_user
+#: code:addons/epps_user/models/res_users.py:194
+#, python-format
+msgid "Email address has an invalid format please recheck it."
+msgstr "Email address has an invalid format please recheck it."
+
+#. module: epps_user
+#: view:res.users:epps_user.view_users_form_notifications
+msgid "Email me when:"
+msgstr "Email me when:"
+
+#. module: epps_user
+#. openerp-web
+#: code:addons/epps_user/static/src/js/epps_user.js:64
+#, python-format
+msgid "Embed"
+msgstr "Embed"
+
+#. module: epps_user
+#: view:res.users:epps_user.view_user_form_epps
+msgid "First Name / Last Name"
+msgstr "First Name / Last Name"
+
+#. module: epps_user
+#. openerp-web
+#: code:addons/epps_user/static/src/xml/usermenu.xml:77
+#, python-format
+msgid "GeoTrust"
+msgstr "GeoTrust"
+
+#. module: epps_user
+#: view:res.groups:epps_user.view_groups_search_epps
+msgid "Group"
+msgstr "Group"
+
+#. module: epps_user
+#: model:ir.actions.act_window,name:epps_user.action_res_group_form
+#: view:res.groups:epps_user.view_groups_form_epps
+#: view:res.groups:epps_user.view_groups_search_epps
+#: view:res.groups:epps_user.view_groups_tree_epps
+msgid "Groups"
+msgstr "Groups"
+
+#. module: epps_user
+#: view:res.users:epps_user.epps_user_search_view
+msgid "Inactive"
+msgstr "Inactive"
+
+#. module: epps_user
+#: view:res.groups:epps_user.view_groups_form_epps
+msgid "Inherited"
+msgstr "Inherited"
+
+#. module: epps_user
+#: view:res.users:epps_user.view_user_form_epps
+msgid "Localization"
+msgstr "Localization"
+
+#. module: epps_user
+#. openerp-web
+#: code:addons/epps_user/static/src/xml/usermenu.xml:17
+#, python-format
+msgid "Log out"
+msgstr "Log out"
+
+#. module: epps_user
+#: model:res.groups,name:epps_user.group_epps_comunity_forum_manager
+#: model:res.groups,name:epps_user.group_epps_cust_satisf_manager
+#: model:res.groups,name:epps_user.group_epps_doc_write_automation_manager
+#: model:res.groups,name:epps_user.group_epps_document_management_manager
+#: model:res.groups,name:epps_user.group_epps_document_repo_templ_manager
+#: model:res.groups,name:epps_user.group_epps_how_to_manager
+#: model:res.groups,name:epps_user.group_epps_ident_of_aspects_manager
+#: model:res.groups,name:epps_user.group_epps_implementation_guide_manager
+#: model:res.groups,name:epps_user.group_epps_public_project_manager
+#: model:res.groups,name:epps_user.group_epps_resseler_admin_manager
+#: model:res.groups,name:epps_user.group_epps_risk_management_manager
+#: model:res.groups,name:epps_user.group_epps_social_intranet_manager
+#: model:res.groups,name:epps_user.group_epps_support_widget_manager
+#: model:res.groups,name:epps_user.group_epps_user_management_manager
+#: model:res.groups,name:epps_user.group_epps_video_tutor_manager
+msgid "Manager"
+msgstr "Manager"
+
+#. module: epps_user
+#: field:res.company,max_number_of_users:0
+msgid "Max"
+msgstr "Max"
+
+#. module: epps_user
+#: field:res.company,max_space_gb:0
+msgid "Max. space (GB)"
+msgstr "Max. space (GB)"
+
+#. module: epps_user
+#: help:res.company,max_space_gb:0
+msgid "Maximum disk space in GB."
+msgstr "Maximum disk space in GB."
+
+#. module: epps_user
+#: help:res.company,max_number_of_users:0
+msgid "Maximum number of users"
+msgstr "Maximum number of users"
+
+#. module: epps_user
+#: view:res.groups:epps_user.view_groups_form_epps
+msgid "Menus"
+msgstr "Menus"
+
+#. module: epps_user
+#: view:res.users:epps_user.view_user_form_epps
+msgid "Menus Customization"
+msgstr "Menus Customization"
+
+#. module: epps_user
+#: view:res.users:epps_user.view_user_form_epps
+msgid "Messaging and Social"
+msgstr "Messaging and Social"
+
+#. module: epps_user
+#: code:addons/epps_user/models/res_users.py:284
+#: view:res.users:epps_user.epps_user_groups_view
+#, python-format
+msgid "Modules"
+msgstr "Modules"
+
+#. module: epps_user
+#. openerp-web
+#: code:addons/epps_user/static/src/xml/usermenu.xml:63
+#, python-format
+msgid "New Password:"
+msgstr "New Password:"
+
+#. module: epps_user
+#: view:res.groups:epps_user.view_groups_form_epps
+msgid "Notes"
+msgstr "Notes"
+
+#. module: epps_user
+#. openerp-web
+#: code:addons/epps_user/static/src/xml/usermenu.xml:8
+#: model:ir.actions.act_window,name:epps_user.action_user_notifications_my
+#, python-format
+msgid "Notifications"
+msgstr "Notifications"
+
+#. module: epps_user
+#: view:res.company:epps_user.view_company_form_user_number
+msgid "Number of users"
+msgstr "Number of users"
+
+#. module: epps_user
+#. openerp-web
+#: code:addons/epps_user/static/src/xml/usermenu.xml:58
+#, python-format
+msgid "Old Password:"
+msgstr "Old Password:"
+
+#. module: epps_user
+#: code:addons/epps_user/models/res_users.py:59
+#: code:addons/epps_user/models/res_users.py:299
+#, python-format
+msgid "Other"
+msgstr "Other"
+
+#. module: epps_user
+#: model:ir.model,name:epps_user.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: epps_user
+#. openerp-web
+#: code:addons/epps_user/static/src/xml/usermenu.xml:7
+#: view:res.users:epps_user.view_user_form_epps
+#, python-format
+msgid "Preferences"
+msgstr "Preferences"
+
+#. module: epps_user
+#. openerp-web
+#: code:addons/epps_user/static/src/xml/usermenu.xml:39
+#, python-format
+msgid "Privacy Policy and Terms"
+msgstr "Privacy Policy and Terms"
+
+#. module: epps_user
+#: field:res.groups,group_admin_id:0
+msgid "Project Group Administrator"
+msgstr "Project Group Administrator"
+
+#. module: epps_user
+#: selection:res.company,client_role:0
+msgid "Reseller"
+msgstr "Reseller"
+
+#. module: epps_user
+#: selection:res.company,client_role:0
+msgid "Reseller-Client"
+msgstr "Reseller-Client"
+
+#. module: epps_user
+#: view:res.groups:epps_user.view_groups_form_epps
+msgid "Rules"
+msgstr "Rules"
+
+#. module: epps_user
+#: view:res.users:epps_user.view_users_form_notifications
+msgid "Save"
+msgstr "Save"
+
+#. module: epps_user
+#: model:res.groups,name:epps_user.group_customer_administrator
+msgid "Settings"
+msgstr "Settings"
+
+#. module: epps_user
+#. openerp-web
+#: code:addons/epps_user/static/src/js/epps_user.js:64
+#, python-format
+msgid "Share"
+msgstr "Share"
+
+#. module: epps_user
+#: view:res.users:epps_user.view_user_form_epps
+msgid "Upgrade"
+msgstr "Upgrade"
+
+#. module: epps_user
+#: view:res.users:epps_user.view_user_form_epps
+msgid "Upgrade to get more"
+msgstr "Upgrade to get more"
+
+#. module: epps_user
+#: model:res.groups,name:epps_user.group_epps_comunity_forum_user
+#: model:res.groups,name:epps_user.group_epps_cust_satisf_user
+#: model:res.groups,name:epps_user.group_epps_doc_write_automation_user
+#: model:res.groups,name:epps_user.group_epps_document_management_user
+#: model:res.groups,name:epps_user.group_epps_document_repo_templ_user
+#: model:res.groups,name:epps_user.group_epps_how_to_user
+#: model:res.groups,name:epps_user.group_epps_ident_of_aspects_user
+#: model:res.groups,name:epps_user.group_epps_implementation_guide_user
+#: model:res.groups,name:epps_user.group_epps_public_project_user
+#: model:res.groups,name:epps_user.group_epps_resseler_admin_user
+#: model:res.groups,name:epps_user.group_epps_risk_management_user
+#: model:res.groups,name:epps_user.group_epps_social_intranet_user
+#: model:res.groups,name:epps_user.group_epps_support_widget_user
+#: model:res.groups,name:epps_user.group_epps_user_management_user
+#: model:res.groups,name:epps_user.group_epps_video_tutor_user
+msgid "User"
+msgstr "User"
+
+#. module: epps_user
+#: model:ir.actions.act_window,name:epps_user.action_res_users_epps
+#: model:ir.model,name:epps_user.model_res_users
+#: model:ir.ui.menu,name:epps_user.epps_menu_action_res_users
+#: view:res.groups:epps_user.view_groups_form_epps
+#: view:res.users:epps_user.view_user_form_epps
+#: view:res.users:epps_user.view_user_tree_epps
+#: view:res.users:epps_user.view_users_form_notifications
+msgid "Users"
+msgstr "Users"
+
+#. module: epps_user
+#: view:res.groups:epps_user.view_groups_form_epps
+msgid "Users added to this group are automatically added in the following groups."
+msgstr "Users added to this group are automatically added in the following groups."
+
+#. module: epps_user
+#: view:res.groups:epps_user.view_groups_form_epps
+msgid "Views"
+msgstr "Views"
+
+#. module: epps_user
+#: code:addons/epps_user/models/res_users.py:184
+#, python-format
+msgid "You can't delete user: %s, as it is customer admin!"
+msgstr "You can't delete user: %s, as it is customer admin!"
+
+#. module: epps_user
+#: view:res.users:epps_user.view_user_form_epps
+msgid "You currently have"
+msgstr "You currently have"
+
+#. module: epps_user
+#: code:addons/epps_user/models/res_users.py:203
+#, python-format
+msgid "You've exceeded the maximum number of users for company selected."
+msgstr "You've exceeded the maximum number of users for company selected."
+
+#. module: epps_user
+#. openerp-web
+#: code:addons/epps_user/static/src/xml/usermenu.xml:75
+#: view:res.users:epps_user.view_users_form_notifications
+#, python-format
+msgid "or"
+msgstr "or"
+
+#. module: epps_user
+#: view:res.users:epps_user.view_user_form_epps
+msgid "users available in your plan."
+msgstr "users available in your plan."
+
+#. module: epps_user
+#. openerp-web
+#: code:addons/epps_user/static/src/xml/usermenu.xml:39
+#, python-format
+msgid "| Version"
+msgstr "| Version"

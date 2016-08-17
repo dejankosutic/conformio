@@ -1,0 +1,54 @@
+.select2-results li {
+    /*margin-bottom: 5px;*/
+    background-image: none;
+}
+
+
+.decodio-list {
+    position: relative !important;
+}
+
+.select2-result-selectable {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    border-radius: 0px !important;
+}
+
+.select2-results .select2-highlighted {
+    background: #7C7BAD !important;
+    color: #fff !important;
+}
+
+
+.select2-results .badge {
+    color: #000;
+    font: 11px "lucida grande", tahoma, verdana, arial, sans-serif;
+    color: #fff;
+    background: #7C7BAD none repeat scroll 0% 0%;
+    padding: 0px;
+}
+
+
+.decodio-list .o_mention_proposition {
+    color: #000;
+    font: 11px "lucida grande", tahoma, verdana, arial, sans-serif;
+    color: #fff;
+    background: #7C7BAD none repeat scroll 0% 0%;
+    padding: 0px;
+}
+
+
+.decodio-list .o_mention_proposition a {
+     color: #000000;
+     background-color: #ffffff;
+}
+
+.openerp .oe_application a {
+    color: #000000;
+}
+.decodio-list > .active > a, .decodio-list > .active > a:hover, .decodio-list > .active > a:focus {
+    color: #fff;
+    text-decoration: none;
+    background-color: #027EE6;
+    outline: 0;
+    }

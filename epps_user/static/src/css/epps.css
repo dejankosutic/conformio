@@ -1,0 +1,37 @@
+.openerp .oe_list.oe_list_editable.oe_editing .oe_edition .oe_list_field_cell * {
+  /*visibility: visible;*/
+}
+
+/*Epps About form style*/
+.about-image{
+    margin: 0 auto;
+    width: 392px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+.about-image .epps_about_logo {
+    width: 392px;
+}
+.about-image p{
+    margin-top: 40px;
+    text-align: center;
+}
+.about_left{
+    float: left;
+}
+.about_right{
+    float: right;
+}
+.about-footer{
+    padding: 20px;
+    overflow: auto;
+    color: #898989;
+}
+.about-footer a{
+    color: #3EA5E6 !important;
+}
+
+.epps_reseller_logo_image {
+    margin-top: 20px;
+    max-height: 150px;
+}

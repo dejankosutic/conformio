@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- hide Messaging menu -->
+        <record id="mail.mail_feeds_main" model="ir.ui.menu">
+            <field name="parent_id" ref="base.hidden_menu_main"/>
+        </record>
+        <!-- hide Reporting menu -->
+        <record id="base.menu_reporting" model="ir.ui.menu">
+            <field name="parent_id" ref="base.hidden_menu_main"/>
+        </record>
+        <!-- hide Project menu -->
+        <record id="base.menu_main_pm" model="ir.ui.menu">
+            <field name="parent_id" ref="base.hidden_menu_main"/>
+        </record>
+        <!-- hide sales menu-->
+        <record id="base.menu_base_partner" model="ir.ui.menu">
+            <field name="parent_id" ref="base.hidden_menu_main"/>
+        </record>
+        <!-- hide knowledge menu-->
+        <record id="knowledge.menu_document" model="ir.ui.menu">
+            <field name="parent_id" ref="base.hidden_menu_main"/>
+        </record>
+    </data>
+</openerp>

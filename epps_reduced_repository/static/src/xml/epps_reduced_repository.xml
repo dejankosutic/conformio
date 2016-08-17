@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="epps_reduced_repository_templates" xml:space="preserve">
+     <!-- default layout -->
+    <t t-name="project_file_browser">
+        <div id="oe_project_file_browser_wrap">
+            <div id="oe_project_file_browser_area">
+                <div id="oe_project_file_browser_buttons" t-if="!is_repository">
+                    <div class="oe_project_file_browser_buttons">
+                        <div id="inline_project_add_attachment"></div>
+                        <button type="button" id="doclist_new" class="oe_button oe_form_button_save oe_highlightas">New folder</button>
+                        <button type="button" id="doclist_new_fold" class="oe_button oe_form_button_save oe_highlightas">New file</button>
+                    </div>
+                    <ul id="oe_project_selected_buttons" style="display: none;">
+                        <li id="oe_project_selected_buttons_open" class="oe_pr_btn_link oe_files_item oe_project_selected_buttons_open">Open</li>
+                        <li id="oe_project_selected_buttons_see_preview" class="oe_pr_btn_link oe_files_item oe_project_selected_buttons_open">See preview</li>
+                        <li id="oe_project_selected_buttons_share" class="oe_pr_btn_link oe_files_item">Share</li>
+                        <li id="oe_project_selected_buttons_unshare" class="oe_pr_btn_link oe_files_item">Unshare</li>
+                        <li id="oe_project_selected_buttons_make_private" class="oe_pr_btn_link oe_files_item">Make private</li>
+                        <li id="oe_project_selected_buttons_move" class="oe_pr_btn_link oe_files_item">Move</li>
+                        <li id="oe_project_selected_buttons_copy" class="oe_pr_btn_link oe_files_item oe_project_selected_buttons_copy">Copy</li>
+                        <li id="oe_project_selected_buttons_rename" class="oe_pr_btn_link oe_files_item">Rename</li>
+                        <li id="oe_project_selected_buttons_delete" class="oe_pr_btn_link oe_files_item">Delete</li>
+                        <li id="oe_project_selected_buttons_create_task" class="oe_pr_btn_link oe_files_item">Create a task</li>
+                        <!--<li id="oe_project_selected_buttons_sync" class="oe_pr_btn_link oe_files_item">Sync</li>-->
+                        <li id="oe_project_selected_buttons_request_access" class="oe_pr_btn_link oe_files_item">Request access</li>
+                        <li id="oe_project_selected_buttons_previous_ver" class="oe_pr_btn_link oe_files_item">Previous versions</li>
+                        <li id="oe_project_selected_buttons_edit_online" class="oe_pr_btn_link oe_files_item">Edit online</li>
+                        <li id="oe_project_selected_buttons_edit_msword" class="oe_pr_btn_link oe_files_item">Edit in Microsoft Office</li>
+                        <!--<li id="oe_project_selected_buttons_more" class="oe_pr_btn_link">...</li>-->
+                        <li id="oe_project_selected_buttons_more" class="dropdown" style="display: none;">
+                            <a href="#" class="dropdown-toggle file_dropdown-toggle" data-toggle="dropdown">... <b class="caret"></b></a>
+                            <ul id="menu_more_files" class="dropdown-menu dropdown-menu-files">
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul id="oe_project_selected_buttons_multiple" style="display: none;">
+                        <li id="oe_project_selected_buttons_move_s" class="oe_pr_btn_link oe_files_item">Move</li>
+                        <li id="oe_project_selected_buttons_copy_s" class="oe_pr_btn_link oe_files_item oe_project_selected_buttons_copy">Copy</li>
+                        <li id="oe_project_selected_buttons_delete_s" class="oe_pr_btn_link oe_files_item">Delete</li>
+                    </ul>
+                </div>
+                <div id="oe_project_file_browser_browser">
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="project_file_dummy">
+        <tr t-if="!is_repository" t-att-data-id="dir.id" t-att-data-parent_id="dir.parent_id" t-att-data-name="dir.name" t-att-data-type="dir.type" t-attf-class="#{(dir.type == 'file' or dir.type == 'url') ? 'oe_row_file' : 'oe_row_folder'} oe_project_file_row">
+            <td colspan="7" class="oe_epps_dummy_file">Drag files from your computer here</td>
+        </tr>
+    </t>
+</templates>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_epps_incident_status_tree" model="ir.ui.view">
+          <field name="name">epps.incident.status.tree</field>
+          <field name="model">incident.status</field>
+          <field name="arch" type="xml">
+             <tree string="Incident status">
+                <field name="name"/>
+                <field name="done" invisible="1"/>
+                <!--<field name="color"/>-->
+             </tree>
+          </field>
+        </record>
+
+        <record id="view_epps_incident_status_form" model="ir.ui.view">
+            <field name="name">epps.incident.status.form</field>
+            <field name="model">incident.status</field>
+            <field name="arch" type="xml">
+                <form string="Incident status">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="done" invisible="1"/>
+                            <!--<field name="color"/>-->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_epps_incident_status" model="ir.actions.act_window">
+          <field name="name">Incident status</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">incident.status</field>
+          <field name="view_type">form</field>
+          <field name="view_id" ref="view_epps_incident_status_tree"/>
+          <field name="context">{}</field>
+          <field name="help"></field>
+        </record>
+        <record id="action_epps_incident_status_form" model="ir.actions.act_window.view">
+          <field eval="2" name="sequence"/>
+          <field name="view_mode">form</field>
+          <field name="view_id" ref="view_epps_incident_status_form"/>
+        </record>
+        <record id="action_epps_incident_status_tree" model="ir.actions.act_window.view">
+          <field eval="1" name="sequence"/>
+          <field name="view_mode">tree</field>
+          <field name="view_id" ref="view_epps_incident_status_tree"/>
+        </record>
+
+        <!--
+        <record id="view_epps_incident_type_tree" model="ir.ui.view">
+          <field name="name">epps.incident.type.tree</field>
+          <field name="model">incident.type</field>
+          <field name="arch" type="xml">
+             <tree string="Incident type">
+                <field name="name"/>
+             </tree>
+          </field>
+        </record>
+
+        <record id="action_epps_incident_type" model="ir.actions.act_window">
+          <field name="name">Incident type</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">incident.type</field>
+          <field name="view_type">form</field>
+          <field name="view_id" ref="view_epps_incident_type_tree"/>
+          <field name="context">{}</field>
+          <field name="help"></field>
+        </record>
+        -->
+
+        <menuitem name="Incidents and complaints"
+            id="epps_security_incident_settings_menu"
+            parent="base.epps_menu_main_epps_settings"
+            groups="epps_user.group_customer_administrator"
+            sequence="100"/>
+
+        <menuitem name="Edit incident statuses"
+            id="epps_menu_incident_status"
+            parent="epps_security_incident_settings_menu"
+            groups="epps_user.group_customer_administrator"
+            action="epps_security_incident.action_epps_incident_status"
+            sequence="100"/>
+
+        <!--
+        <menuitem name="Edit incident types"
+            id="epps_menu_incident_type"
+            parent="epps_security_incident_settings_menu"
+            groups="epps_user.group_customer_administrator"
+            action="epps_security_incident.action_epps_incident_type"
+            sequence="100"/>
+        -->
+
+    </data>
+</openerp>

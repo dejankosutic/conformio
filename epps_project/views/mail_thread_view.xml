@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <!--menuitem id="epps_project.mail_feeds" name="Messaging" parent="base.epps_menu_main_pm" groups="base.group_user" sequence="50"/-->
+
+        <menuitem name="My work"
+            id="epps_menu_messaging"
+            parent="base.epps_menu_main_pm"
+            sequence="100"/>
+            
+            
+        <!-- ORIGINAL TO ME i INBOX
+        <record id="action_mail_inbox_feeds" model="ir.actions.client">
+            <field name="name">Inbox</field>
+            <field name="tag">mail.wall</field>
+            <field name="res_model">mail.message</field>
+            <field name="context">{
+              'default_model': 'res.users',
+              'default_res_id': uid,
+              'thread_model': 'res.partner',
+              'needaction_menu_ref': ['mail.mail_tomefeeds', 'mail.mail_starfeeds']
+            }</field>
+            <field name="params" eval="&quot;{
+                'domain': [
+                  ('to_read', '=', True),
+                  ('starred', '=', False),
+                ],
+                'view_mailbox': True,
+                'view_inbox': True,
+                'read_action': 'read',
+                'show_compose_message': False
+            }&quot;"/>
+            <field name="help" type="html">
+                <p>
+                    <b>Good Job!</b> Your inbox is empty.
+                </p><p>
+                    Your inbox contains private messages or emails sent to you
+                    as well as information related to documents or people you
+                    follow.
+                </p>
+            </field>
+        </record>
+
+        <record id="action_mail_to_me_feeds" model="ir.actions.client">
+            <field name="name">To: me</field>
+            <field name="tag">mail.wall</field>
+            <field name="res_model">mail.message</field>
+            <field name="context">{
+              'default_model': 'res.users',
+              'default_res_id': uid,
+              'thread_model': 'res.partner',
+              'search_default_message_unread': True,
+              'needaction_menu_ref': ['mail.mail_starfeeds', 'mail.mail_inboxfeeds']
+            }</field>
+            <field name="params" eval="&quot;{
+                'domain': [
+                    ('partner_ids.user_ids', 'in', [uid])
+                ],
+                'view_mailbox': True,
+                'read_action': 'read',
+                'show_compose_message': False
+            }&quot;"/>
+            <field name="help" type="html">
+                <p>
+                    <b>No private message.</b>
+                </p><p>
+                    This list contains messages sent to you.
+                </p>
+            </field>
+        </record>
+        -->
+
+        <record id="mail.action_mail_inbox_feeds" model="ir.actions.client">
+            <field name="name">My Discussions</field>
+            <field name="tag">mail.wallmydiscussions</field>
+            <field name="params" eval="&quot;{
+                'domain': ['|',
+                    '|',
+                        ('partner_ids.user_ids', 'in', [uid]),
+                        '&amp;',
+                            ('author_id.user_ids', 'in', [uid]),
+                            '|',
+                                ('model', '!=', 'ir.attachment'),
+                                ('model', '=', None),
+                    '&amp;',
+                        ('notified_partner_ids.user_ids', 'in', [uid]),
+                        ('model', '=', 'ir.attachment')
+                ],
+                'view_mailbox': True,
+                'view_inbox': True,
+                'read_action': 'read',
+                'show_compose_message': False
+            }&quot;"/>
+        </record>
+        
+        <record id="mail_tomefeeds" model="ir.ui.menu">
+          <field name="name">My Discussions</field>
+          <field name="sequence" eval="5"/>
+          <field name="action" ref="mail.action_mail_inbox_feeds"/>
+          <field name="parent_id" ref="epps_menu_messaging"/>
+        </record>
+
+        <menuitem id="menu_sale_tasks_my"
+                  action="action_view_sale_task_my"
+                  parent="epps_menu_messaging"
+                  sequence="50"/>
+
+    </data>
+</openerp>

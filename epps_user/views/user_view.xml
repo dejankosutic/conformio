@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_res_user_form_customeradmin" model="ir.ui.view">
+          <field name="name">res.users.form.customeradmin</field>
+          <field name="model">res.users</field>
+          <field name="inherit_id" ref="base.view_users_form"/>
+          <field name="arch" type="xml">
+            <data>
+              <field name="active" position="after">
+                <field name="customer_administrator" readonly="1"/>
+              </field>
+            </data>
+          </field>
+        </record>
+
+    <!--Notification settings-->
+        <record id="view_users_form_notifications" model="ir.ui.view">
+            <field name="name">res.users.notifications.form</field>
+            <field name="model">res.users</field>
+            <field eval="20" name="priority"/>
+            <field name="arch" type="xml">
+                <form string="Users">
+                    <field name="image" readonly="1" widget='image' class="oe_left oe_avatar" options='{"preview_image": "image_small"}'/>
+                    <h1>
+                        <field name="name" readonly="1" class="oe_inline"/>
+                    </h1>
+                    <group string="Email me when:">
+                        <field name="message_received" readonly="0"/>
+                        <field name="tasks_change" readonly="0"/>
+                        <field name="documents_change" readonly="0"/>
+                        <field name="new_login" readonly="0"/>
+                        <field name="project_invite" readonly="0"/>
+                        <field name="message_like" readonly="0"/>
+                        <field name="important_updates" readonly="0"/>
+                    </group>
+                    <footer>
+                        <button name="notifications_save" type="object" string="Save" class="oe_highlight"/>
+                        or
+                        <button name="preference_cancel" string="Cancel" special="cancel" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_user_notifications_my" model="ir.actions.act_window">
+            <field name="name">Notifications</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.users</field>
+            <field name="target">new</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+        </record>
+        <record id="action_notifications_my" model="ir.actions.act_window.view">
+            <field eval="10" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_users_form_notifications"/>
+            <field name="act_window_id" ref="action_user_notifications_my"/>
+        </record>
+
+
+<!-- User Views-->
+        <record id="view_user_tree_epps" model="ir.ui.view">
+          <field name="name">res.users.tree.epps</field>
+          <field name="model">res.users</field>
+          <field name="arch" type="xml">
+             <tree string="Users">
+                <field name="name"/>
+                <field name="login_date"/>
+             </tree>
+          </field>
+        </record>
+        
+        
+        <record id="view_user_form_epps" model="ir.ui.view">
+            <field name="name">res.users.form.epps</field>
+            <field name="model">res.users</field>
+            <field name="arch" type="xml">
+                <form string="Users">
+                    <sheet>
+                        <div class="user_count_wrapper" style="text-align: center;" attrs="{'invisible': [('id','=', False)]}">
+                            <field name="id" invisible="1" readonly="1"/>
+                            <h2>You currently have <field name="remaining_users" readonly="1" class="oe_inline"/> / <field name="max_number_of_users" readonly="1" class="oe_inline"/> users available in your plan.</h2>
+                        </div>
+                        <div class="oe_right oe_button_box">
+                            <button string="Change Password" type="action" name="%(base.change_password_wizard_action)d"
+                                class="oe_stat_button" icon="fa-key" help="Change the user password."/>
+                            <div attrs="{'invisible': [('active','=', True)]}">
+                            <button string="Activate" type="object" name="update_active"
+                                class="oe_stat_button" icon="fa-check-square" help="Activate/Deactivate User"/>
+                            </div>
+                            <div attrs="{'invisible': [('active','!=', True)]}">
+                            <button string="Deactivate" type="object" name="update_active"
+                                class="oe_stat_button" icon="fa-minus-square" help="Activate/Deactivate User"/>
+                            </div>
+                        </div>
+                        <field name="image" widget='image' class="oe_avatar oe_left" options='{"preview_image": "image_medium"}'/>
+                        <div class="oe_title" invisible="1">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" readonly="1"/></h1>
+                        </div>
+                        <div class="oe_title">
+                            <label for="firstname" class="oe_edit_only" string="First Name / Last Name"/>
+                            <h2><field name="firstname" class="oe_inline"/> <field name="lastname" class="oe_inline"/></h2>
+                            <field name="email" invisible="1"/>
+                            <label for="login" class="oe_edit_only" string="Email Address"/>
+                            <h2><field name="login" on_change="on_change_login(login)"/></h2>
+                            <label for="company_id" class="oe_edit_only" groups="base.group_multi_company"/>
+                            <field name="company_id" context="{'user_preference': 0}" groups="base.group_multi_company"/>
+                            <group>
+                                <field name="partner_id" readonly="1" required="0" groups="base.group_no_one"
+                                        invisible="1"/>
+                                <field name="active" invisible="1"/>
+                                <field name="id" invisible="1"/>
+                            </group>
+                        </div>
+                        <group col="4">
+                            <field name="groups_id"/>
+                        </group>
+                        <notebook colspan="4" invisible="1">
+                            <page string="Access Rights">
+                                <group string="Allowed Companies" groups="base.group_multi_company">
+                                    <field name="company_ids" nolabel="1" widget="many2many_tags"/>
+                                </group>
+                            </page>
+                            <page string="Preferences">
+                                <group>
+                                    <group string="Localization" name="preferences">
+                                        <field name="lang"/>
+                                        <field name="tz"/>
+                                    </group>
+                                    <group string="Menus Customization" groups="base.group_no_one">
+                                        <field name="action_id"/>
+                                    </group>
+                                </group>
+                                <group string="Messaging and Social" name="messaging">
+                                    <field name="signature"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="epps_user_groups_view" model="ir.ui.view">
+            <field name="name">res.users.groups.epps</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="view_user_form_epps"/>
+            <field name="arch" type="xml">
+                <!-- dummy, will be modified by epps groups -->
+                <field name="groups_id" position="after"/>
+            </field>
+        </record>
+        <record id="epps_user_search_view" model="ir.ui.view">
+            <field name="name">res.users.search.epps</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_search"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='company_ids']" position="after">
+                     <filter name="Inactive" string="Inactive" domain="[('active','=',False)]"/>
+                 </xpath>
+            </field>
+        </record>
+<!-- User Actions --> 
+        <record id="action_res_users_epps" model="ir.actions.act_window">
+          <field name="name">Users</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">res.users</field>
+          <field name="view_type">form</field>
+          <field name="view_id" ref="base.view_users_tree"/>
+          <field name="search_view_id" ref="base.view_users_search"/>
+          <field name="domain" eval="[('id', '!=', ref('base.user_root')),('share','=',False)]"/>
+          <field name="context">{}</field>
+          <field name="help"></field>
+        </record>
+        
+        <record id="action_res_user_epps_tree_view" model="ir.actions.act_window.view">
+          <field eval="1" name="sequence"/>
+          <field name="view_mode">tree</field>
+          <field name="view_id" ref="view_user_tree_epps"/>
+          <field name="act_window_id" ref="action_res_users_epps"/>
+        </record>
+        <record id="action_res_user_epps_form_view" model="ir.actions.act_window.view">
+          <field eval="2" name="sequence"/>
+          <field name="view_mode">form</field>
+          <field name="view_id" ref="view_user_form_epps"/>
+          <field name="act_window_id" ref="action_res_users_epps"/>
+        </record>
+        
+        
+<!-- res.groups -->
+        <record id="view_groups_search_epps" model="ir.ui.view">
+            <field name="name">res.groups.search.epps</field>
+            <field name="model">res.groups</field>
+            <field name="arch" type="xml">
+                <search string="Groups">
+                    <field name="name" filter_domain="['|', ('name','ilike',self), ('category_id','ilike',self)]" string="Group"/>
+                </search>
+            </field>
+        </record>
+        <record id="view_groups_tree_epps" model="ir.ui.view">
+          <field name="name">res.groups.tree.epps</field>
+          <field name="model">res.groups</field>
+          <field name="arch" type="xml">
+             <tree string="Groups">
+                <field name="full_name"/>
+             </tree>
+          </field>
+        </record>
+        <record id="view_groups_form_epps" model="ir.ui.view">
+            <field name="name">res.groups.form.epps</field>
+            <field name="model">res.groups</field>
+            <field name="arch" type="xml">
+                <form string="Groups">
+                  <sheet>
+                      <field name="category_id" invisible="1" readonly="1"/>
+                    <group col="4">
+                        <field name="name" colspan="4"/>
+                        <field name="group_admin_id" colspan="4"/>
+                    </group>
+                    <notebook>
+                        <page string="Users">
+                            <field name="users" context="{'tree_view_ref':'epps_user.view_user_tree_epps'}"/>
+                        </page>
+                        <page string="Inherited" invisible="1">
+                            <label string="Users added to this group are automatically added in the following groups."/>
+                            <field name="implied_ids"/>
+                        </page>
+                        <page string="Menus" invisible="1">
+                            <field name="menu_access"/>
+                        </page>
+                        <page string="Views" invisible="1">
+                            <field name="view_access"/>
+                        </page>
+                        <page string="Access Rights" invisible="1">
+                            <field name="model_access">
+                                <tree string="Access Rules" editable="top">
+                                    <field name="model_id"/>
+                                    <field name="perm_read"/>
+                                    <field name="perm_write"/>
+                                    <field name="perm_create"/>
+                                    <field name="perm_unlink"/>
+                                    <field name="name"/>
+                                </tree>
+                                <form string="Access Controls">
+                                    <group col="4">
+                                        <field name="name"/>
+                                        <field name="active"/>
+                                        <field name="model_id"/>
+                                        <newline/>
+                                        <field name="perm_read"/>
+                                        <field name="perm_write"/>
+                                        <field name="perm_create"/>
+                                        <field name="perm_unlink"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Rules" invisible="0">
+                            <field name="rule_groups">
+                                <tree string="Rules">
+                                    <field name="name"/>
+                                    <field name="model_id"/>
+                                    <field name="global"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Notes" invisible="1">
+                            <field name="comment"/>
+                        </page>
+                    </notebook>
+                  </sheet>
+                </form>
+            </field>
+        </record>
+        
+<!-- Group Actions --> 
+        <record id="action_res_group_form" model="ir.actions.act_window">
+          <field name="name">Groups</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">res.groups</field>
+          <field name="view_type">form</field>
+          <field name="view_id" ref="base.view_users_tree"/>
+          <field name="search_view_id" ref="view_groups_search_epps"/>
+          <field name="domain" eval="[('category_id', '=', ref('base.module_category_project_per_user'))]"/>
+          <field name="context" eval="{'default_category_id':ref('base.module_category_project_per_user')}"/>
+          <field name="help"></field>
+        </record>
+        
+        <record id="action_res_group_epps_tree_view" model="ir.actions.act_window.view">
+          <field eval="1" name="sequence"/>
+          <field name="view_mode">tree</field>
+          <field name="view_id" ref="view_groups_tree_epps"/>
+          <field name="act_window_id" ref="action_res_group_form"/>
+        </record>
+        <record id="action_res_group_epps_form_view" model="ir.actions.act_window.view">
+          <field eval="2" name="sequence"/>
+          <field name="view_mode">form</field>
+          <field name="view_id" ref="view_groups_form_epps"/>
+          <field name="act_window_id" ref="action_res_group_form"/>
+        </record>
+
+<!-- Menuitems -->
+        <!--MENU TO HIDE TOP MENU ITEMS (add as parent_id)-->
+        <!-- EXAMPLE
+           <record id="mail.mail_feeds_main" model="ir.ui.menu">
+                <field name="parent_id" ref="base.hidden_menu_main"/>
+           </record>
+        -->
+        <menuitem name="Hidden"
+            id="base.hidden_menu_main"
+            groups="base.group_system"
+            sequence="499"/>
+
+        <menuitem name="Users"
+            id="base.epps_menu_main_settings"
+            groups="epps_user.group_customer_administrator"
+            sequence="3"/><!--groups="project.group_project_manager,project.group_project_user"-->
+
+        <menuitem name="User management"
+            id="base.epps_menu_company"
+            parent="base.epps_menu_main_settings"
+            groups="epps_user.group_customer_administrator"
+            sequence="10"/><!--groups="project.group_project_manager,project.group_project_user"-->
+
+         <menuitem action="epps_user.action_res_users_epps" id="epps_menu_action_res_users"
+                   parent="base.epps_menu_company" sequence="10"/>
+
+         <!--Hiding top menu item Setting-->
+         <record id="base.menu_administration" model="ir.ui.menu">
+                <field name="parent_id" ref="base.hidden_menu_main"/>
+         </record>
+         <!--
+         <menuitem action="epps_user.action_res_group_form" id="epps_menu_action_res_groups_form"
+                   parent="base.epps_menu_company" sequence="40"/>
+        -->
+        <!--
+         <menuitem action="base.action_res_company_form" id="epps_menu_action_res_company_form"
+                   parent="base.epps_menu_company" sequence="50"/>
+        -->
+        
+    </data>
+</openerp>

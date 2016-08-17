@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <!--Repository project-->
+        <record id="epps_repository_project" model="project.project">
+            <field name="name">Repository</field>
+            <field name="user_id" ref="base.user_customer_administrator"/>
+            <field name="project_description"></field>
+            <field name="privacy_visibility">public</field>
+            <field name="members"></field>
+            <field name="is_company_rules" eval="False"/>
+            <field name="is_my_files" eval="False"/>
+            <field name="is_repository" eval="True"/>
+            <field name="is_conbase" eval="False"/>
+        </record>
+    </data>
+</openerp>

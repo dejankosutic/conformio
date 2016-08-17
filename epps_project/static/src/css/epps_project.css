@@ -1,0 +1,283 @@
+.nav-pills > li > a.epps_create_project {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 1px 13px;
+    border: 1px solid #4fa14f;
+    border-radius: 8px;
+    background: #82ff82;
+    background: -webkit-gradient(linear, left top, left bottom, from(#82ff82), to(#4fa14f));
+    background: -moz-linear-gradient(top, #82ff82, #4fa14f);
+    background: linear-gradient(to bottom, #82ff82, #4fa14f);
+    color: #ffffff;
+    text-decoration: none;
+}
+.nav-pills > li > a.epps_create_project:hover,
+.nav-pills > li > a.epps_create_project:focus {
+    border: 1px solid #71e671;
+    background: #9cff9c;
+    background: -webkit-gradient(linear, left top, left bottom, from(#9cff9c), to(#5fc15f));
+    background: -moz-linear-gradient(top, #9cff9c, #5fc15f);
+    background: linear-gradient(to bottom, #9cff9c, #5fc15f);
+    color: #ffffff;
+    text-decoration: none;
+}
+.nav-pills > li > a.epps_create_project:active,
+.nav-pills > li.active > a.epps_create_project{
+    background: #4fa14f;
+    background: -webkit-gradient(linear, left top, left bottom, from(#4fa14f), to(#4fa14f));
+    background: -moz-linear-gradient(top, #4fa14f, #4fa14f);
+    background: linear-gradient(to bottom, #4fa14f, #4fa14f);
+}
+.nav-pills > li > a.epps_create_project:after{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    margin: 0 -4px -6px 4px;
+    position: relative;
+    top: -3px;
+    left: 4px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABC0lEQVRIie3ULUsEURTG8Z+yiBg3GUwmMRiNYhCj4AtqFtNi8gMIfgY/gdEkGy02EZNBBBUMvmHaKmyQMcxddlhn3JnlbhD2DweeyzDPOXPOmcuI/8hcgY5GCytBv2V0NBK0cYBFPAcdNUEnTjCLm6AnYidIcIEZnAVdr2I2iWUco4m7nAQJHjGPI9wrMfx6MP0oMMyLFlaxjZegc1nDZwXjbLTR0B1+Y7zH/BDnmO73iYOwj+8BK8+2aFemRWPBfAHXmArnd1ziFq/4Qk06m9Oc4p6wjh1sYRMPnYc1XIXqm9Kt6W1dlspruiFdv6U/TIsSlPrR9nRbUzbBr22p8H5fhn7ZDf26HhGXHxIybXqDfwJ7AAAAAElFTkSuQmCC") no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+.decod_pager_group li {
+    height: 24px;
+    line-height: 24px;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+    float: left;
+    border-right: 1px solid #ABABAB;
+}
+
+.openerp .oe_mail .oe_msg .oe_msg_icons .oe_newtask:hover a{
+    color: #7C7BAD;
+    text-shadow: none;
+/*    text-shadow: 0px 1px #184fc5,0px -1px #184fc5, -1px 0px #184fc5, 1px 0px #184fc5, 0px 3px 3px rgba(0,0,0,0.1); */
+}
+.openerp.openerp_ie .oe_mail .oe_msg .oe_msg_icons .oe_newtask:hover a{
+    color: #7C7BAD;
+    text-shadow: none;
+}
+
+/*project edit form style*/
+#proj_manager_input{
+    width:50%;
+}
+#proj_manager_input input{
+    line-height: 28px;
+    height: 28px;
+    font-size: 14px;
+    color: #333333;
+    font-weight: normal;
+    border: 1px solid #BDC4C9;
+}
+#proj_manager_input label{
+    color: #808080;
+    line-height: 28px;
+    font-size: 14px;
+    font-weight:lighter;
+}
+.proj_title{
+    padding-top:20px;
+}
+.proj_title > label.oe_form_label.oe_align_right{
+    color: #808080;
+    line-height: 28px;
+    font-size: 14px;
+    font-weight:lighter;
+}
+.proj_title h1 input[type=text]{
+    line-height: 28px;
+    font-size: 14px;
+    color: #333333;
+    font-weight: normal;
+    border: 1px solid transparent !important;
+    width: 50%;
+}
+.proj_title h1 span.oe_form_field.oe_form_field_char.oe_form_required{
+    line-height: 28px;
+    font-size: 14px;
+    color: #333333;
+    font-weight: normal;
+    border: 1px solid #BDC4C9;
+    width: 50%;
+    border-radius: 3px;
+    padding: 0px;
+    margin: 0px;
+}
+.proj_title h1 span.oe_form_char_content{
+    padding-left: 3px;
+}
+#proj_manager_input > span > a.oe_form_uri{
+    font-size: 14px;
+    color: #333333;
+    font-weight: normal;
+    pointer-events: none;
+    cursor: default;
+    padding-left:3px;
+}
+
+div#proj_manager_input span.oe_form_field.oe_form_field_many2one.oe_form_field_with_button.oe_form_required{
+    border: 1px solid #BDC4C9;
+    padding: 0px;
+    border-radius: 3px;
+}
+div#proj_manager_input input[type=text]{
+    border: 1px solid transparent;
+}
+div#proj_manager_input input[type=text]:focus{
+    outline: none;
+}
+#project_description{
+    width: 50%;
+}
+#project_description textarea{
+    border: 1px solid #BDC4C9;
+    font-size: 14px;
+}
+#project_description .oe_form_field.oe_form_field_text{
+    border: 1px solid #BDC4C9;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 3px;
+    font-size: 14px;
+    min-height: 28px;
+}
+#project_description .oe_form_text_content {
+    border: 1px solid #BDC4C9;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 3px;
+    min-height: 28px;
+}
+.custom_label{
+    display:inline !important;
+    color: #808080 !important;
+    line-height: 28px !important;
+    font-size: 14px !important;
+    font-weight:lighter !important;
+}
+.custom_label_subtitle{
+    display:inline;
+    color: #999999 !important;
+    line-height: 20px !important;
+    font-size: 11px !important;
+    font-weight:lighter !important;
+}
+#project_members{
+    width:50%;
+}
+#project_members div.oe_kanban_record{
+    min-width:50px;
+    min-height:50px;
+}
+#form_buttons{
+    padding-bottom:20px;
+}
+#form_buttons button{
+    margin-right:20px;
+    min-width:100px;
+}
+
+#create_project_form_wrapper{
+    background-color:#FFFFFF;
+    border-radius:6px 6px;
+    padding:16px;
+    margin:20px;
+}
+
+/*kanban new form button style*/
+.openerp .oe_kanban_view .oe_kanban_button_new {
+    color: transparent;
+    background-color:#027EE6 !important;
+}
+
+/*kanban view style*/
+.oe_kanban_content{
+    padding:20px;
+}
+.oe_kanban_content h4{
+    font-size:26px;
+    font-weight:normal;
+    line-height:42px;
+    color:#333333;
+    text-align:left;
+}
+.oe_kanban_project{
+    min-width:300px;
+}
+.oe_kanban_project_description{
+    font-size:16px;
+    font-weight:normal;
+    line-height:20px;
+    color:#333333;
+    resize: none;
+}
+.oe_kanban_content .oe_kanban_project_avatars{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+}
+.custom_kanban{
+    margin:20px;
+    margin-right:10px;
+    min-width:280px !important;
+    min-height:350px !important;
+    border:none !important;
+    border-radius:6px 6px !important;
+}
+.custom_kanban:hover{
+    box-shadow:none !important;
+    border:none !important;
+}
+.last_edit_date{
+    font-size:14px;
+    font-weight:lighter;
+    color:#808080;
+}
+
+/*multiline elipsis e.g. 3 dots at the end of clipped text */
+    .oe_kanban_project_description p{
+    margin: 30px 0;
+    line-height: 1.5;
+    overflow: hidden;
+    position: relative;
+    max-height: 142px; /*display ellipsis after 3 lines*/
+}
+
+.oe_kanban_project_description p:before{
+    background: #fff;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    content: '\2026';
+}
+
+.oe_kanban_project_description p:after{
+    content: '';
+    background: #fff;
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    z-index: 1;
+}
+
+.openerp .oe_form .oe_form_field_date{
+    line-height:28px;
+}
+
+/*dashboard recent_files nonclickable*/
+.o_epps_dashboard_box.recent_files div.msg_head_line.msg_head_line_padtop > h1 > a{
+   pointer-events: none !important;
+   cursor: default !important;
+}
+
+/*Epps limit the logo's width in the side menu.*/
+.openerp .oe_leftbar > div a.oe_logo img {
+    max-width: 240px;
+    padding-left: 5px;
+    padding-right: 5px;
+}

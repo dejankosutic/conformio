@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="epps_company_rules_my_files_action" model="ir.actions.act_window">
+            <field name="name">My Files</field>
+            <field name="res_model">project.project</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="res_id" ref="epps_my_files_rules_project"/>
+        </record>
+
+        <record id="epps_company_rules_my_files" model="ir.ui.menu">
+            <field name="name">My Files</field>
+            <field name="sequence" eval="300"/>
+            <field name="action" ref="epps_company_rules_my_files_action"/>
+            <field name="parent_id" ref="epps_project.epps_menu_messaging"/>
+        </record>
+
+        <record id="epps_company_rules_project_action" model="ir.actions.act_window">
+            <field name="name">Company Rules</field>
+            <field name="res_model">project.project</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="res_id" ref="epps_company_rules_project"/>
+        </record>
+
+        <record id="action_update_update_logo_name" model="ir.actions.server">
+            <field name="name">Update Logo and Organization Name</field>
+            <field name="model_id" ref="epps_company_rules.model_update_logo_name_wizard"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = self.action_update_logo_name(cr, uid, context=context)
+            </field>
+        </record>
+
+        <record id="epps_company_rules_project_menu" model="ir.ui.menu">
+            <field name="name">Company Rules</field>
+            <field name="sequence" eval="400"/>
+            <field name="action" ref="action_update_update_logo_name"/>
+            <field name="parent_id" ref="epps_project.epps_menu_messaging"/>
+        </record>
+    </data>
+</openerp>

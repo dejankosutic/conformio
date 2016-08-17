@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <delete model="email.template" search="[('id','=',ref('auth_signup.set_password_email'))]"/>
+    </data>
+    <data noupdate="1">
+        <!-- Email template for new users -->
+        <record id="auth_signup.set_password_email" model="email.template">
+            <field name="name">Invitation to Conformio</field>
+            <field name="model_id" ref="base.model_res_users"/>
+            <field name="email_from"><![CDATA[${object.company_id.name} on Conformio <do-not-reply@conformio.com>]]></field>
+            <field name="email_to">${object.email|safe}</field>
+            <field name="subject"><![CDATA[${object.company_id.name} invites you to connect to Conformio]]></field>
+            <field name="body_html">
+                <![CDATA[
+                    <p>
+                        Dear ${object.name},
+                    </p>
+                    <p>
+                        You have been invited to connect to "${object.company_id.name}" network on Conformio to start working together.
+                    </p>
+                    <p>
+                        For confirmation of your account, please click the following link: <a href="${object.signup_url}">"${object.company_id.name}"</a>
+                    </p>
+                ]]>
+            </field>
+        </record>
+    </data>
+</openerp>

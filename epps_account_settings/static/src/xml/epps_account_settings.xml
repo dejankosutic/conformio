@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <!--Epps Account setting template-->
+    <t t-name="EppsAccountSettingsTemplate">
+    <div class ="oe_view_manager oe_view_manager_current">
+        <div class="epps_account_settings">
+            <div class="oe_form_sheet">
+                <div class="row">
+                    <div class="plan_settings">
+                        <table>
+                            <th>
+                                <td></td>
+                                <td>Free plan</td>
+                                <td>Level 1</td>
+                                <td>Level 2</td>
+                                <td>Level 3</td>
+                                <td class="last_row_td">Level 4</td>
+                            </th>
+                            <tr>
+                                <td></td>
+                                <td class="green_checkmark"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="last_row_td"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="last_row_td"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="last_row_td"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="last_row_td"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="last_row_td"></td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </t>
+
+</templates>
+

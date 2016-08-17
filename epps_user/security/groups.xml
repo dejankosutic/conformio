@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+<!--
+CATEGORIES:
+Social Intranet 20
+Document management system 30
+How to start guide 40
+User management 50
+Implementation guide / step-by-step guidance 60 
+Document writing automation  70
+Repository of documentation tem plates 80  
+Video tutorials and recorded webinars 90
+Community forum 100
+Support widget 110
+ISO 27001 Risk management tool 120 
+Tool for ISO 14001 identification of aspects 130 
+Customer satisfaction measurement tool 140
+Admin interface for resellers 150
+Public project
+-->
+
+        <record model="ir.module.category" id="base.module_category_epps_social_intranet">
+            <field name="name">Social Intranet</field>
+            <field name="description">Social Intranet</field>
+            <field name="parent_id" ref="base.module_category_epps_modules"/>
+            <field name="sequence">20</field>
+        </record>
+        <record model="ir.module.category" id="base.module_category_epps_document_management">
+            <field name="name">Document management system</field>
+            <field name="description">Document management system</field>
+            <field name="parent_id" ref="base.module_category_epps_modules"/>
+            <field name="sequence">30</field>
+        </record>       
+        <record model="ir.module.category" id="base.module_category_epps_how_to">
+            <field name="name">How to start guide</field>
+            <field name="description">How to start guide</field>
+            <field name="parent_id" ref="base.module_category_epps_modules"/>
+            <field name="visible" eval="False"/>
+            <field name="sequence">40</field>
+        </record>
+        <record model="ir.module.category" id="base.module_category_epps_user_management">
+            <field name="name">User management</field>
+            <field name="description">User management</field>
+            <field name="parent_id" ref="base.module_category_epps_modules"/>
+            <field name="sequence">50</field>
+        </record>
+        <record model="ir.module.category" id="base.module_category_epps_implementation_guide">
+            <field name="name">Implementation guide</field>
+            <field name="description">Implementation guide</field>
+            <field name="parent_id" ref="base.module_category_epps_modules"/>
+            <field name="visible" eval="False"/>
+            <field name="sequence">60</field>
+        </record>
+        <record model="ir.module.category" id="base.module_category_epps_doc_write_automation">
+            <field name="name">Document writing automation</field>
+            <field name="description">Document writing automation</field>
+            <field name="parent_id" ref="base.module_category_epps_modules"/>
+            <field name="sequence">70</field>
+        </record>
+        <record model="ir.module.category" id="base.module_category_epps_document_repo_templ">
+            <field name="name">Repository of documentation templates</field>
+            <field name="description">Repository of documentation templates</field>
+            <field name="parent_id" ref="base.module_category_epps_modules"/>
+            <field name="sequence">80</field>
+        </record>
+        <record model="ir.module.category" id="base.module_category_epps_video_tutor">
+            <field name="name">Video tutorials and recorded webinars</field>
+            <field name="description">Video tutorials and recorded webinars</field>
+            <field name="parent_id" ref="base.module_category_epps_modules"/>
+            <field name="visible" eval="False"/>
+            <field name="sequence">90</field>
+        </record>
+        <record model="ir.module.category" id="base.module_category_epps_comunity_forum">
+            <field name="name">Community forum</field>
+            <field name="description">Community forum</field>
+            <field name="parent_id" ref="base.module_category_epps_modules"/>
+            <field name="visible" eval="False"/>
+            <field name="sequence">100</field>
+        </record>
+        <record model="ir.module.category" id="base.module_category_epps_support_widget">
+            <field name="name">Support widget</field>
+            <field name="description">Support widget</field>
+            <field name="parent_id" ref="base.module_category_epps_modules"/>
+            <field name="visible" eval="False"/>
+            <field name="sequence">110</field>
+        </record>
+        <record model="ir.module.category" id="base.module_category_epps_risk_management">
+            <field name="name">ISO 27001 Risk management tool</field>
+            <field name="description">ISO 27001 Risk management tool</field>
+            <field name="parent_id" ref="base.module_category_epps_modules"/>
+            <field name="visible" eval="False"/>
+            <field name="sequence">120</field>
+        </record>
+        <record model="ir.module.category" id="base.module_category_epps_ident_of_aspects">
+            <field name="name">Tool for ISO 14001 identification of aspects</field>
+            <field name="description">Tool for ISO 14001 identification of aspects</field>
+            <field name="parent_id" ref="base.module_category_epps_modules"/>
+            <field name="visible" eval="False"/>
+            <field name="sequence">130</field>
+        </record>
+        <record model="ir.module.category" id="base.module_category_epps_cust_satisf">
+            <field name="name">Customer satisfaction measurement tool</field>
+            <field name="description">Customer satisfaction measurement tool</field>
+            <field name="parent_id" ref="base.module_category_epps_modules"/>
+            <field name="visible" eval="False"/>
+            <field name="sequence">140</field>
+        </record>
+        <record model="ir.module.category" id="base.module_category_epps_resseler_admin">
+            <field name="name">Admin interface for resellers</field>
+            <field name="description">Admin interface for resellers</field>
+            <field name="parent_id" ref="base.module_category_epps_modules"/>
+            <field name="visible" eval="False"/>
+            <field name="sequence">150</field>
+        </record>
+        <record model="ir.module.category" id="base.module_category_epps_public_project">
+            <field name="name">Public projects</field>
+            <field name="description">Public projects</field>
+            <field name="parent_id" ref="base.module_category_epps_modules"/>
+            <field name="visible" eval="False"/>
+            <field name="sequence">150</field>
+        </record>
+    </data>
+
+<!-- 
+GROUPS(for every category):
+User
+Admin
+-->
+    <data noupdate="0">
+                
+        <!--EPPS Social Intranet 20-->
+        <record id="epps_user.group_epps_social_intranet_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="base.module_category_epps_social_intranet"/>
+        </record> 
+        <record id="epps_user.group_epps_social_intranet_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="base.module_category_epps_social_intranet"/>
+            <field name="implied_ids" eval="[(4, ref('epps_user.group_epps_social_intranet_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')),(4, ref('base.user_customer_administrator'))]"/>
+        </record>
+        
+        <!--EPPS Document management system 30-->
+        <record id="epps_user.group_epps_document_management_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="base.module_category_epps_document_management"/>
+        </record> 
+        <record id="epps_user.group_epps_document_management_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="base.module_category_epps_document_management"/>
+            <field name="implied_ids" eval="[(4, ref('epps_user.group_epps_document_management_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')),(4, ref('base.user_customer_administrator'))]"/>
+        </record>
+        
+        <!--How to start guide 40-->
+        <record id="epps_user.group_epps_how_to_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="base.module_category_epps_how_to"/>
+        </record> 
+        <record id="epps_user.group_epps_how_to_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="base.module_category_epps_how_to"/>
+            <field name="implied_ids" eval="[(4, ref('epps_user.group_epps_how_to_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')),(4, ref('base.user_customer_administrator'))]"/>
+        </record>
+        
+        <!--User management 50-->
+        <record id="epps_user.group_epps_user_management_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="base.module_category_epps_user_management"/>
+        </record> 
+        <record id="epps_user.group_epps_user_management_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="base.module_category_epps_user_management"/>
+            <field name="implied_ids" eval="[(4, ref('epps_user.group_epps_user_management_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')),(4, ref('base.user_customer_administrator'))]"/>
+        </record>
+        
+        <!--Implementation guide 60-->
+        <record id="epps_user.group_epps_implementation_guide_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="base.module_category_epps_implementation_guide"/>
+        </record> 
+        <record id="epps_user.group_epps_implementation_guide_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="base.module_category_epps_implementation_guide"/>
+            <field name="implied_ids" eval="[(4, ref('epps_user.group_epps_implementation_guide_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')),(4, ref('base.user_customer_administrator'))]"/>
+        </record>
+        
+        <!--Document writing automation 70-->
+        <record id="epps_user.group_epps_doc_write_automation_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="base.module_category_epps_doc_write_automation"/>
+        </record> 
+        <record id="epps_user.group_epps_doc_write_automation_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="base.module_category_epps_doc_write_automation"/>
+            <field name="implied_ids" eval="[(4, ref('epps_user.group_epps_doc_write_automation_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')),(4, ref('base.user_customer_administrator'))]"/>
+        </record>
+        
+        <!--Repository of documentation templates 80-->
+        <record id="epps_user.group_epps_document_repo_templ_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="base.module_category_epps_document_repo_templ"/>
+        </record> 
+        <record id="epps_user.group_epps_document_repo_templ_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="base.module_category_epps_document_repo_templ"/>
+            <field name="implied_ids" eval="[(4, ref('epps_user.group_epps_document_repo_templ_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')),(4, ref('base.user_customer_administrator'))]"/>
+        </record>
+        
+        <!--Video tutorials and recorded webinars 90-->
+        <record id="epps_user.group_epps_video_tutor_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="base.module_category_epps_video_tutor"/>
+        </record> 
+        <record id="epps_user.group_epps_video_tutor_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="base.module_category_epps_video_tutor"/>
+            <field name="implied_ids" eval="[(4, ref('epps_user.group_epps_video_tutor_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')),(4, ref('base.user_customer_administrator'))]"/>
+        </record>
+        
+        <!--Community forum 100-->
+        <record id="epps_user.group_epps_comunity_forum_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="base.module_category_epps_comunity_forum"/>
+        </record> 
+        <record id="epps_user.group_epps_comunity_forum_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="base.module_category_epps_comunity_forum"/>
+            <field name="implied_ids" eval="[(4, ref('epps_user.group_epps_comunity_forum_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')),(4, ref('base.user_customer_administrator'))]"/>
+        </record>
+        
+        <!--Support widget 110-->
+        <record id="epps_user.group_epps_support_widget_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="base.module_category_epps_support_widget"/>
+        </record> 
+        <record id="epps_user.group_epps_support_widget_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="base.module_category_epps_support_widget"/>
+            <field name="implied_ids" eval="[(4, ref('epps_user.group_epps_support_widget_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')),(4, ref('base.user_customer_administrator'))]"/>
+        </record>
+        
+        <!--ISO 27001 Risk management tool 120-->
+        <record id="epps_user.group_epps_risk_management_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="base.module_category_epps_risk_management"/>
+        </record> 
+        <record id="epps_user.group_epps_risk_management_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="base.module_category_epps_risk_management"/>
+            <field name="implied_ids" eval="[(4, ref('epps_user.group_epps_risk_management_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')),(4, ref('base.user_customer_administrator'))]"/>
+        </record>
+        
+        <!--Tool for ISO 14001 identification of aspects 130-->
+        <record id="epps_user.group_epps_ident_of_aspects_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="base.module_category_epps_ident_of_aspects"/>
+        </record> 
+        <record id="epps_user.group_epps_ident_of_aspects_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="base.module_category_epps_ident_of_aspects"/>
+            <field name="implied_ids" eval="[(4, ref('epps_user.group_epps_ident_of_aspects_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')),(4, ref('base.user_customer_administrator'))]"/>
+        </record>
+        
+        <!--Customer satisfaction measurement tool 140-->
+        <record id="epps_user.group_epps_cust_satisf_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="base.module_category_epps_cust_satisf"/>
+        </record> 
+        <record id="epps_user.group_epps_cust_satisf_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="base.module_category_epps_cust_satisf"/>
+            <field name="implied_ids" eval="[(4, ref('epps_user.group_epps_cust_satisf_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')),(4, ref('base.user_customer_administrator'))]"/>
+        </record>
+        
+        <!--Admin interface for resellers 150-->
+        <record id="epps_user.group_epps_resseler_admin_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="base.module_category_epps_resseler_admin"/>
+        </record> 
+        <record id="epps_user.group_epps_resseler_admin_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="base.module_category_epps_resseler_admin"/>
+            <field name="implied_ids" eval="[(4, ref('epps_user.group_epps_resseler_admin_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')),(4, ref('base.user_customer_administrator'))]"/>
+        </record>
+
+        <!--Public project group-->
+        <record id="epps_user.group_epps_public_project_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="base.module_category_epps_public_project"/>
+        </record>
+        <record id="epps_user.group_epps_public_project_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="base.module_category_epps_public_project"/>
+            <field name="implied_ids" eval="[(4, ref('epps_user.group_epps_public_project_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')),(4, ref('base.user_customer_administrator'))]"/>
+        </record>
+
+    </data>
+</openerp>

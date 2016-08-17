@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <!--security incident project-->
+        <record id="epps_security_incident_project" model="project.project">
+            <field name="name">Security incidents</field>
+            <field name="user_id" ref="base.user_customer_administrator"/>
+            <field name="project_description"></field>
+            <field name="privacy_visibility">public</field>
+            <field name="members"></field>
+            <field name="is_company_rules" eval="False"/>
+            <field name="is_my_files" eval="False"/>
+            <field name="is_conbase" eval="True"/>
+        </record>
+
+        <!--Security incident base-->
+        <record id="epps_security_incident_base_record" model="security.incident.conbase">
+            <field name="name">Security incidents</field>
+            <field name="project_id" ref="epps_security_incident_project"/>
+        </record>
+
+        <record id="incident_type_mailcious_attack" model="incident.type">
+            <field name="name">Malicious attack</field>
+        </record>
+
+        <record id="incident_type_unintentional_human_error" model="incident.type">
+            <field name="name">Unintentional human error</field>
+        </record>
+
+        <record id="incident_type_technical_error" model="incident.type">
+            <field name="name">Technical error</field>
+        </record>
+
+        <record id="incident_type_force_majeure" model="incident.type">
+            <field name="name">Force majeure &amp; environmental incidents</field>
+        </record>
+    </data>
+</openerp>

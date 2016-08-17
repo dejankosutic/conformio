@@ -1,0 +1,166 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* epps_reduced_repository
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-25 17:13+0000\n"
+"PO-Revision-Date: 2016-05-25 17:13+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/js/epps_reduced_repository.js:72
+#, python-format
+msgid "Author"
+msgstr ""
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/xml/epps_reduced_repository.xml:19
+#: code:addons/epps_reduced_repository/static/src/xml/epps_reduced_repository.xml:36
+#, python-format
+msgid "Copy"
+msgstr ""
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/xml/epps_reduced_repository.xml:22
+#, python-format
+msgid "Create a task"
+msgstr ""
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/xml/epps_reduced_repository.xml:21
+#: code:addons/epps_reduced_repository/static/src/xml/epps_reduced_repository.xml:37
+#, python-format
+msgid "Delete"
+msgstr ""
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/xml/epps_reduced_repository.xml:48
+#, python-format
+msgid "Drag files from your computer here"
+msgstr ""
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/xml/epps_reduced_repository.xml:26
+#, python-format
+msgid "Edit in Microsoft Office"
+msgstr ""
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/xml/epps_reduced_repository.xml:17
+#, python-format
+msgid "Make private"
+msgstr ""
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/js/epps_reduced_repository.js:73
+#, python-format
+msgid "Modified"
+msgstr ""
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/xml/epps_reduced_repository.xml:18
+#: code:addons/epps_reduced_repository/static/src/xml/epps_reduced_repository.xml:35
+#, python-format
+msgid "Move"
+msgstr ""
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/js/epps_reduced_repository.js:71
+#, python-format
+msgid "Name"
+msgstr ""
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/xml/epps_reduced_repository.xml:11
+#, python-format
+msgid "New file"
+msgstr ""
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/xml/epps_reduced_repository.xml:10
+#, python-format
+msgid "New folder"
+msgstr ""
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/xml/epps_reduced_repository.xml:14
+#, python-format
+msgid "Open"
+msgstr ""
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/xml/epps_reduced_repository.xml:25
+#, python-format
+msgid "Previous versions"
+msgstr ""
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/xml/epps_reduced_repository.xml:20
+#, python-format
+msgid "Rename"
+msgstr ""
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/xml/epps_reduced_repository.xml:24
+#, python-format
+msgid "Request access"
+msgstr ""
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/xml/epps_reduced_repository.xml:15
+#, python-format
+msgid "Share"
+msgstr ""
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/js/epps_reduced_repository.js:74
+#, python-format
+msgid "Shared with"
+msgstr ""
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/js/epps_reduced_repository.js:75
+#, python-format
+msgid "Status"
+msgstr ""
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/xml/epps_reduced_repository.xml:23
+#, python-format
+msgid "Sync"
+msgstr ""
+
+#. module: epps_reduced_repository
+#. openerp-web
+#: code:addons/epps_reduced_repository/static/src/xml/epps_reduced_repository.xml:16
+#, python-format
+msgid "Unshare"
+msgstr ""

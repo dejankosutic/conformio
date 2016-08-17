@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--Top menu repository-->
+        <menuitem name="Repository"
+            id="base.epps_menu_main_repository"
+            groups="epps_project.group_epps_project_manager,epps_project.group_epps_project_user"
+            sequence="400"/>
+
+        <!--Repository menu-->
+        <menuitem name="Repository"
+            id="epps_repository_parent_menu"
+            parent="base.epps_menu_main_repository"
+            groups="epps_project.group_epps_project_manager,epps_project.group_epps_project_user"
+            sequence="100"/>
+        <menuitem name="Repository"
+            id="epps_repository_menu"
+            parent="epps_repository_parent_menu"
+            groups="epps_project.group_epps_project_manager,epps_project.group_epps_project_user"
+            action="epps_project.action_epps_repository"
+            sequence="100"/>
+    </data>
+</openerp>

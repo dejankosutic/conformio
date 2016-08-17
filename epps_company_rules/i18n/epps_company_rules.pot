@@ -1,0 +1,103 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* epps_company_rules
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-03 15:39+0000\n"
+"PO-Revision-Date: 2016-05-03 15:39+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: epps_company_rules
+#: view:update.logo.name.wizard:epps_company_rules.update_logo_name_wizard
+msgid "Cancel"
+msgstr ""
+
+#. module: epps_company_rules
+#: model:ir.actions.act_window,name:epps_company_rules.epps_company_rules_project_action
+#: model:ir.ui.menu,name:epps_company_rules.epps_company_rules_project_menu
+msgid "Company Rules"
+msgstr ""
+
+#. module: epps_company_rules
+#: field:update.logo.name.wizard,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: epps_company_rules
+#: field:update.logo.name.wizard,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: epps_company_rules
+#: code:addons/epps_company_rules/wizard/update_logo_name.py:83
+#, python-format
+msgid "Please ask your administrator to complete the initial setup first."
+msgstr ""
+
+#. module: epps_company_rules
+#: field:update.logo.name.wizard,id:0
+msgid "ID"
+msgstr ""
+
+#. module: epps_company_rules
+#: field:update.logo.name.wizard,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: epps_company_rules
+#: field:update.logo.name.wizard,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: epps_company_rules
+#: field:update.logo.name.wizard,logo:0
+msgid "Logo"
+msgstr ""
+
+#. module: epps_company_rules
+#: model:ir.actions.act_window,name:epps_company_rules.epps_company_rules_my_files_action
+#: model:ir.ui.menu,name:epps_company_rules.epps_company_rules_my_files
+msgid "My Files"
+msgstr ""
+
+#. module: epps_company_rules
+#: field:update.logo.name.wizard,name:0
+msgid "Organization Name"
+msgstr ""
+
+#. module: epps_company_rules
+#: code:addons/epps_company_rules/wizard/update_logo_name.py:85
+#, python-format
+msgid "Organization name must not be empty."
+msgstr ""
+
+#. module: epps_company_rules
+#: view:update.logo.name.wizard:epps_company_rules.update_logo_name_wizard
+msgid "Save"
+msgstr ""
+
+#. module: epps_company_rules
+#: model:ir.actions.server,name:epps_company_rules.action_update_update_logo_name
+msgid "Update Logo and Organization Name"
+msgstr ""
+
+#. module: epps_company_rules
+#: model:ir.actions.act_window,name:epps_company_rules.action_update_logo_name_wizard
+#: view:update.logo.name.wizard:epps_company_rules.update_logo_name_wizard
+msgid "Update Logo/Organization Name"
+msgstr ""
+
+#. module: epps_company_rules
+#: code:addons/epps_company_rules/wizard/update_logo_name.py:87
+#, python-format
+msgid "You must pick a logo."
+msgstr ""
+

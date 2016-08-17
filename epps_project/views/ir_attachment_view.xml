@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Attachment -->
+        <record id="epps_view_attachment_form" model="ir.ui.view">
+            <field name="name">epps.ir.attachment.form</field>
+            <field name="model">ir.attachment</field>
+            <field name="arch" type="xml">
+                <form string="Attachments">
+                    <group>
+                        <div id="document_related_info">
+                            <label for="document_status_id" class="oe_edit_only"/>
+                            <field name="document_status_id" 
+                                options="{'no_open': True, 'no_create': True, 'no_create_edit':True, 'no_quick_create':True}"/>
+                            <label for="name" class="oe_edit_only" string="Document Name"/>
+                            <field name="name"/>
+                            <group id="version">
+                                <group>
+                                    <label string="Document revision"/>
+                                    <newline/>
+                                    <group class="revision_version">
+                                        <field id="m_version" nolabel="1" name="file_version" class="oe_edit_only m_version" attrs="{'readonly': [('change_revision_on_save','=','off')]}"/>
+                                        <field id="s_version" nolabel="1" name="file_subversion" class="oe_edit_only s_version" attrs="{'readonly': [('change_revision_on_save','=','off')]}"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <div>
+                                        <label for="change_revision_on_save" class="oe_edit_only smaller_text"/>
+                                        <field name="change_revision_on_save" widget="buttonRadio" options="{'horizontal': True}"/>
+                                    </div>
+                                </group>
+                            </group>
+                            <label for="document_author_id" class="oe_edit_only"/>
+                            <field name="document_author_id" 
+                                options="{'no_open': True,
+                                          'no_create': True,
+                                          'no_create_edit':True,
+                                          'no_quick_create':True}" 
+                                domain="[('id', 'not in', [1])]" 
+                                context="{'default_document_author_id': uid}"/>
+                            <group id="next_user_in_line">
+                                <group>
+                                    <div>
+                                    <label for="document_next_reviewer_id" class="oe_edit_only smaller_text"/>
+                                    <field name="document_next_reviewer_id" domain="[('id', 'not in', [1])]" options="{'no_open': True, 'no_create': True, 'no_create_edit':True, 'no_quick_create':True}"/>
+                                    </div>
+                                </group>
+                                <group>
+                                <div>
+                                    <label for="send_document_on_save" class="oe_edit_only smaller_text"/>
+                                    <field name="send_document_on_save" widget="buttonRadio" options="{'horizontal': True}" domain="[('id', 'not in', [1])]"/>
+                                </div>
+                                </group>
+                            </group>
+                            <label for="document_approver_id" class="oe_edit_only" invisible="1"/>
+                            <field name="document_approver_id" options="{'no_open': True, 'no_create': True, 'no_create_edit':True, 'no_quick_create':True}" domain="[('id', 'not in', [1])]" invisible="1"/>
+                            <label for="frequency_of_review" class="oe_edit_only"/>
+                            <field name="frequency_of_review"/>
+                            <label for="document_owner_id" class="oe_edit_only"/>
+                            <field name="document_owner_id" options="{'no_open': True, 'no_create': True, 'no_create_edit':True, 'no_quick_create':True}" domain="[('id', 'not in', [1])]"/>
+                            <label for="notify_user_ids" class="oe_edit_only"/>
+                            <field name="notify_user_ids" widget="many2many_tags" options="{'no_open': True, 'no_create': True, 'no_create_edit':True, 'no_quick_create':True}" domain="[('id', 'not in', [1])]"/>
+                            <div class="document_record_actions">
+                                <button class="oe_highlight" name="button_save_data" string="Save" type="object" />
+                                <button class="cancel_att_details oe_button" special="cancel" string="Cancel"/>
+                            </div>
+                            <div class="delete_document">
+                                <button class="oe_link oe_project_delete_document" name="unlink_document" string="Delete" type="object"/>
+                            </div>
+                        </div>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="epps_view_attachment_tree" model="ir.ui.view">
+            <field name="name">epps.ir.attachment.tree</field>
+            <field name="model">ir.attachment</field>
+            <field name="arch" type="xml">
+                <tree string="Attachments">
+                    <field name="name"/>
+                    <field name="datas_fname"/>
+                    <field name="res_model"/>
+                    <field name="res_id"/>
+                    <field name="type"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="create_uid"/>
+                    <field name="create_date"/>
+                </tree>
+            </field>
+        </record>
+        <record id="epps_view_attachment_search" model="ir.ui.view">
+            <field name="name">epps.ir.attachment.search</field>
+            <field name="model">ir.attachment</field>
+            <field name="arch" type="xml">
+                <search string="Attachments">
+                    <field name="name" filter_domain="['|', ('name','ilike',self), ('datas_fname','ilike',self)]" string="Attachment"/>
+                    <field name="create_date"/>
+                    <filter icon="terp-stage"
+                        string="URL"
+                        domain="[('type','=','url')]"/>
+                    <filter icon="terp-stock_align_left_24"
+                        string="Binary"
+                        domain="[('type','=','binary')]"/>
+                    <separator/>
+                    <filter name="my_documents_filter" 
+                        string="My Document(s)"
+                        icon="terp-personal"
+                        domain="[('create_uid','=',uid)]"
+                        help="Filter on my documents"/>
+                    <field name="create_uid"/>
+                    <field name="type"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Owner" icon="terp-personal" domain="[]" context="{'group_by':'create_uid'}"/>
+                        <filter string="Type" icon="terp-stock_symbol-selection" domain="[]" context="{'group_by':'type'}" groups="base.group_no_one"/>
+                        <filter string="Company" icon="terp-gtk-home" domain="[]" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
+                        <filter string="Creation Month" icon="terp-go-month" domain="[]" context="{'group_by':'create_date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="epps_action_attachment" model="ir.actions.act_window">
+            <field name="name">Attachments</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ir.attachment</field>
+            <field name="view_type">form</field>
+            <field name="view_id" eval="False"/>
+            <field name="search_view_id" ref="epps_view_attachment_search"/>
+        </record>
+        <!--menuitem action="epps_action_attachment" id="menu_action_attachment" parent="base.next_id_9"/-->
+
+    </data>
+</openerp>

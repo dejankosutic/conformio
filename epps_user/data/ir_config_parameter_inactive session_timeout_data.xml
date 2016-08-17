@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<openerp>
+    <data noupdate="0">
+        <!--First we need to remove the old record and then change the session timeout value-->
+        <delete id="inactive_session_timeout.inactive_session_time_out_delay" model="ir.config_parameter"/>
+
+        <record id="inactive_session_timeout.inactive_session_time_out_delay" model="ir.config_parameter">
+            <field name="key">inactive_session_time_out_delay</field>
+            <field name="value">172800</field>
+        </record>
+    </data>
+</openerp>

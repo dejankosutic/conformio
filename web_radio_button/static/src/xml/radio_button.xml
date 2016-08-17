@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="radio_button_templates" xml:space="preserve">
+    <!--FieldButtonRadio template-->
+    <t t-name="FieldButtonRadio">
+    <span t-attf-class="oe_form_field oe_form_field_radio #{widget.options.horizontal ? 'oe_horizontal' : 'oe_vertical'}" t-att-style="widget.node.attrs.style">
+        <span t-if="!widget.get('effective_readonly')">
+            <div class="buttonRadio">
+                <t t-if="widget.options.horizontal">
+                    <t t-foreach="widget.selection" t-as="selection">
+                        <input type="radio" t-att-id="widget.name + '_' + widget.uniqueId + '_' + selection[0]" t-att-name="widget.name + '_' + widget.uniqueId" t-att-value="selection[0]"/>
+                        <label t-if="!widget.options.no_radiolabel" t-att-for="widget.name + '_' + widget.uniqueId + '_' + selection[0]"><t t-raw="selection[2]?selection[2]:selection[1]"/></label>
+                    </t>
+                </t>
+                <t t-if="!widget.options.horizontal">
+                    <t t-foreach="widget.selection" t-as="selection">
+                        <input type="radio" t-att-id="widget.name + '_' + widget.uniqueId + '_' + selection[0]" t-att-name="widget.name + '_' + widget.uniqueId" t-att-value="selection[0]"/>
+                        <label t-if="!widget.options.no_radiolabel" t-att-for="widget.name + '_' + widget.uniqueId + '_' + selection[0]"><t t-raw="selection[2]?selection[2]:selection[1]"/></label>
+                        <br/>
+                    </t>
+                </t>
+            </div>
+        </span>
+        <span t-if="widget.get('effective_readonly')" class="oe_radio_readonly">
+            <t t-foreach="widget.selection" t-as="selection">
+                <t t-raw="selection[2]"/>
+            </t>
+        </span>
+
+    </span>
+    </t>
+</templates>

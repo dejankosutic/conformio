@@ -1,0 +1,162 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* epps_reseller
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-03 15:53+0000\n"
+"PO-Revision-Date: 2016-05-03 15:53+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: epps_reseller
+#: model:ir.actions.act_window,name:epps_reseller.action_reseller_order
+#: model:ir.ui.menu,name:epps_reseller.epps_menu_sales
+msgid " Open customer access"
+msgstr ""
+
+#. module: epps_reseller
+#: model:ir.actions.act_window,help:epps_reseller.action_reseller_order
+msgid "<p class=\"oe_view_nocontent_create\"/>\n"
+"              <p/>\n"
+"              <p/>\n"
+"            "
+msgstr ""
+
+#. module: epps_reseller
+#: view:reseller.order:epps_reseller.view_reseller_filter
+#: selection:reseller.order,state:0
+msgid "Active"
+msgstr ""
+
+#. module: epps_reseller
+#: view:reseller.order:epps_reseller.view_reseller_form
+msgid "Cancel"
+msgstr ""
+
+#. module: epps_reseller
+#: view:reseller.order:epps_reseller.view_reseller_filter
+#: selection:reseller.order,state:0
+msgid "Canceled"
+msgstr ""
+
+#. module: epps_reseller
+#: field:reseller.order,canceled_date:0
+msgid "Canceled date"
+msgstr ""
+
+#. module: epps_reseller
+#: view:reseller.order:epps_reseller.view_reseller_form
+msgid "Client Access"
+msgstr ""
+
+#. module: epps_reseller
+#: field:reseller.order,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: epps_reseller
+#: field:reseller.order,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: epps_reseller
+#: view:reseller.order:epps_reseller.view_reseller_filter
+#: field:reseller.order,partner_id:0
+msgid "Customer"
+msgstr ""
+
+#. module: epps_reseller
+#: view:res.partner:epps_reseller.epps_view_partner_reseller_form
+msgid "Customer Access"
+msgstr ""
+
+#. module: epps_reseller
+#: model:ir.ui.menu,name:epps_reseller.epps_menu_partner
+msgid "Customers"
+msgstr ""
+
+#. module: epps_reseller
+#: view:reseller.order:epps_reseller.view_reseller_filter
+msgid "Group By"
+msgstr ""
+
+#. module: epps_reseller
+#: field:reseller.order,id:0
+msgid "ID"
+msgstr ""
+
+#. module: epps_reseller
+#: field:reseller.order,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: epps_reseller
+#: field:reseller.order,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: epps_reseller
+#: view:reseller.order:epps_reseller.view_reseller_form
+#: view:reseller.order:epps_reseller.view_reseller_tree
+msgid "Opening access for a client"
+msgstr ""
+
+#. module: epps_reseller
+#: field:reseller.order,order_date:0
+msgid "Order date"
+msgstr ""
+
+#. module: epps_reseller
+#: field:reseller.order,name:0
+msgid "Order number"
+msgstr ""
+
+#. module: epps_reseller
+#: view:reseller.order:epps_reseller.view_reseller_filter
+#: field:reseller.order,product_id:0
+msgid "Package"
+msgstr ""
+
+#. module: epps_reseller
+#: model:ir.model,name:epps_reseller.model_res_partner
+msgid "Partner"
+msgstr ""
+
+#. module: epps_reseller
+#: view:reseller.order:epps_reseller.view_reseller_filter
+#: selection:reseller.order,state:0
+msgid "Processing"
+msgstr ""
+
+#. module: epps_reseller
+#: view:reseller.order:epps_reseller.view_reseller_filter
+msgid "Reseller Order"
+msgstr ""
+
+#. module: epps_reseller
+#: field:res.partner,reseller_order_ids:0
+msgid "Reseller Orders"
+msgstr ""
+
+#. module: epps_reseller
+#: view:reseller.order:epps_reseller.view_reseller_filter
+msgid "Search Client Access"
+msgstr ""
+
+#. module: epps_reseller
+#: view:reseller.order:epps_reseller.view_reseller_filter
+#: field:reseller.order,state:0
+msgid "State"
+msgstr ""
+
+#. module: epps_reseller
+#: field:reseller.order,subdomain_name:0
+msgid "Subdomain name"
+msgstr ""

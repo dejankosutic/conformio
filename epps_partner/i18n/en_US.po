@@ -1,0 +1,129 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* epps_partner
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-03 15:48+0000\n"
+"PO-Revision-Date: 2016-05-03 15:48+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: epps_partner
+#: view:res.partner:epps_partner.epps_view_partner_form
+msgid "(edit company address)"
+msgstr "(edit company address)"
+
+#. module: epps_partner
+#: view:res.partner:epps_partner.epps_view_partner_form
+msgid "Address"
+msgstr "Address"
+
+#. module: epps_partner
+#: view:res.partner:epps_partner.epps_view_partner_form
+msgid "Administrator"
+msgstr "Administrator"
+
+#. module: epps_partner
+#: view:res.partner:epps_partner.epps_view_partner_form
+msgid "City"
+msgstr "City"
+
+#. module: epps_partner
+#: view:res.partner:epps_partner.epps_view_partner_form
+msgid "Company"
+msgstr "Company"
+
+#. module: epps_partner
+#: view:res.partner:epps_partner.epps_view_partner_form
+msgid "Company name"
+msgstr "Company name"
+
+#. module: epps_partner
+#: view:res.partner:epps_partner.epps_view_partner_form
+msgid "Country"
+msgstr "Country"
+
+#. module: epps_partner
+#: model:ir.actions.act_window,name:epps_partner.action_epps_partner
+#: view:res.partner:epps_partner.epps_view_partner_form
+#: view:res.partner:epps_partner.epps_view_partner_tree
+msgid "Customers"
+msgstr "Customers"
+
+#. module: epps_partner
+#: field:res.partner,admin_firstname:0
+msgid "First name"
+msgstr "First name"
+
+#. module: epps_partner
+#: view:res.partner:epps_partner.epps_view_partner_form
+msgid "Internal Notes"
+msgstr "Internal Notes"
+
+#. module: epps_partner
+#: field:res.partner,admin_lastname:0
+msgid "Last name"
+msgstr "Last name"
+
+#. module: epps_partner
+#: model:ir.model,name:epps_partner.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: epps_partner
+#: view:res.partner:epps_partner.epps_view_partner_form
+msgid "Put an internal note..."
+msgstr "Put an internal note..."
+
+#. module: epps_partner
+#: view:res.partner:epps_partner.epps_view_partner_form
+msgid "Sales & Purchases"
+msgstr "Sales & Purchases"
+
+#. module: epps_partner
+#: view:res.partner:epps_partner.epps_view_res_partner_filter
+msgid "Search Contacts"
+msgstr "Search Contacts"
+
+#. module: epps_partner
+#: view:res.partner:epps_partner.epps_view_partner_form
+msgid "State"
+msgstr "State"
+
+#. module: epps_partner
+#: view:res.partner:epps_partner.epps_view_partner_form
+msgid "Street..."
+msgstr "Street..."
+
+#. module: epps_partner
+#: field:res.partner,subdomain_name:0
+msgid "Subdomain name"
+msgstr "Subdomain name"
+
+#. module: epps_partner
+#: view:res.partner:epps_partner.epps_view_partner_form
+msgid "Tags..."
+msgstr "Tags..."
+
+#. module: epps_partner
+#: view:res.partner:epps_partner.epps_view_partner_form
+msgid "ZIP"
+msgstr "ZIP"
+
+#. module: epps_partner
+#: view:res.partner:epps_partner.epps_view_partner_form
+msgid "e.g. Sales Director"
+msgstr "e.g. Sales Director"
+
+#. module: epps_partner
+#: view:res.partner:epps_partner.epps_view_partner_form
+msgid "e.g. www.odoo.com"
+msgstr "e.g. www.odoo.com"
+

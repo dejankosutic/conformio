@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="web_list_button_icon_templates" xml:space="preserve">
+
+    <button t-name="ListView.row.button.icon" type="button"
+        t-att-title="widget.string" t-att-disabled="disabled || undefined"
+        t-att-class="disabled ? 'oe_list_button_disabled' : ''"
+        ><img t-attf-src="#{prefix}#{widget.icon}"
+        t-att-alt="widget.string"/></button>
+
+</templates>

@@ -1,0 +1,99 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* epps_user_log
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-03 16:02+0000\n"
+"PO-Revision-Date: 2016-05-03 16:02+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: epps_user_log
+#: model:email.template,body_html:epps_user_log.email_temp_new_ip_address_logg
+msgid "\n"
+"<p>\n"
+"New IP address detected\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Login Date: ${format_tz(object.log_date, tz=user.tz, context={'lang':object.user_id.partner_id.lang})}<br>\n"
+"IP Address: ${object.ip_address}\n"
+"</p>\n"
+"\n"
+"<p>Note: If it was you, you can safely ignore this email.</p>"
+msgstr "\n"
+"<p>\n"
+"New IP address detected\n"
+"</p>\n"
+"\n"
+"<p>\n"
+"Login Date: ${format_tz(object.log_date, tz=user.tz, context={'lang':object.user_id.partner_id.lang})}<br>\n"
+"IP Address: ${object.ip_address}\n"
+"</p>\n"
+"\n"
+"<p>Note: If it was you, you can safely ignore this email.</p>"
+
+#. module: epps_user_log
+#: field:user.log,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: epps_user_log
+#: field:user.log,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: epps_user_log
+#: field:epps_user_log.installed,id:0
+#: field:user.log,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: epps_user_log
+#: field:user.log,ip_address:0
+msgid "IP Address"
+msgstr "IP Address"
+
+#. module: epps_user_log
+#: view:base.config.settings:epps_user_log.view_general_configuration_logging_enabled
+#: field:base.config.settings,ip_logging_enabled:0
+msgid "IP Logging Enabled"
+msgstr "IP Logging Enabled"
+
+#. module: epps_user_log
+#: field:user.log,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: epps_user_log
+#: field:user.log,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: epps_user_log
+#: field:user.log,log_date:0
+msgid "Log Date"
+msgstr "Log Date"
+
+#. module: epps_user_log
+#: model:email.template,subject:epps_user_log.email_temp_new_ip_address_logg
+msgid "Logged in from new IP address"
+msgstr "Logged in from new IP address"
+
+#. module: epps_user_log
+#: field:user.log,session_id:0
+msgid "Session ID"
+msgstr "Session ID"
+
+#. module: epps_user_log
+#: field:user.log,user_id:0
+msgid "User ID"
+msgstr "User ID"
+

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="1">
+        <record id="status_new" model="document.file.status">
+            <field name="name">No status</field>
+            <field name="sequence" eval="1"/>
+            <field name="permanent" eval="True"/>
+            <field name="state">new</field>
+        </record>
+        <record id="status_draft" model="document.file.status">
+            <field name="name">Draft</field>
+            <field name="sequence" eval="10"/>
+            <field name="permanent" eval="False"/>
+            <field name="state">in_progress</field>
+        </record>
+        <record id="status_for_review" model="document.file.status">
+            <field name="name">For review</field>
+            <field name="sequence" eval="20"/>
+            <field name="permanent" eval="False"/>
+            <field name="state">in_progress</field>
+        </record>
+        <record id="status_for_approval" model="document.file.status">
+            <field name="name">For approval</field>
+            <field name="sequence" eval="30"/>
+            <field name="permanent" eval="False"/>
+            <field name="state">in_progress</field>
+        </record>
+        <record id="status_approved" model="document.file.status">
+            <field name="name">Approved</field>
+            <field name="sequence" eval="99"/>
+            <field name="permanent" eval="True"/>
+            <field name="state">done</field>
+        </record>
+    </data>
+</openerp>

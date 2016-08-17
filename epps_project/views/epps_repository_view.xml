@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_epps_repository_form" model="ir.ui.view">
+            <field name="name">epps.project.repository</field>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">
+                <form string="Project">
+                <header>
+                    <field name="state" invisible="1" widget="statusbar" clickable="True" statusbar_visible="draft,open,close,cancelled" statusbar_colors='{"pending":"blue"}'/>
+                </header>
+                <sheet string="Project" class="transparent_sheet">
+                    <notebook class="menu_top">
+                        <page string="Files" class="full_background">
+                            <!--iframe src="http://46.101.214.196/OnlineEditorsExample/doceditor.aspx?fileID=demo.docx"
+                                    style="min-width: 900px; min-height:900px;"></iframe-->
+                            <field name="id" widget="project_files"/>
+                            <!--widget="many2many_binary"-->
+                        </page>
+                    </notebook>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_epps_repository" model="ir.actions.act_window">
+          <field name="name">Repository</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">project.project</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">form</field>
+          <field name="view_id" ref="view_epps_repository_form"/>
+          <field name="res_id" ref="epps_repository_project"/>
+          <field name="context">{}</field>
+          <field name="help"></field>
+        </record>
+    </data>
+</openerp>

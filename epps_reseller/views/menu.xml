@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    <menuitem name="Reseller module"
+            id="base.epps_menu_reseller"
+            parent="base.epps_menu_main_apps"
+            groups="epps_project.group_epps_project_manager,epps_project.group_epps_project_user"
+            sequence="100"/>
+            
+    <menuitem id="epps_menu_sales"
+            action="action_reseller_order"
+            parent="base.epps_menu_reseller"
+            sequence="10"/>
+            
+    <menuitem id="epps_menu_partner"
+            action="epps_partner.action_epps_partner"
+            parent="base.epps_menu_reseller"
+            sequence="11"/>
+    </data>
+</openerp>

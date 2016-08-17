@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_project_epps_user,project.project.epps.user,model_project_project,epps_project.group_epps_project_user,1,1,0,0
+access_analytic_line_epps_user,project.access.analytic.line.epps.user,analytic.model_account_analytic_line,epps_project.group_epps_project_user,1,1,1,1
+project_pad_epps_user,project.pad.epps.user,model_project_pad,epps_project.group_epps_project_user,1,1,1,1
+user_project_email_user,user.project.email user,model_user_project_email,base.group_user,1,1,1,1
+access_partner_epps_user,project.access.partner.epps.user,base.model_res_partner,epps_project.group_epps_project_user,1,1,1,1
+access_partner_epps_manager,project.access.partner.epps.manager,base.model_res_partner,epps_project.group_epps_project_manager,1,1,1,1
+access_dwa_fields_user,access_dwa_fields,model_dwa_fields,base.group_user,1,0,0,0
+access_dwa_fields_manager,access_dwa_fields,model_dwa_fields,epps_project.group_epps_project_manager,1,1,1,1
+access_document_file_status,access_document_file_status,model_document_file_status,epps_project.group_epps_project_user,1,1,1,1
+access_epps_project_res_users,access_epps_project_res_users,model_res_users,epps_project.group_epps_project_user,1,1,0,0
+access_message_tags,access_message_tags,model_message_tags,base.group_user,1,0,0,0
+access_message_tags_project_manager,access_message_tags_project_manage,model_message_tags,epps_project.group_epps_project_user,1,1,1,1
+access_dropbox_integration,access_dropbox_integration,model_dropbox_integration,epps_project.group_epps_project_user,1,1,1,1

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <delete model="mail.message.subtype" search="[('id','=',ref('analytic.mt_account_pending'))]"/>
+        <delete model="mail.message.subtype" search="[('id','=',ref('analytic.mt_account_closed'))]"/>
+        <delete model="mail.message.subtype" search="[('id','=',ref('analytic.mt_account_opened'))]"/>
+        <delete model="mail.message.subtype" search="[('id','=',ref('analytic.mt_account_opened'))]"/>
+    </data>
+</openerp>
